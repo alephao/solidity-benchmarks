@@ -1,0 +1,8 @@
+contracts:
+- name: ERC721OZMinimal
+  type: ERC721OZ
+- name: ERC721AMinimal
+  type: ERC721A
+
+tests:
+  mint: [1, 2, 3, 4, 5, 10, 50, 100]  
