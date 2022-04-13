@@ -1,4 +1,5 @@
 @ds-test/=lib/ds-test/src/
 @forge-std/=lib/forge-std/src/
-@openzeppelin/=lib/openzeppelin-contracts/contracts/
+@openzeppelin/=lib/openzeppelin-contracts/
+@ERC721A/=lib/ERC721A/contracts/
 $/=src/
