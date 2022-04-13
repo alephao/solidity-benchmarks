@@ -2,5 +2,6 @@
 @forge-std/=lib/forge-std/src/
 @openzeppelin/=lib/openzeppelin-contracts/
 @ERC721A/=lib/ERC721A/contracts/
+@ERC721B/=lib/ERC721B/contracts/
 @solmate/=lib/solmate/src/
 $/=src/

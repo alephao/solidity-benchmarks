@@ -31,8 +31,8 @@ contract {{contract.type}}TransferTest is DSTest {
 
     function setUp() public {
         sut = new {{contract.name}}();
-        sut.mint(address(0xAAAA), 100);
-        sut.mint(address(0xBBBB), 100);
+        sut.mint(address(0xAAAA), 101);
+        sut.mint(address(0xBBBB), 101);
     }
 
     {% for tokenId in tests.transfer %}
@@ -55,8 +55,8 @@ contract {{contract.type}}ApprovalTest is DSTest {
 
     function setUp() public {
         sut = new {{contract.name}}();
-        sut.mint(address(0xAAAA), 100);
-        sut.mint(address(0xBBBB), 100);
+        sut.mint(address(0xAAAA), 101);
+        sut.mint(address(0xBBBB), 101);
     }
 
     function test_setApprovalForAll() public {
