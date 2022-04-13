@@ -2,7 +2,6 @@
 
 Benchmarks for implementations of ERC721 contracts.
 
-
 ## Benchmarks
 
 Benchmarks are separated by method. Check the description of each table.
@@ -43,6 +42,17 @@ How much gas to transfer the `nth` token id if you own all tokens from 1 to 100?
 |    ERC721A   |72850|111341|206463|305207|
 <!-- End Transfer Non Owner Table -->
 
+### Approval
+
+How much gas for `setApprovalForAll`?
+
+<!-- Start setApprovalForAll Table -->
+|Implementation|  _  |
+|--------------|-----|
+| Open Zeppelin|32629|
+|    Solmate   |32528|
+|    ERC721A   |32571|
+<!-- End setApprovalForAll Table -->
 
 ## Contributing
 

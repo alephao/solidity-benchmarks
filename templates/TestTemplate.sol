@@ -48,4 +48,21 @@ contract {{contract.type}}TransferTest is DSTest {
     {% endfor %}
 }
 
+contract {{contract.type}}ApprovalTest is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    {{contract.name}} internal sut;
+
+    function setUp() public {
+        sut = new {{contract.name}}();
+        sut.mint(address(0xAAAA), 100);
+        sut.mint(address(0xBBBB), 100);
+    }
+
+    function test_setApprovalForAll() public {
+        HEVM.prank(address(0xAAAA));
+        sut.setApprovalForAll(address(0xCCCC), true);
+    }
+}
+
 {% endfor %}

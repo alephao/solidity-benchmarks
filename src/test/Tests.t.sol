@@ -91,6 +91,23 @@ contract ERC721OZTransferTest is DSTest {
     }
 }
 
+contract ERC721OZApprovalTest is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721OZMinimal internal sut;
+
+    function setUp() public {
+        sut = new ERC721OZMinimal();
+        sut.mint(address(0xAAAA), 100);
+        sut.mint(address(0xBBBB), 100);
+    }
+
+    function test_setApprovalForAll() public {
+        HEVM.prank(address(0xAAAA));
+        sut.setApprovalForAll(address(0xCCCC), true);
+    }
+}
+
 contract ERC721AMintTest is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
@@ -175,6 +192,23 @@ contract ERC721ATransferTest is DSTest {
     }
 }
 
+contract ERC721AApprovalTest is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721AMinimal internal sut;
+
+    function setUp() public {
+        sut = new ERC721AMinimal();
+        sut.mint(address(0xAAAA), 100);
+        sut.mint(address(0xBBBB), 100);
+    }
+
+    function test_setApprovalForAll() public {
+        HEVM.prank(address(0xAAAA));
+        sut.setApprovalForAll(address(0xCCCC), true);
+    }
+}
+
 contract ERC721SolmateMintTest is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
@@ -256,6 +290,23 @@ contract ERC721SolmateTransferTest is DSTest {
     function test_transfer_toNonOwner_id100() public {
         HEVM.prank(address(0xAAAA));
         sut.transferFrom(address(0xAAAA), address(0xCCCC), 100);
+    }
+}
+
+contract ERC721SolmateApprovalTest is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721SolmateMinimal internal sut;
+
+    function setUp() public {
+        sut = new ERC721SolmateMinimal();
+        sut.mint(address(0xAAAA), 100);
+        sut.mint(address(0xBBBB), 100);
+    }
+
+    function test_setApprovalForAll() public {
+        HEVM.prank(address(0xAAAA));
+        sut.setApprovalForAll(address(0xCCCC), true);
     }
 }
 
