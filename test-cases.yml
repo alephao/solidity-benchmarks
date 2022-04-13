@@ -1,8 +1,18 @@
 contracts:
-- name: ERC721OZMinimal
-  type: ERC721OZ
-- name: ERC721AMinimal
-  type: ERC721A
+  - name: ERC721OZMinimal
+    type: ERC721OZ
+  - name: ERC721AMinimal
+    type: ERC721A
 
 tests:
-  mint: [1, 2, 3, 4, 5, 10, 50, 100]  
+  # Transfer
+  # - For transfer tests, there is one account with tokens from 1 to 100.
+  # - The numbers below is which token ID to transfer. Each number in the 
+  #   array will generate a test transfering the specific token Id. This only 
+  #   affects a few implementations like ERC721A.
+  transfer: [1, 10, 50, 100]
+
+  # Mint
+  # - The numbers below are the amount to mint. Each number in the array will
+  #   generate a test mining the number.
+  mint: [1, 2, 3, 4, 5, 10, 50, 100]

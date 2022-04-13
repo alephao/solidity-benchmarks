@@ -35,15 +35,17 @@ contract {{contract.type}}TransferTest is DSTest {
         sut.mint(address(0xBBBB), 100);
     }
 
-    function test_transfer_toOwner() public {
+    {% for tokenId in tests.transfer %}
+    function test_transfer_toOwner_id{{tokenId}}() public {
         HEVM.prank(address(0xAAAA));
-        sut.transferFrom(address(0xAAAA), address(0xBBBB), 50);
+        sut.transferFrom(address(0xAAAA), address(0xBBBB), {{tokenId}});
     }
 
-    function test_transfer_toNonOwner() public {
+    function test_transfer_toNonOwner_id{{tokenId}}() public {
         HEVM.prank(address(0xAAAA));
-        sut.transferFrom(address(0xAAAA), address(0xCCCC), 50);
+        sut.transferFrom(address(0xAAAA), address(0xCCCC), {{tokenId}});
     }
+    {% endfor %}
 }
 
 {% endfor %}

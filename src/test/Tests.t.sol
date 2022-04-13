@@ -52,14 +52,41 @@ contract ERC721OZTransferTest is DSTest {
         sut.mint(address(0xBBBB), 100);
     }
 
-    function test_transfer_toOwner() public {
+    function test_transfer_toOwner_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transferFrom(address(0xAAAA), address(0xBBBB), 1);
+    }
+
+    function test_transfer_toNonOwner_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transferFrom(address(0xAAAA), address(0xCCCC), 1);
+    }
+    function test_transfer_toOwner_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transferFrom(address(0xAAAA), address(0xBBBB), 10);
+    }
+
+    function test_transfer_toNonOwner_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transferFrom(address(0xAAAA), address(0xCCCC), 10);
+    }
+    function test_transfer_toOwner_id50() public {
         HEVM.prank(address(0xAAAA));
         sut.transferFrom(address(0xAAAA), address(0xBBBB), 50);
     }
 
-    function test_transfer_toNonOwner() public {
+    function test_transfer_toNonOwner_id50() public {
         HEVM.prank(address(0xAAAA));
         sut.transferFrom(address(0xAAAA), address(0xCCCC), 50);
+    }
+    function test_transfer_toOwner_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transferFrom(address(0xAAAA), address(0xBBBB), 100);
+    }
+
+    function test_transfer_toNonOwner_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transferFrom(address(0xAAAA), address(0xCCCC), 100);
     }
 }
 
@@ -109,14 +136,41 @@ contract ERC721ATransferTest is DSTest {
         sut.mint(address(0xBBBB), 100);
     }
 
-    function test_transfer_toOwner() public {
+    function test_transfer_toOwner_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transferFrom(address(0xAAAA), address(0xBBBB), 1);
+    }
+
+    function test_transfer_toNonOwner_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transferFrom(address(0xAAAA), address(0xCCCC), 1);
+    }
+    function test_transfer_toOwner_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transferFrom(address(0xAAAA), address(0xBBBB), 10);
+    }
+
+    function test_transfer_toNonOwner_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transferFrom(address(0xAAAA), address(0xCCCC), 10);
+    }
+    function test_transfer_toOwner_id50() public {
         HEVM.prank(address(0xAAAA));
         sut.transferFrom(address(0xAAAA), address(0xBBBB), 50);
     }
 
-    function test_transfer_toNonOwner() public {
+    function test_transfer_toNonOwner_id50() public {
         HEVM.prank(address(0xAAAA));
         sut.transferFrom(address(0xAAAA), address(0xCCCC), 50);
+    }
+    function test_transfer_toOwner_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transferFrom(address(0xAAAA), address(0xBBBB), 100);
+    }
+
+    function test_transfer_toNonOwner_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transferFrom(address(0xAAAA), address(0xCCCC), 100);
     }
 }
 
