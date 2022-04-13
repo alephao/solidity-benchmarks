@@ -14,6 +14,10 @@ tests:
   #   affects a few implementations like ERC721A.
   transfer: [1, 10, 50, 100]
 
+  # Approve
+  # - same logic as Transfer, but for approval, the numbers below are token ids
+  approve: [1, 10, 50, 100]
+
   # Mint
   # - The numbers below are the amount to mint. Each number in the array will
   #   generate a test mining the number.

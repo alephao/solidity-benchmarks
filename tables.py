@@ -22,6 +22,8 @@ mint_regex = re.compile("test_mint_(\d+).+gas:\s(\d+)")
 transfer_owner_regex = re.compile("transfer_toOwner_id(\d+).+gas:\s(\d+)")
 transfer_nonowner_regex = re.compile(
     "transfer_toNonOwner_id(\d+).+gas:\s(\d+)")
+approve_regex = re.compile(
+    "test_approve_id(\d+).+gas:\s(\d+)")
 approvalall_regex = re.compile(
     "test_setApprovalForAll.+gas:\s(\d+)")
 
@@ -83,6 +85,14 @@ def transfer_nonowner_table(lines):
         row_sep='markdown', quote=False).getMarkdown()
     return table
 
+def approve_table(lines):
+    rows = map(lambda variation: make_row(approve_regex, lines,
+               variation["name"], "ERC721" + variation["short"] + "ApprovalTest"), variations)
+    rows = list(rows)
+    table = markdownTable(rows).setParams(
+        row_sep='markdown', quote=False).getMarkdown()
+    return table
+
 
 def _make_approvalall_row(regex, lines, variant, test_name):
     p = _make_row_match(regex, lines, test_name)
@@ -119,6 +129,8 @@ def main():
                     "<!-- Start Transfer Non Owner Table -->\n{}\n<!-- End Transfer Non Owner Table -->".format(transfer_nonowner_table(lines)), readme, 1, re.M)
     readme = re.sub(r"<!-- Start setApprovalForAll Table -->(.|\n)+<!-- End setApprovalForAll Table -->",
                     "<!-- Start setApprovalForAll Table -->\n{}\n<!-- End setApprovalForAll Table -->".format(approvalall_table(lines)), readme, 1, re.M)
+    readme = re.sub(r"<!-- Start approve Table -->(.|\n)+<!-- End approve Table -->",
+                    "<!-- Start approve Table -->\n{}\n<!-- End approve Table -->".format(approve_table(lines)), readme, 1, re.M)
     f.write(readme)
     f.truncate()
 

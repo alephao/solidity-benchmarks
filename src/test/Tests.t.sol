@@ -106,6 +106,23 @@ contract ERC721OZApprovalTest is DSTest {
         HEVM.prank(address(0xAAAA));
         sut.setApprovalForAll(address(0xCCCC), true);
     }
+
+    function test_approve_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xCCCC), 1);
+    }
+    function test_approve_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xCCCC), 10);
+    }
+    function test_approve_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xCCCC), 50);
+    }
+    function test_approve_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xCCCC), 100);
+    }
 }
 
 contract ERC721AMintTest is DSTest {
@@ -207,6 +224,23 @@ contract ERC721AApprovalTest is DSTest {
         HEVM.prank(address(0xAAAA));
         sut.setApprovalForAll(address(0xCCCC), true);
     }
+
+    function test_approve_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xCCCC), 1);
+    }
+    function test_approve_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xCCCC), 10);
+    }
+    function test_approve_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xCCCC), 50);
+    }
+    function test_approve_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xCCCC), 100);
+    }
 }
 
 contract ERC721SolmateMintTest is DSTest {
@@ -307,6 +341,23 @@ contract ERC721SolmateApprovalTest is DSTest {
     function test_setApprovalForAll() public {
         HEVM.prank(address(0xAAAA));
         sut.setApprovalForAll(address(0xCCCC), true);
+    }
+
+    function test_approve_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xCCCC), 1);
+    }
+    function test_approve_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xCCCC), 10);
+    }
+    function test_approve_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xCCCC), 50);
+    }
+    function test_approve_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xCCCC), 100);
     }
 }
 

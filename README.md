@@ -49,10 +49,20 @@ How much gas for `setApprovalForAll`?
 <!-- Start setApprovalForAll Table -->
 |Implementation|  _  |
 |--------------|-----|
-| Open Zeppelin|32629|
-|    Solmate   |32528|
-|    ERC721A   |32571|
+| Open Zeppelin|32651|
+|    Solmate   |32550|
+|    ERC721A   |32593|
 <!-- End setApprovalForAll Table -->
+
+How much gas to approve the `nth` token id if you own all tokens from 1 to 100?
+
+<!-- Start approve Table -->
+|Implementation|  1  |  10 |  50  |  100 |
+|--------------|-----|-----|------|------|
+| Open Zeppelin|35194|35149| 35216| 35172|
+|    Solmate   |34762|34717| 34784| 34740|
+|    ERC721A   |37433|58780|154013|273005|
+<!-- End approve Table -->
 
 ## Contributing
 

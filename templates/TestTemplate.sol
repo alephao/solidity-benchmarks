@@ -63,6 +63,13 @@ contract {{contract.type}}ApprovalTest is DSTest {
         HEVM.prank(address(0xAAAA));
         sut.setApprovalForAll(address(0xCCCC), true);
     }
+
+    {% for tokenId in tests.approve %}
+    function test_approve_id{{tokenId}}() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xCCCC), {{tokenId}});
+    }
+    {% endfor %}
 }
 
 {% endfor %}
