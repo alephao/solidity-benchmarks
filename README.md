@@ -8,6 +8,16 @@ Benchmarks for implementations of ERC721 contracts.
 - [ERC721B](https://github.com/beskay/ERC721B)
 - [ERC721K](https://github.com/kadenzipfel/ERC721K)
 
+## Method used
+
+We create a minimal implementation of each contract with a function to mint tokens with a sequential ID. Then for each test, we setup the enviroment in the `setUp` function so the gas used for setting up the test won't leak to the actual test function. The test function only use `HEVM.prank` and call the function, adding the minimum amount of noise as it is currently possible. 
+
+All gas tests are generated via the [`test-cases.yml`](test-cases.yml) and [`templates/TestTemplate.sol`](templates/TestTemplate.sol) by using [stencil-cli](https://github.com/alephao/stencil-cli) (I'm hoping to change that since it only works on macOS D:). The tables in this README.md are generated using the [`tables.py`](tables.py) script (not great code, but it works well. quick and dirty job ;D).
+
+We use `foundry snapshot --optimize` to get gas used on each test function.
+
+The gas used here is not 100% accurate, you might see a different gas usage in the implementations' codebases, but we're using the same setup for all contracts and in a controled environment, so it should be good enough to be able to compare the gas usage between the implementations. I'll risk saying it's probably more accurate than what each individual codebase is showing.
+
 ## Benchmarks
 
 Benchmarks are separated by method. Check the description of each table.
