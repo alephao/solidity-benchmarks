@@ -9,6 +9,10 @@ variations = [
         "short": "OZ"
     },
     {
+        "name": "Open Zeppelin Enumerable",
+        "short": "OZEnum"
+    },
+    {
         "name": "Solmate",
         "short": "Solmate"
     },

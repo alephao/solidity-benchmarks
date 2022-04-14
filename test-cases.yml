@@ -1,6 +1,8 @@
 contracts:
   - name: ERC721OZMinimal
     type: ERC721OZ
+  - name: ERC721OZEnumMinimal
+    type: ERC721OZEnum
   - name: ERC721AMinimal
     type: ERC721A
   - name: ERC721BMinimal
