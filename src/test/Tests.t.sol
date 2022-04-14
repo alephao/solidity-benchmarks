@@ -21,26 +21,58 @@ contract ERC721OZMintTest is DSTest {
     function test_mint_1() public {
         sut.mint(address(0xAAAA), 1);
     }
+
+    function test_safeMint_1() public {
+        sut.safeMint(address(0xAAAA), 1);
+    }
     function test_mint_2() public {
         sut.mint(address(0xAAAA), 2);
+    }
+
+    function test_safeMint_2() public {
+        sut.safeMint(address(0xAAAA), 2);
     }
     function test_mint_3() public {
         sut.mint(address(0xAAAA), 3);
     }
+
+    function test_safeMint_3() public {
+        sut.safeMint(address(0xAAAA), 3);
+    }
     function test_mint_4() public {
         sut.mint(address(0xAAAA), 4);
+    }
+
+    function test_safeMint_4() public {
+        sut.safeMint(address(0xAAAA), 4);
     }
     function test_mint_5() public {
         sut.mint(address(0xAAAA), 5);
     }
+
+    function test_safeMint_5() public {
+        sut.safeMint(address(0xAAAA), 5);
+    }
     function test_mint_10() public {
         sut.mint(address(0xAAAA), 10);
+    }
+
+    function test_safeMint_10() public {
+        sut.safeMint(address(0xAAAA), 10);
     }
     function test_mint_50() public {
         sut.mint(address(0xAAAA), 50);
     }
+
+    function test_safeMint_50() public {
+        sut.safeMint(address(0xAAAA), 50);
+    }
     function test_mint_100() public {
         sut.mint(address(0xAAAA), 100);
+    }
+
+    function test_safeMint_100() public {
+        sut.safeMint(address(0xAAAA), 100);
     }
 }
 
@@ -139,26 +171,58 @@ contract ERC721AMintTest is DSTest {
     function test_mint_1() public {
         sut.mint(address(0xAAAA), 1);
     }
+
+    function test_safeMint_1() public {
+        sut.safeMint(address(0xAAAA), 1);
+    }
     function test_mint_2() public {
         sut.mint(address(0xAAAA), 2);
+    }
+
+    function test_safeMint_2() public {
+        sut.safeMint(address(0xAAAA), 2);
     }
     function test_mint_3() public {
         sut.mint(address(0xAAAA), 3);
     }
+
+    function test_safeMint_3() public {
+        sut.safeMint(address(0xAAAA), 3);
+    }
     function test_mint_4() public {
         sut.mint(address(0xAAAA), 4);
+    }
+
+    function test_safeMint_4() public {
+        sut.safeMint(address(0xAAAA), 4);
     }
     function test_mint_5() public {
         sut.mint(address(0xAAAA), 5);
     }
+
+    function test_safeMint_5() public {
+        sut.safeMint(address(0xAAAA), 5);
+    }
     function test_mint_10() public {
         sut.mint(address(0xAAAA), 10);
+    }
+
+    function test_safeMint_10() public {
+        sut.safeMint(address(0xAAAA), 10);
     }
     function test_mint_50() public {
         sut.mint(address(0xAAAA), 50);
     }
+
+    function test_safeMint_50() public {
+        sut.safeMint(address(0xAAAA), 50);
+    }
     function test_mint_100() public {
         sut.mint(address(0xAAAA), 100);
+    }
+
+    function test_safeMint_100() public {
+        sut.safeMint(address(0xAAAA), 100);
     }
 }
 
@@ -257,26 +321,58 @@ contract ERC721BMintTest is DSTest {
     function test_mint_1() public {
         sut.mint(address(0xAAAA), 1);
     }
+
+    function test_safeMint_1() public {
+        sut.safeMint(address(0xAAAA), 1);
+    }
     function test_mint_2() public {
         sut.mint(address(0xAAAA), 2);
+    }
+
+    function test_safeMint_2() public {
+        sut.safeMint(address(0xAAAA), 2);
     }
     function test_mint_3() public {
         sut.mint(address(0xAAAA), 3);
     }
+
+    function test_safeMint_3() public {
+        sut.safeMint(address(0xAAAA), 3);
+    }
     function test_mint_4() public {
         sut.mint(address(0xAAAA), 4);
+    }
+
+    function test_safeMint_4() public {
+        sut.safeMint(address(0xAAAA), 4);
     }
     function test_mint_5() public {
         sut.mint(address(0xAAAA), 5);
     }
+
+    function test_safeMint_5() public {
+        sut.safeMint(address(0xAAAA), 5);
+    }
     function test_mint_10() public {
         sut.mint(address(0xAAAA), 10);
+    }
+
+    function test_safeMint_10() public {
+        sut.safeMint(address(0xAAAA), 10);
     }
     function test_mint_50() public {
         sut.mint(address(0xAAAA), 50);
     }
+
+    function test_safeMint_50() public {
+        sut.safeMint(address(0xAAAA), 50);
+    }
     function test_mint_100() public {
         sut.mint(address(0xAAAA), 100);
+    }
+
+    function test_safeMint_100() public {
+        sut.safeMint(address(0xAAAA), 100);
     }
 }
 
@@ -375,26 +471,58 @@ contract ERC721KMintTest is DSTest {
     function test_mint_1() public {
         sut.mint(address(0xAAAA), 1);
     }
+
+    function test_safeMint_1() public {
+        sut.safeMint(address(0xAAAA), 1);
+    }
     function test_mint_2() public {
         sut.mint(address(0xAAAA), 2);
+    }
+
+    function test_safeMint_2() public {
+        sut.safeMint(address(0xAAAA), 2);
     }
     function test_mint_3() public {
         sut.mint(address(0xAAAA), 3);
     }
+
+    function test_safeMint_3() public {
+        sut.safeMint(address(0xAAAA), 3);
+    }
     function test_mint_4() public {
         sut.mint(address(0xAAAA), 4);
+    }
+
+    function test_safeMint_4() public {
+        sut.safeMint(address(0xAAAA), 4);
     }
     function test_mint_5() public {
         sut.mint(address(0xAAAA), 5);
     }
+
+    function test_safeMint_5() public {
+        sut.safeMint(address(0xAAAA), 5);
+    }
     function test_mint_10() public {
         sut.mint(address(0xAAAA), 10);
+    }
+
+    function test_safeMint_10() public {
+        sut.safeMint(address(0xAAAA), 10);
     }
     function test_mint_50() public {
         sut.mint(address(0xAAAA), 50);
     }
+
+    function test_safeMint_50() public {
+        sut.safeMint(address(0xAAAA), 50);
+    }
     function test_mint_100() public {
         sut.mint(address(0xAAAA), 100);
+    }
+
+    function test_safeMint_100() public {
+        sut.safeMint(address(0xAAAA), 100);
     }
 }
 
@@ -493,26 +621,58 @@ contract ERC721SolmateMintTest is DSTest {
     function test_mint_1() public {
         sut.mint(address(0xAAAA), 1);
     }
+
+    function test_safeMint_1() public {
+        sut.safeMint(address(0xAAAA), 1);
+    }
     function test_mint_2() public {
         sut.mint(address(0xAAAA), 2);
+    }
+
+    function test_safeMint_2() public {
+        sut.safeMint(address(0xAAAA), 2);
     }
     function test_mint_3() public {
         sut.mint(address(0xAAAA), 3);
     }
+
+    function test_safeMint_3() public {
+        sut.safeMint(address(0xAAAA), 3);
+    }
     function test_mint_4() public {
         sut.mint(address(0xAAAA), 4);
+    }
+
+    function test_safeMint_4() public {
+        sut.safeMint(address(0xAAAA), 4);
     }
     function test_mint_5() public {
         sut.mint(address(0xAAAA), 5);
     }
+
+    function test_safeMint_5() public {
+        sut.safeMint(address(0xAAAA), 5);
+    }
     function test_mint_10() public {
         sut.mint(address(0xAAAA), 10);
+    }
+
+    function test_safeMint_10() public {
+        sut.safeMint(address(0xAAAA), 10);
     }
     function test_mint_50() public {
         sut.mint(address(0xAAAA), 50);
     }
+
+    function test_safeMint_50() public {
+        sut.safeMint(address(0xAAAA), 50);
+    }
     function test_mint_100() public {
         sut.mint(address(0xAAAA), 100);
+    }
+
+    function test_safeMint_100() public {
+        sut.safeMint(address(0xAAAA), 100);
     }
 }
 

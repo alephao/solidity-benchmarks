@@ -27,6 +27,7 @@ variations = [
 ]
 
 mint_regex = re.compile("test_mint_(\d+).+gas:\s(\d+)")
+safemint_regex = re.compile("test_safeMint_(\d+).+gas:\s(\d+)")
 transfer_owner_regex = re.compile("transfer_toOwner_id(\d+).+gas:\s(\d+)")
 transfer_nonowner_regex = re.compile(
     "transfer_toNonOwner_id(\d+).+gas:\s(\d+)")
@@ -76,6 +77,15 @@ def mint_table(lines):
     return table
 
 
+def safemint_table(lines):
+    rows = map(lambda variation: make_row(safemint_regex, lines,
+               variation["name"], "ERC721" + variation["short"] + "MintTest"), variations)
+    rows = list(rows)
+    table = markdownTable(rows).setParams(
+        row_sep='markdown', quote=False).getMarkdown()
+    return table
+
+
 def transfer_owner_table(lines):
     rows = map(lambda variation: make_row(transfer_owner_regex, lines,
                variation["name"], "ERC721" + variation["short"] + "TransferTest"), variations)
@@ -92,6 +102,7 @@ def transfer_nonowner_table(lines):
     table = markdownTable(rows).setParams(
         row_sep='markdown', quote=False).getMarkdown()
     return table
+
 
 def approve_table(lines):
     rows = map(lambda variation: make_row(approve_regex, lines,
@@ -131,6 +142,8 @@ def main():
     f.seek(0)
     readme = re.sub(r"<!-- Start Mint Table -->(.|\n)+<!-- End Mint Table -->",
                     "<!-- Start Mint Table -->\n{}\n<!-- End Mint Table -->".format(mint_table(lines)), readme, 1, re.M)
+    readme = re.sub(r"<!-- Start safeMint Table -->(.|\n)+<!-- End safeMint Table -->",
+                    "<!-- Start safeMint Table -->\n{}\n<!-- End safeMint Table -->".format(safemint_table(lines)), readme, 1, re.M)
     readme = re.sub(r"<!-- Start Transfer Owner Table -->(.|\n)+<!-- End Transfer Owner Table -->",
                     "<!-- Start Transfer Owner Table -->\n{}\n<!-- End Transfer Owner Table -->".format(transfer_owner_table(lines)), readme, 1, re.M)
     readme = re.sub(r"<!-- Start Transfer Non Owner Table -->(.|\n)+<!-- End Transfer Non Owner Table -->",

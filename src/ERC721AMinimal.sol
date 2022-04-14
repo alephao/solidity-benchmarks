@@ -10,6 +10,10 @@ contract ERC721AMinimal is ERC721A {
         _mint(to, amount, "", false);
     }
 
+    function safeMint(address to, uint256 amount) external payable {
+        _safeMint(to, amount);
+    }
+
     function _startTokenId() internal view override returns (uint256) {
         return 1;
     }

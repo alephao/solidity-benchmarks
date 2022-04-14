@@ -21,6 +21,10 @@ contract {{contract.type}}MintTest is DSTest {
     function test_mint_{{testMintAmount}}() public {
         sut.mint(address(0xAAAA), {{testMintAmount}});
     }
+
+    function test_safeMint_{{testMintAmount}}() public {
+        sut.safeMint(address(0xAAAA), {{testMintAmount}});
+    }
     {% endfor %}
 }
 

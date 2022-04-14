@@ -10,6 +10,10 @@ contract ERC721BMinimal is ERC721B {
         _mint(to, amount);
     }
 
+    function safeMint(address to, uint256 amount) external payable {
+        _safeMint(to, amount);
+    }
+
     function tokenURI(uint256 id) public view override returns (string memory) {
         return "";
     }

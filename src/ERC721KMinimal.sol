@@ -10,5 +10,15 @@ contract ERC721KMinimal is ERC721K {
         _mint(to, amount, "", false);
     }
 
-    function tokenURI(uint256) public pure virtual override returns (string memory) {}
+    function safeMint(address to, uint256 amount) external payable {
+        _safeMint(to, amount);
+    }
+
+    function tokenURI(uint256)
+        public
+        pure
+        virtual
+        override
+        returns (string memory)
+    {}
 }

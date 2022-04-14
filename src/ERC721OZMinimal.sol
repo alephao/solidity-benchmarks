@@ -22,4 +22,19 @@ contract ERC721OZMinimal is ERC721 {
             }
         }
     }
+
+    function safeMint(address to, uint256 amount) external payable {
+        uint256 startingIndex;
+        unchecked {
+            startingIndex = currentSupply + 1;
+            currentSupply += amount;
+        }
+
+        for (uint256 i; i < amount; ) {
+            _safeMint(to, startingIndex + i);
+            unchecked {
+                i++;
+            }
+        }
+    }
 }
