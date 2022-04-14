@@ -84,20 +84,32 @@ How much gas to approve the `nth` token id if you own all tokens from 1 to 100?
 
 ### How to add a contract
 
-Create a minimal implementation on `src/`, the contract name and file name should follow the convention `ERC721<Variation>Minimal`.
+1. Create a minimal implementation on `src/`, the contract name and file name should follow the convention `ERC721<Variation>Minimal`.
+2. Implement the mint interface `function mint(address to, uint256 amount) external payable`
+3. Add an entry to the `contracts` property on [test-cases.yml](test-cases.yml), following the examples there. E.g.:
 
-The implementation should implement the interface common in all contracts, currently, the interface is:
-
-```solidity
-function mint(address to, uint256 amount) external payable
+```yml
+contracts:
+  - name: ERC721XMinimal
+    type: ERC721X
 ```
 
-Then add an entry to the `contracts` property on [test-cases.yml](test-cases.yml).
+4. Add an entry to [tables.py](tables.py)'s `variants` var following the examples there. E.g.:
 
-Then run:
+```py
+{
+    "name": "ERC721X",
+    "short": "X"
+}
+```
+
+
+5. Run the following commands:
 
 ```console
 make codegen
 make snapshot
 make readme
 ```
+
+6. Add the contract to the list at the top of this README.
