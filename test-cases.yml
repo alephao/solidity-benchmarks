@@ -5,6 +5,8 @@ contracts:
     type: ERC721A
   - name: ERC721BMinimal
     type: ERC721B
+  - name: ERC721KMinimal
+    type: ERC721K
   - name: ERC721SolmateMinimal
     type: ERC721Solmate
 

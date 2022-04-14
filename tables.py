@@ -20,6 +20,10 @@ variations = [
         "name": "ERC721B",
         "short": "B"
     },
+    {
+        "name": "ERC721K",
+        "short": "K"
+    },
 ]
 
 mint_regex = re.compile("test_mint_(\d+).+gas:\s(\d+)")
