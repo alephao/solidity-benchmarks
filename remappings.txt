@@ -3,5 +3,6 @@
 @openzeppelin/=lib/openzeppelin-contracts/
 @ERC721A/=lib/ERC721A/contracts/
 @ERC721B/=lib/ERC721B/contracts/
+@ERC721K/=lib/ERC721K/src/
 @solmate/=lib/solmate/src/
 $/=src/

@@ -16,3 +16,6 @@
 [submodule "lib/ERC721B"]
 	path = lib/ERC721B
 	url = https://github.com/beskay/ERC721B
+[submodule "lib/ERC721K"]
+	path = lib/ERC721K
+	url = https://github.com/kadenzipfel/ERC721K
