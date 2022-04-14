@@ -6,6 +6,7 @@ Benchmarks for implementations of ERC721 contracts.
 - [Solmate](https://github.com/rari-capital/solmate)
 - [ERC721A](https://github.com/chiru-labs/ERC721A)
 - [ERC721B](https://github.com/beskay/ERC721B)
+- [ERC721K](https://github.com/kadenzipfel/ERC721K)
 
 ## Benchmarks
 
