@@ -9,7 +9,7 @@ Benchmarks for implementations of the ERC20 standard.
 
 How much gas to transfer tokens?
 
-#### To a wallet that already owns a token from the collection
+#### To a wallet that already owns a token
 
 <!-- Start transferToOwner Table -->
 |Implementation|  -- |
@@ -18,7 +18,7 @@ How much gas to transfer tokens?
 |    Solmate   |20590|
 <!-- End transferToOwner Table -->
 
-#### To a wallet that owns no token from the collection
+#### To a wallet that owns no token
 
 <!-- Start transferToNonOwner Table -->
 |Implementation|  -- |
