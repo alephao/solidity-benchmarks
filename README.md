@@ -134,14 +134,14 @@ How much gas to run balanceOf in an account with N tokens.
 How much gas to find the owner of a token when the owner owne n tokens and the token to find is the nth token.
 
 <!-- Start ownerOf Table -->
-|     Implementation     |  1  |  10  |  50  |  100 |
-|------------------------|-----|------|------|------|
-|         ERC721A        |10200| 31637|126802|245785|
-|         ERC721B        |31680|126605|247576| 10322|
-|         ERC721K        |10197| 31634|126799|245782|
-|Open Zeppelin Enumerable| 7744| 7789 | 7788 | 7734 |
-|      Open Zeppelin     | 7722| 7767 | 7766 | 7712 |
-|         Solmate        | 7720| 7765 | 7764 | 7710 |
+|     Implementation     |   1  |  10  |  50  |  100 |
+|------------------------|------|------|------|------|
+|         ERC721A        | 10200| 31637|126802|245785|
+|         ERC721B        |245160|223857|128976| 10322|
+|         ERC721K        | 10197| 31634|126799|245782|
+|Open Zeppelin Enumerable| 7744 | 7789 | 7788 | 7734 |
+|      Open Zeppelin     | 7722 | 7767 | 7766 | 7712 |
+|         Solmate        | 7720 | 7765 | 7764 | 7710 |
 <!-- End ownerOf Table -->
 
 #### getApproved

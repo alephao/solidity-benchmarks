@@ -155,10 +155,7 @@ contract ERC721_{{variation}}_ownerOf_Test is DSTest {
 
     function setUp() public {
         sut = new ERC721_{{variation}}();
-        sut.mint(address(0xAAAA), 1);
-        sut.mint(address(0xBBBB), 10);
-        sut.mint(address(0xCCCC), 50);
-        sut.mint(address(0xDDDD), 101);
+        sut.mint(address(0xAAAA), 101);
     }
 
     function test_ownerOf_1() view public {
@@ -166,15 +163,15 @@ contract ERC721_{{variation}}_ownerOf_Test is DSTest {
     }
 
     function test_ownerOf_10() view public {
-        sut.ownerOf(11);
+        sut.ownerOf(10);
     }
 
     function test_ownerOf_50() view public {
-        sut.ownerOf(61);
+        sut.ownerOf(50);
     }
 
     function test_ownerOf_100() view public {
-        sut.ownerOf(161);
+        sut.ownerOf(100);
     }
 }
 
