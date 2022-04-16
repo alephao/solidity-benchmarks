@@ -6,8 +6,8 @@ import {Vm} from "@forge-std/Vm.sol";
 {% for variation in contracts.erc721.variations %}
 import {ERC721_{{variation}}} from "$/ERC721_{{variation}}.sol";
 {% endfor %}
-
 {% for variation in contracts.erc721.variations %}
+
 // mint
 contract ERC721_{{variation}}_mint_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
@@ -178,4 +178,30 @@ contract ERC721_{{variation}}_ownerOf_Test is DSTest {
     }
 }
 
+contract ERC721_{{variation}}_getApproved_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_{{variation}} internal sut;
+
+    function setUp() public {
+        sut = new ERC721_{{variation}}();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_getApproved_1() view public {
+        sut.ownerOf(1);
+    }
+
+    function test_getApproved_10() view public {
+        sut.ownerOf(10);
+    }
+
+    function test_getApproved_50() view public {
+        sut.ownerOf(50);
+    }
+
+    function test_getApproved_100() view public {
+        sut.ownerOf(100);
+    }
+}
 {% endfor %}

@@ -105,6 +105,17 @@ def ownerOf(line):
         "gas": match.group(2)
     }
 
+getApproved_regex = re.compile(
+    "test_getApproved_(\d+).+gas:\s(\d+)")
+
+
+def getApproved(line):
+    match = re.search(getApproved_regex, line)
+    return {
+        "key": match.group(1),
+        "gas": match.group(2)
+    }
+
 
 def group_methods_and_variant(lines):
     methods = common.group_by_method(lines)
@@ -131,5 +142,6 @@ def group(lines):
         "transferToNonOwner", transferToNonOwner)
     methods["balanceOf"] = rows_for_method("balanceOf", balanceOf)
     methods["ownerOf"] = rows_for_method("ownerOf", ownerOf)
+    methods["getApproved"] = rows_for_method("getApproved", getApproved)
 
     return methods

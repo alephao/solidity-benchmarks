@@ -271,6 +271,33 @@ contract ERC721_OZ_ownerOf_Test is DSTest {
     }
 }
 
+contract ERC721_OZ_getApproved_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_OZ internal sut;
+
+    function setUp() public {
+        sut = new ERC721_OZ();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_getApproved_1() view public {
+        sut.ownerOf(1);
+    }
+
+    function test_getApproved_10() view public {
+        sut.ownerOf(10);
+    }
+
+    function test_getApproved_50() view public {
+        sut.ownerOf(50);
+    }
+
+    function test_getApproved_100() view public {
+        sut.ownerOf(100);
+    }
+}
+
 // mint
 contract ERC721_OZEnumerable_mint_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
@@ -529,6 +556,33 @@ contract ERC721_OZEnumerable_ownerOf_Test is DSTest {
 
     function test_ownerOf_100() view public {
         sut.ownerOf(161);
+    }
+}
+
+contract ERC721_OZEnumerable_getApproved_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_OZEnumerable internal sut;
+
+    function setUp() public {
+        sut = new ERC721_OZEnumerable();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_getApproved_1() view public {
+        sut.ownerOf(1);
+    }
+
+    function test_getApproved_10() view public {
+        sut.ownerOf(10);
+    }
+
+    function test_getApproved_50() view public {
+        sut.ownerOf(50);
+    }
+
+    function test_getApproved_100() view public {
+        sut.ownerOf(100);
     }
 }
 
@@ -793,6 +847,33 @@ contract ERC721_Solmate_ownerOf_Test is DSTest {
     }
 }
 
+contract ERC721_Solmate_getApproved_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_Solmate internal sut;
+
+    function setUp() public {
+        sut = new ERC721_Solmate();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_getApproved_1() view public {
+        sut.ownerOf(1);
+    }
+
+    function test_getApproved_10() view public {
+        sut.ownerOf(10);
+    }
+
+    function test_getApproved_50() view public {
+        sut.ownerOf(50);
+    }
+
+    function test_getApproved_100() view public {
+        sut.ownerOf(100);
+    }
+}
+
 // mint
 contract ERC721_A_mint_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
@@ -1051,6 +1132,33 @@ contract ERC721_A_ownerOf_Test is DSTest {
 
     function test_ownerOf_100() view public {
         sut.ownerOf(161);
+    }
+}
+
+contract ERC721_A_getApproved_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_A internal sut;
+
+    function setUp() public {
+        sut = new ERC721_A();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_getApproved_1() view public {
+        sut.ownerOf(1);
+    }
+
+    function test_getApproved_10() view public {
+        sut.ownerOf(10);
+    }
+
+    function test_getApproved_50() view public {
+        sut.ownerOf(50);
+    }
+
+    function test_getApproved_100() view public {
+        sut.ownerOf(100);
     }
 }
 
@@ -1315,6 +1423,33 @@ contract ERC721_B_ownerOf_Test is DSTest {
     }
 }
 
+contract ERC721_B_getApproved_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_B internal sut;
+
+    function setUp() public {
+        sut = new ERC721_B();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_getApproved_1() view public {
+        sut.ownerOf(1);
+    }
+
+    function test_getApproved_10() view public {
+        sut.ownerOf(10);
+    }
+
+    function test_getApproved_50() view public {
+        sut.ownerOf(50);
+    }
+
+    function test_getApproved_100() view public {
+        sut.ownerOf(100);
+    }
+}
+
 // mint
 contract ERC721_K_mint_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
@@ -1576,3 +1711,29 @@ contract ERC721_K_ownerOf_Test is DSTest {
     }
 }
 
+contract ERC721_K_getApproved_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_K internal sut;
+
+    function setUp() public {
+        sut = new ERC721_K();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_getApproved_1() view public {
+        sut.ownerOf(1);
+    }
+
+    function test_getApproved_10() view public {
+        sut.ownerOf(10);
+    }
+
+    function test_getApproved_50() view public {
+        sut.ownerOf(50);
+    }
+
+    function test_getApproved_100() view public {
+        sut.ownerOf(100);
+    }
+}
