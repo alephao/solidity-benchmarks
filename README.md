@@ -163,22 +163,44 @@ How much gas to find the approved address of the nth token when the onwer owns 1
 
 ### How to add a contract
 
-1. Create a minimal implementation on `src/`, the contract name and file name should follow the convention `ERC721<Variation>Minimal`.
-2. Implement the mint interface `function mint(address to, uint256 amount) external payable`
-3. Add an entry to the `contracts` property on [test-cases.yml](test-cases.yml), following the examples there. E.g.:
+**Dependencies**
+
+- You'll need python 3 installed to run the scripts under the `scripts` folder
+- You'll need to install [stencil-cli](https://github.com/alephao/stencil-cli). This is used to code generate the tests. Unfortunately this is currently only available on macos. Quick install: `brew install alephao/formulae/stencil` 
+
+**Instructions**
+
+1. Create a minimal implementation on `src/`, the contract name and file name should follow the convention `ERC721_<Variation>`.
+2. Implement the following functions:
+
+```solidity
+function mint(address to, uint256 amount) external payable {
+    _mint(to, amount, "", false);
+}
+
+function safeMint(address to, uint256 amount) external payable {
+    _safeMint(to, amount);
+}
+```
+
+3. Add an entry to the `contracts.erc721.variations` property on [test-cases.yml](test-cases.yml), following the examples there. E.g.:
 
 ```yml
 contracts:
-  - name: ERC721XMinimal
-    type: ERC721X
+  erc721:
+    variations: [OZ, OZEnumerable, Solmate, A, B, K]
 ```
 
-4. Add an entry to [tables.py](tables.py)'s `variants` var following the examples there. E.g.:
+4. Add an entry to [scripts/erc721.py](scripts/erc721.py)'s `variants` var following the examples there. It should map the variant name u used in the contract `ERC721_<Variant>` to the name you want to appear on the table. E.g.:
 
-```py
-{
-    "name": "ERC721X",
-    "short": "X"
+```python
+variations = {
+    "OZ": "Open Zeppelin",
+    "OZEnumerable": "Open Zeppelin Enumerable",
+    "Solmate": "Solmate",
+    "A": "ERC721A",
+    "B": "ERC721B",
+    "K": "ERC721K",
 }
 ```
 
