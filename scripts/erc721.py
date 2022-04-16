@@ -94,6 +94,17 @@ def balanceOf(line):
         "gas": match.group(2)
     }
 
+ownerOf_regex = re.compile(
+    "test_ownerOf_(\d+).+gas:\s(\d+)")
+
+
+def ownerOf(line):
+    match = re.search(ownerOf_regex, line)
+    return {
+        "key": match.group(1),
+        "gas": match.group(2)
+    }
+
 
 def group_methods_and_variant(lines):
     methods = common.group_by_method(lines)
@@ -119,5 +130,6 @@ def group(lines):
     methods["transferToNonOwner"] = rows_for_method(
         "transferToNonOwner", transferToNonOwner)
     methods["balanceOf"] = rows_for_method("balanceOf", balanceOf)
+    methods["ownerOf"] = rows_for_method("ownerOf", ownerOf)
 
     return methods

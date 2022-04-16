@@ -241,6 +241,36 @@ contract ERC721_OZ_balanceOf_Test is DSTest {
     }
 }
 
+contract ERC721_OZ_ownerOf_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_OZ internal sut;
+
+    function setUp() public {
+        sut = new ERC721_OZ();
+        sut.mint(address(0xAAAA), 1);
+        sut.mint(address(0xBBBB), 10);
+        sut.mint(address(0xCCCC), 50);
+        sut.mint(address(0xDDDD), 101);
+    }
+
+    function test_ownerOf_1() view public {
+        sut.ownerOf(1);
+    }
+
+    function test_ownerOf_10() view public {
+        sut.ownerOf(11);
+    }
+
+    function test_ownerOf_50() view public {
+        sut.ownerOf(61);
+    }
+
+    function test_ownerOf_100() view public {
+        sut.ownerOf(161);
+    }
+}
+
 // mint
 contract ERC721_OZEnumerable_mint_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
@@ -469,6 +499,36 @@ contract ERC721_OZEnumerable_balanceOf_Test is DSTest {
 
     function test_balanceOf_100() view public {
         sut.balanceOf(address(0xDDDD));
+    }
+}
+
+contract ERC721_OZEnumerable_ownerOf_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_OZEnumerable internal sut;
+
+    function setUp() public {
+        sut = new ERC721_OZEnumerable();
+        sut.mint(address(0xAAAA), 1);
+        sut.mint(address(0xBBBB), 10);
+        sut.mint(address(0xCCCC), 50);
+        sut.mint(address(0xDDDD), 101);
+    }
+
+    function test_ownerOf_1() view public {
+        sut.ownerOf(1);
+    }
+
+    function test_ownerOf_10() view public {
+        sut.ownerOf(11);
+    }
+
+    function test_ownerOf_50() view public {
+        sut.ownerOf(61);
+    }
+
+    function test_ownerOf_100() view public {
+        sut.ownerOf(161);
     }
 }
 
@@ -703,6 +763,36 @@ contract ERC721_Solmate_balanceOf_Test is DSTest {
     }
 }
 
+contract ERC721_Solmate_ownerOf_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_Solmate internal sut;
+
+    function setUp() public {
+        sut = new ERC721_Solmate();
+        sut.mint(address(0xAAAA), 1);
+        sut.mint(address(0xBBBB), 10);
+        sut.mint(address(0xCCCC), 50);
+        sut.mint(address(0xDDDD), 101);
+    }
+
+    function test_ownerOf_1() view public {
+        sut.ownerOf(1);
+    }
+
+    function test_ownerOf_10() view public {
+        sut.ownerOf(11);
+    }
+
+    function test_ownerOf_50() view public {
+        sut.ownerOf(61);
+    }
+
+    function test_ownerOf_100() view public {
+        sut.ownerOf(161);
+    }
+}
+
 // mint
 contract ERC721_A_mint_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
@@ -931,6 +1021,36 @@ contract ERC721_A_balanceOf_Test is DSTest {
 
     function test_balanceOf_100() view public {
         sut.balanceOf(address(0xDDDD));
+    }
+}
+
+contract ERC721_A_ownerOf_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_A internal sut;
+
+    function setUp() public {
+        sut = new ERC721_A();
+        sut.mint(address(0xAAAA), 1);
+        sut.mint(address(0xBBBB), 10);
+        sut.mint(address(0xCCCC), 50);
+        sut.mint(address(0xDDDD), 101);
+    }
+
+    function test_ownerOf_1() view public {
+        sut.ownerOf(1);
+    }
+
+    function test_ownerOf_10() view public {
+        sut.ownerOf(11);
+    }
+
+    function test_ownerOf_50() view public {
+        sut.ownerOf(61);
+    }
+
+    function test_ownerOf_100() view public {
+        sut.ownerOf(161);
     }
 }
 
@@ -1165,6 +1285,36 @@ contract ERC721_B_balanceOf_Test is DSTest {
     }
 }
 
+contract ERC721_B_ownerOf_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_B internal sut;
+
+    function setUp() public {
+        sut = new ERC721_B();
+        sut.mint(address(0xAAAA), 1);
+        sut.mint(address(0xBBBB), 10);
+        sut.mint(address(0xCCCC), 50);
+        sut.mint(address(0xDDDD), 101);
+    }
+
+    function test_ownerOf_1() view public {
+        sut.ownerOf(1);
+    }
+
+    function test_ownerOf_10() view public {
+        sut.ownerOf(11);
+    }
+
+    function test_ownerOf_50() view public {
+        sut.ownerOf(61);
+    }
+
+    function test_ownerOf_100() view public {
+        sut.ownerOf(161);
+    }
+}
+
 // mint
 contract ERC721_K_mint_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
@@ -1393,6 +1543,36 @@ contract ERC721_K_balanceOf_Test is DSTest {
 
     function test_balanceOf_100() view public {
         sut.balanceOf(address(0xDDDD));
+    }
+}
+
+contract ERC721_K_ownerOf_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_K internal sut;
+
+    function setUp() public {
+        sut = new ERC721_K();
+        sut.mint(address(0xAAAA), 1);
+        sut.mint(address(0xBBBB), 10);
+        sut.mint(address(0xCCCC), 50);
+        sut.mint(address(0xDDDD), 101);
+    }
+
+    function test_ownerOf_1() view public {
+        sut.ownerOf(1);
+    }
+
+    function test_ownerOf_10() view public {
+        sut.ownerOf(11);
+    }
+
+    function test_ownerOf_50() view public {
+        sut.ownerOf(61);
+    }
+
+    function test_ownerOf_100() view public {
+        sut.ownerOf(161);
     }
 }
 

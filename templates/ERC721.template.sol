@@ -148,4 +148,34 @@ contract ERC721_{{variation}}_balanceOf_Test is DSTest {
     }
 }
 
+contract ERC721_{{variation}}_ownerOf_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_{{variation}} internal sut;
+
+    function setUp() public {
+        sut = new ERC721_{{variation}}();
+        sut.mint(address(0xAAAA), 1);
+        sut.mint(address(0xBBBB), 10);
+        sut.mint(address(0xCCCC), 50);
+        sut.mint(address(0xDDDD), 101);
+    }
+
+    function test_ownerOf_1() view public {
+        sut.ownerOf(1);
+    }
+
+    function test_ownerOf_10() view public {
+        sut.ownerOf(11);
+    }
+
+    function test_ownerOf_50() view public {
+        sut.ownerOf(61);
+    }
+
+    function test_ownerOf_100() view public {
+        sut.ownerOf(161);
+    }
+}
+
 {% endfor %}
