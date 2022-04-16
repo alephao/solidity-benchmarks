@@ -110,6 +110,25 @@ How much gas to approve the `nth` token id if you own all tokens from 1 to 100?
 |         Solmate        | 34762| 34739| 34717| 34740|
 <!-- End approve Table -->
 
+### View methods
+
+The gas used in the methods below are important for devs who will add on-chain integrations with contracts built using the specific implementation, not for people using the contracts.
+
+#### balanceOf
+
+How much gas to run balanceOf in an account with N tokens.
+
+<!-- Start balanceOf Table -->
+|     Implementation     |   1   |   10  |   50  |  100  |
+|------------------------|-------|-------|-------|-------|
+|         ERC721A        |  7846 |  7780 |  7825 |  7792 |
+|         ERC721B        |2793572|2793641|2794286|2795003|
+|         ERC721K        |  7846 |  7780 |  7825 |  7792 |
+|Open Zeppelin Enumerable|  7862 |  7796 |  7841 |  7808 |
+|      Open Zeppelin     |  7840 |  7774 |  7819 |  7786 |
+|         Solmate        |  7840 |  7774 |  7819 |  7786 |
+<!-- End balanceOf Table -->
+
 ## Contributing
 
 ### How to add a contract

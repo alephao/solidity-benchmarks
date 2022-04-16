@@ -83,6 +83,17 @@ def setApprovalForAll(line):
         "gas": match.group(1)
     }
 
+balanceOf_regex = re.compile(
+    "test_balanceOf_(\d+).+gas:\s(\d+)")
+
+
+def balanceOf(line):
+    match = re.search(balanceOf_regex, line)
+    return {
+        "key": match.group(1),
+        "gas": match.group(2)
+    }
+
 
 def group_methods_and_variant(lines):
     methods = common.group_by_method(lines)
@@ -107,5 +118,6 @@ def group(lines):
         "transferToOwner", transferToOwner)
     methods["transferToNonOwner"] = rows_for_method(
         "transferToNonOwner", transferToNonOwner)
+    methods["balanceOf"] = rows_for_method("balanceOf", balanceOf)
 
     return methods

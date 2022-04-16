@@ -31,6 +31,7 @@ def main():
     readme = erc721_subreadme(contracts, readme, "transferToNonOwner")
     readme = erc721_subreadme(contracts, readme, "approve")
     readme = erc721_subreadme(contracts, readme, "setApprovalForAll")
+    readme = erc721_subreadme(contracts, readme, "balanceOf")
     f.write(readme)
     f.truncate()
 
