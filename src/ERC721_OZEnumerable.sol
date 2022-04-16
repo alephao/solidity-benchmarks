@@ -1,9 +1,10 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.10;
 
-import {ERC721} from "@solmate/tokens/ERC721.sol";
+import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import {ERC721Enumerable} from "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
-contract ERC721SolmateMinimal is ERC721 {
+contract ERC721_OZEnumerable is ERC721Enumerable {
     uint256 currentSupply;
 
     constructor() ERC721("Name", "Sy") {}
@@ -36,9 +37,5 @@ contract ERC721SolmateMinimal is ERC721 {
                 i++;
             }
         }
-    }
-
-    function tokenURI(uint256 id) public view override returns (string memory) {
-        return "";
     }
 }

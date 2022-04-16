@@ -3,7 +3,7 @@ pragma solidity 0.8.10;
 
 import {ERC721B} from "@ERC721B/ERC721B.sol";
 
-contract ERC721BMinimal is ERC721B {
+contract ERC721_B is ERC721B {
     constructor() ERC721B("Name", "Sy") {}
 
     function mint(address to, uint256 amount) external payable {

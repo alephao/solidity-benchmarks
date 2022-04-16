@@ -1,6 +1,6 @@
 .PHONY: codegen
 codegen:
-	stencil render -t templates/TestTemplate.sol -d test-cases.yml -o src/test/Tests.t.sol
+	stencil render -t templates/ERC721.template.sol -d test-cases.yml -o src/test/ERC721.t.sol
 
 .PHONY: snapshot
 snapshot:
@@ -8,4 +8,4 @@ snapshot:
 
 .PHONY: readme
 readme:
-	python3 tables.py
+	python3 scripts/main.py

@@ -28,28 +28,28 @@ How much gas to Mint N tokens?
 
 #### mint
 
-<!-- Start Mint Table -->
+<!-- Start mint Table -->
 |     Implementation     |   1  |   2  |   3  |   4  |   5  |   10  |   50  |   100  |
 |------------------------|------|------|------|------|------|-------|-------|--------|
-|      Open Zeppelin     | 74565| 99466|124412|149337|174194| 298682|1294807| 2539883|
-|Open Zeppelin Enumerable|146132|260478|374869|489239|603541|1175254|5749179|11466505|
-|         Solmate        | 74461| 99258|124100|148921|173674| 297642|1289607| 2529483|
-|         ERC721A        | 57340| 59303| 61311| 63298| 65217| 75015 | 153620| 251796 |
-|         ERC721B        | 52206| 54410| 56659| 58887| 61047| 72050 | 160295| 270521 |
-|         ERC721K        | 57328| 59291| 61299| 63286| 65205| 75003 | 153608| 251784 |
-<!-- End Mint Table -->
+|         ERC721A        | 57255| 59251| 61237| 63233| 65121| 75030 | 153546| 251789 |
+|         ERC721B        | 52121| 54358| 56585| 58822| 60951| 72065 | 160221| 270514 |
+|         ERC721K        | 57243| 59239| 61225| 63221| 65109| 75018 | 153534| 251777 |
+|Open Zeppelin Enumerable|146047|260426|374795|489174|603445|1175269|5749105|11466498|
+|      Open Zeppelin     | 74480| 99414|124338|149272|174098| 298697|1294733| 2539876|
+|         Solmate        | 74376| 99206|124026|148856|173578| 297657|1289533| 2529476|
+<!-- End mint Table -->
 
 #### safeMint
 
 <!-- Start safeMint Table -->
 |     Implementation     |   1  |   2  |   3  |   4  |   5  |   10  |   50  |   100  |
 |------------------------|------|------|------|------|------|-------|-------|--------|
-|      Open Zeppelin     | 77429|102715|127890|153155|178374| 304386|1313258| 2574252|
-|Open Zeppelin Enumerable|148907|263638|378258|492968|607632|1180869|5767541|11500785|
-|         Solmate        | 77193|102246|127188|152220|177206| 302053|1301600| 2550928|
-|         ERC721A        | 60085| 62115| 64034| 66043| 68006| 77738 | 156365| 254543 |
-|         ERC721B        | 55167| 57438| 59598| 61848| 64052| 74989 | 163256| 273484 |
-|         ERC721K        | 60061| 62091| 64010| 66019| 67982| 77714 | 156341| 254519 |
+|         ERC721A        | 60078| 61975| 63983| 65957| 67955| 77709 | 156270| 254437 |
+|         ERC721B        | 55160| 57298| 59547| 61762| 64001| 74960 | 163161| 273378 |
+|         ERC721K        | 60054| 61951| 63959| 65933| 67931| 77685 | 156246| 254413 |
+|Open Zeppelin Enumerable|148900|263498|378207|492882|607581|1180840|5767446|11500679|
+|      Open Zeppelin     | 77422|102575|127839|153069|178323| 304357|1313163| 2574146|
+|         Solmate        | 77186|102106|127137|152134|177155| 302024|1301505| 2550822|
 <!-- End safeMint Table -->
 
 ### Transfer
@@ -58,7 +58,7 @@ How much gas to transfer the `nth` token id if you own all tokens from 1 to 100?
 
 #### To a wallet that already owns a token from the collection
 
-<!-- Start Transfer Owner Table -->
+<!-- Start transfer_toOwner Table -->
 |     Implementation     |   1  |  10  |  50  |  100 |
 |------------------------|------|------|------|------|
 |      Open Zeppelin     | 31458| 31481| 31525| 31503|
@@ -67,11 +67,11 @@ How much gas to transfer the `nth` token id if you own all tokens from 1 to 100?
 |         ERC721A        | 55639| 94154|189364|308378|
 |         ERC721B        |296020|274695|179859| 44137|
 |         ERC721K        | 55916| 94431|189641|308655|
-<!-- End Transfer Owner Table -->
+<!-- End transfer_toOwner Table -->
 
 #### To a wallet that owns no token from the collection
 
-<!-- Start Transfer Non Owner Table -->
+<!-- Start transfer_toNonOwner Table -->
 |     Implementation     |   1  |  10  |  50  |  100 |
 |------------------------|------|------|------|------|
 |      Open Zeppelin     | 48647| 48646| 48602| 48624|
@@ -80,21 +80,21 @@ How much gas to transfer the `nth` token id if you own all tokens from 1 to 100?
 |         ERC721A        | 72828|111319|206441|325499|
 |         ERC721B        |296109|274760|179836| 44158|
 |         ERC721K        | 73105|111596|206718|325776|
-<!-- End Transfer Non Owner Table -->
+<!-- End transfer_toNonOwner Table -->
 
 ### Approval
 
 How much gas for `setApprovalForAll`?
 
 <!-- Start setApprovalForAll Table -->
-|     Implementation     |  _  |
+|     Implementation     |  -- |
 |------------------------|-----|
-|      Open Zeppelin     |32651|
-|Open Zeppelin Enumerable|32673|
-|         Solmate        |32550|
-|         ERC721A        |32593|
-|         ERC721B        |32615|
-|         ERC721K        |32593|
+|         ERC721A        |32571|
+|         ERC721B        |32593|
+|         ERC721K        |32571|
+|Open Zeppelin Enumerable|32651|
+|      Open Zeppelin     |32629|
+|         Solmate        |32528|
 <!-- End setApprovalForAll Table -->
 
 How much gas to approve the `nth` token id if you own all tokens from 1 to 100?
@@ -102,12 +102,12 @@ How much gas to approve the `nth` token id if you own all tokens from 1 to 100?
 <!-- Start approve Table -->
 |     Implementation     |   1  |  10  |  50  |  100 |
 |------------------------|------|------|------|------|
-|      Open Zeppelin     | 35194| 35149| 35216| 35172|
-|Open Zeppelin Enumerable| 35261| 35216| 35283| 35239|
-|         Solmate        | 34762| 34717| 34784| 34740|
-|         ERC721A        | 37500| 58847|154080|273072|
-|         ERC721B        |272396|251003|156190| 37546|
-|         ERC721K        | 37497| 58844|154077|273069|
+|         ERC721A        | 37500| 58869|154013|273072|
+|         ERC721B        |272396|251025|156123| 37546|
+|         ERC721K        | 37497| 58866|154010|273069|
+|Open Zeppelin Enumerable| 35261| 35238| 35216| 35239|
+|      Open Zeppelin     | 35194| 35171| 35149| 35172|
+|         Solmate        | 34762| 34739| 34717| 34740|
 <!-- End approve Table -->
 
 ## Contributing
