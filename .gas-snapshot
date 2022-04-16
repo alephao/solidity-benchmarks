@@ -1,3 +1,5 @@
+ERC20_OZ_transferToNonOwner_Test:test_transferToNonOwner() (gas: 37995)
+ERC20_OZ_transferToOwner_Test:test_transferToOwner() (gas: 20917)
 ERC721_A_approve_Test:test_approve_id1() (gas: 37500)
 ERC721_A_approve_Test:test_approve_id10() (gas: 58869)
 ERC721_A_approve_Test:test_approve_id100() (gas: 273072)

@@ -1,4 +1,6 @@
 contracts:
+  erc20:
+    variations: [OZ]
   erc721:
     variations: [OZ, OZEnumerable, Solmate, A, B, K]
     methods:

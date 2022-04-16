@@ -42,6 +42,14 @@ def group_by_constraint(lines):
     return grouped_by_constraint_dict
 
 
+def group_methods_and_variant(lines):
+    methods = group_by_method(lines)
+    grouped = {}
+    for key in methods:
+        grouped[key] = group_by_variant(methods[key])
+    return grouped
+
+
 def rows_for_method(methods, variations, method_name, method_fn):
     rows = []
     for variant in methods[method_name]:
@@ -66,6 +74,8 @@ def table_for_rows(rows):
 
 
 def sub_readme(file, method, content):
-    pattern = "<!-- Start {} Table -->(.|\n)+<!-- End {} Table -->".format(method, method)
-    sub = "<!-- Start {} Table -->\n{}\n<!-- End {} Table -->".format(method, content, method)
+    pattern = "<!-- Start {} Table -->(.|\n)+<!-- End {} Table -->".format(
+        method, method)
+    sub = "<!-- Start {} Table -->\n{}\n<!-- End {} Table -->".format(
+        method, content, method)
     return re.sub(pattern, sub, file, 1, re.M)
