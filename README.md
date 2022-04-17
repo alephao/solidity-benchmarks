@@ -161,6 +161,8 @@ How much gas to find the approved address of the nth token when the onwer owns 1
 
 ## Contributing
 
+If you want to add another implementation, please open an issue with a link to the repo, or try adding it yourself by using the instructions below.
+
 ### How to add a contract
 
 **Dependencies**
