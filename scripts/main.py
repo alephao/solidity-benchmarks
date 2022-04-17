@@ -40,7 +40,7 @@ def erc721_subreadme(contracts, readme, method):
 
 
 def update_erc721_readme(contracts):
-    f = open("README.md", "r+")
+    f = open("ERC721.md", "r+")
     readme = f.read()
     f.seek(0)
     readme = erc721_subreadme(contracts, readme, "mint")
