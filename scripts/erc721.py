@@ -1,8 +1,4 @@
-from functools import reduce
-from os import write
 import re
-from markdownTable import markdownTable
-from itertools import groupby
 import common
 
 variations = {
