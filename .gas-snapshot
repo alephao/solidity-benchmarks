@@ -1,3 +1,7 @@
+ERC1155_OZ_mintBatch_Test:test_mintBatch_1() (gas: 36677)
+ERC1155_OZ_mintBatch_Test:test_mintBatch_10() (gas: 139580)
+ERC1155_OZ_mintBatch_Test:test_mintBatch_5() (gas: 131041)
+ERC1155_OZ_mint_Test:test_mint() (gas: 33659)
 ERC20_OZ_transferToNonOwner_Test:test_transferToNonOwner() (gas: 37995)
 ERC20_OZ_transferToOwner_Test:test_transferToOwner() (gas: 20917)
 ERC20_Solmate_transferToNonOwner_Test:test_transferToNonOwner() (gas: 37668)

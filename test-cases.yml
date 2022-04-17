@@ -18,6 +18,7 @@ contracts:
       # - The numbers below are the amount to mint. Each number in the array will
       #   generate a test mining the number.
       mint: [1, 2, 3, 4, 5, 10, 50, 100]
-  
+  erc1155:
+    variations: [OZ]
 
 
