@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity >=0.8.4;
 
-import {ERC1155} from "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
+import {ERC1155} from "@solmate/tokens/ERC1155.sol";
 
-contract ERC1155_OZ is ERC1155 {
-    constructor() ERC1155("") {}
+contract ERC1155_Solmate is ERC1155 {
+    constructor() {}
 
     function mint(
         address to,
@@ -19,6 +19,10 @@ contract ERC1155_OZ is ERC1155 {
         uint256[] calldata ids,
         uint256[] calldata amounts
     ) external payable {
-        _mintBatch(to, ids, amounts, "");
+        _batchMint(to, ids, amounts, "");
+    }
+
+    function uri(uint256) public pure override returns (string memory) {
+        return "";
     }
 }

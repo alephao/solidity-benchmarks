@@ -68,11 +68,11 @@ contract ERC1155_{{variation}}_mintBatch_Test is DSTest {
         ids[2] = 3;
         ids[3] = 4;
         ids[4] = 5;
-        ids[5] = 1;
-        ids[6] = 2;
-        ids[7] = 3;
-        ids[8] = 4;
-        ids[9] = 5;
+        ids[5] = 6;
+        ids[6] = 7;
+        ids[7] = 8;
+        ids[8] = 9;
+        ids[9] = 10;
 
         uint256[] memory amounts = new uint256[](10);
         amounts[0] = 1;
