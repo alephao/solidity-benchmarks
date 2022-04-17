@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity 0.8.10;
+pragma solidity >=0.8.4;
 
 import {ERC721K} from "@ERC721K/ERC721K.sol";
 

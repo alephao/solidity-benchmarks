@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity 0.8.10;
+pragma solidity >=0.8.4;
 
 import {ERC721A} from "@ERC721A/ERC721A.sol";
 
@@ -14,7 +14,7 @@ contract ERC721_A is ERC721A {
         _safeMint(to, amount);
     }
 
-    function _startTokenId() internal view override returns (uint256) {
+    function _startTokenId() internal pure override returns (uint256) {
         return 1;
     }
 }
