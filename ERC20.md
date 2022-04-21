@@ -5,6 +5,15 @@ Benchmarks for implementations of the ERC20 standard.
 - [Open Zeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts)
 - [Solmate](https://github.com/rari-capital/solmate)
 
+## Methods TODO
+
+- [ ] totalSupply
+- [ ] balanceOf
+- [x] transfer
+- [ ] transferFrom
+- [ ] approve
+- [ ] allowance
+
 ### Transfer
 
 How much gas to transfer tokens?
