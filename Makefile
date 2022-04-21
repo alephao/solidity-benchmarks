@@ -6,7 +6,7 @@ codegen:
 
 .PHONY: snapshot
 snapshot:
-	forge snapshot --optimize
+	forge snapshot --force --optimize
 
 .PHONY: readme
 readme:
