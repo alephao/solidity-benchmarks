@@ -14,7 +14,9 @@ Benchmarks for implementations of the ERC20 standard.
 - [ ] approve
 - [ ] allowance
 
-### Transfer
+## Write methods
+
+### transfer
 
 How much gas to transfer tokens?
 
@@ -35,3 +37,47 @@ How much gas to transfer tokens?
 | Open Zeppelin|37995|
 |    Solmate   |37668|
 <!-- End transferToNonOwner Table -->
+
+### transferFrom
+
+How much gas to transfer tokens?
+
+#### To a wallet that already owns a token
+
+<!-- Start transferFromToOwner Table -->
+TBD
+<!-- End transferFromToOwner Table -->
+
+#### To a wallet that owns no token
+
+<!-- Start transferFromToNonOwner Table -->
+TBD
+<!-- End transferFromToNonOwner Table -->
+
+### approve
+
+<!-- Start approve Table -->
+TBD
+<!-- Start approve Table -->
+
+## View methods
+
+### totalSupply
+
+<!-- Start totalSupply Table -->
+TBD
+<!-- Start totalSupply Table -->
+
+### balanceOf
+
+<!-- Start balanceOf Table -->
+TBD
+<!-- Start balanceOf Table -->
+
+### allowance
+
+<!-- Start allowance Table -->
+TBD
+<!-- Start allowance Table -->
+
+
