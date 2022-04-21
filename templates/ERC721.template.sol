@@ -62,6 +62,7 @@ contract ERC721_{{variation}}_transferToOwner_Test is DSTest {
     {% endfor %}
 }
 
+// transfer toNonOwner
 contract ERC721_{{variation}}_transferToNonOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
@@ -76,6 +77,45 @@ contract ERC721_{{variation}}_transferToNonOwner_Test is DSTest {
     function test_transferToNonOwner_id{{tokenId}}() public {
         HEVM.prank(address(0xAAAA));
         sut.transferFrom(address(0xAAAA), address(0xCCCC), {{tokenId}});
+    }
+    {% endfor %}
+}
+
+// safeTransfer toOwner
+contract ERC721_{{variation}}_safeTransferToOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_{{variation}} internal sut;
+
+    function setUp() public {
+        sut = new ERC721_{{variation}}();
+        sut.mint(address(0xAAAA), 101);
+        sut.mint(address(0xBBBB), 101);
+    }
+    {% for tokenId in contracts.erc721.methods.transfer %}
+
+    function test_safeTransferToOwner_id{{tokenId}}() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), {{tokenId}});
+    }
+    {% endfor %}
+}
+
+// safeTransfer toNonOwner
+contract ERC721_{{variation}}_safeTransferToNonOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_{{variation}} internal sut;
+
+    function setUp() public {
+        sut = new ERC721_{{variation}}();
+        sut.mint(address(0xAAAA), 101);
+    }
+    {% for tokenId in contracts.erc721.methods.transfer %}
+
+    function test_safeTransferToNonOwner_id{{tokenId}}() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), {{tokenId}});
     }
     {% endfor %}
 }

@@ -47,6 +47,8 @@ def update_erc721_readme(contracts):
     readme = erc721_subreadme(contracts, readme, "safeMint")
     readme = erc721_subreadme(contracts, readme, "transferToOwner")
     readme = erc721_subreadme(contracts, readme, "transferToNonOwner")
+    readme = erc721_subreadme(contracts, readme, "safeTransferToOwner")
+    readme = erc721_subreadme(contracts, readme, "safeTransferToNonOwner")
     readme = erc721_subreadme(contracts, readme, "approve")
     readme = erc721_subreadme(contracts, readme, "setApprovalForAll")
     readme = erc721_subreadme(contracts, readme, "balanceOf")

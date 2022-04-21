@@ -129,6 +129,7 @@ contract ERC721_OZ_transferToOwner_Test is DSTest {
     }
 }
 
+// transfer toNonOwner
 contract ERC721_OZ_transferToNonOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
@@ -157,6 +158,71 @@ contract ERC721_OZ_transferToNonOwner_Test is DSTest {
     function test_transferToNonOwner_id100() public {
         HEVM.prank(address(0xAAAA));
         sut.transferFrom(address(0xAAAA), address(0xCCCC), 100);
+    }
+}
+
+// safeTransfer toOwner
+contract ERC721_OZ_safeTransferToOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_OZ internal sut;
+
+    function setUp() public {
+        sut = new ERC721_OZ();
+        sut.mint(address(0xAAAA), 101);
+        sut.mint(address(0xBBBB), 101);
+    }
+
+    function test_safeTransferToOwner_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 1);
+    }
+
+    function test_safeTransferToOwner_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 10);
+    }
+
+    function test_safeTransferToOwner_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 50);
+    }
+
+    function test_safeTransferToOwner_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 100);
+    }
+}
+
+// safeTransfer toNonOwner
+contract ERC721_OZ_safeTransferToNonOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_OZ internal sut;
+
+    function setUp() public {
+        sut = new ERC721_OZ();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_safeTransferToNonOwner_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 1);
+    }
+
+    function test_safeTransferToNonOwner_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 10);
+    }
+
+    function test_safeTransferToNonOwner_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 50);
+    }
+
+    function test_safeTransferToNonOwner_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 100);
     }
 }
 
@@ -414,6 +480,7 @@ contract ERC721_OZEnumerable_transferToOwner_Test is DSTest {
     }
 }
 
+// transfer toNonOwner
 contract ERC721_OZEnumerable_transferToNonOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
@@ -442,6 +509,71 @@ contract ERC721_OZEnumerable_transferToNonOwner_Test is DSTest {
     function test_transferToNonOwner_id100() public {
         HEVM.prank(address(0xAAAA));
         sut.transferFrom(address(0xAAAA), address(0xCCCC), 100);
+    }
+}
+
+// safeTransfer toOwner
+contract ERC721_OZEnumerable_safeTransferToOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_OZEnumerable internal sut;
+
+    function setUp() public {
+        sut = new ERC721_OZEnumerable();
+        sut.mint(address(0xAAAA), 101);
+        sut.mint(address(0xBBBB), 101);
+    }
+
+    function test_safeTransferToOwner_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 1);
+    }
+
+    function test_safeTransferToOwner_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 10);
+    }
+
+    function test_safeTransferToOwner_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 50);
+    }
+
+    function test_safeTransferToOwner_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 100);
+    }
+}
+
+// safeTransfer toNonOwner
+contract ERC721_OZEnumerable_safeTransferToNonOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_OZEnumerable internal sut;
+
+    function setUp() public {
+        sut = new ERC721_OZEnumerable();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_safeTransferToNonOwner_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 1);
+    }
+
+    function test_safeTransferToNonOwner_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 10);
+    }
+
+    function test_safeTransferToNonOwner_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 50);
+    }
+
+    function test_safeTransferToNonOwner_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 100);
     }
 }
 
@@ -699,6 +831,7 @@ contract ERC721_Solmate_transferToOwner_Test is DSTest {
     }
 }
 
+// transfer toNonOwner
 contract ERC721_Solmate_transferToNonOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
@@ -727,6 +860,71 @@ contract ERC721_Solmate_transferToNonOwner_Test is DSTest {
     function test_transferToNonOwner_id100() public {
         HEVM.prank(address(0xAAAA));
         sut.transferFrom(address(0xAAAA), address(0xCCCC), 100);
+    }
+}
+
+// safeTransfer toOwner
+contract ERC721_Solmate_safeTransferToOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_Solmate internal sut;
+
+    function setUp() public {
+        sut = new ERC721_Solmate();
+        sut.mint(address(0xAAAA), 101);
+        sut.mint(address(0xBBBB), 101);
+    }
+
+    function test_safeTransferToOwner_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 1);
+    }
+
+    function test_safeTransferToOwner_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 10);
+    }
+
+    function test_safeTransferToOwner_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 50);
+    }
+
+    function test_safeTransferToOwner_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 100);
+    }
+}
+
+// safeTransfer toNonOwner
+contract ERC721_Solmate_safeTransferToNonOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_Solmate internal sut;
+
+    function setUp() public {
+        sut = new ERC721_Solmate();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_safeTransferToNonOwner_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 1);
+    }
+
+    function test_safeTransferToNonOwner_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 10);
+    }
+
+    function test_safeTransferToNonOwner_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 50);
+    }
+
+    function test_safeTransferToNonOwner_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 100);
     }
 }
 
@@ -984,6 +1182,7 @@ contract ERC721_A_transferToOwner_Test is DSTest {
     }
 }
 
+// transfer toNonOwner
 contract ERC721_A_transferToNonOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
@@ -1012,6 +1211,71 @@ contract ERC721_A_transferToNonOwner_Test is DSTest {
     function test_transferToNonOwner_id100() public {
         HEVM.prank(address(0xAAAA));
         sut.transferFrom(address(0xAAAA), address(0xCCCC), 100);
+    }
+}
+
+// safeTransfer toOwner
+contract ERC721_A_safeTransferToOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_A internal sut;
+
+    function setUp() public {
+        sut = new ERC721_A();
+        sut.mint(address(0xAAAA), 101);
+        sut.mint(address(0xBBBB), 101);
+    }
+
+    function test_safeTransferToOwner_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 1);
+    }
+
+    function test_safeTransferToOwner_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 10);
+    }
+
+    function test_safeTransferToOwner_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 50);
+    }
+
+    function test_safeTransferToOwner_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 100);
+    }
+}
+
+// safeTransfer toNonOwner
+contract ERC721_A_safeTransferToNonOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_A internal sut;
+
+    function setUp() public {
+        sut = new ERC721_A();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_safeTransferToNonOwner_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 1);
+    }
+
+    function test_safeTransferToNonOwner_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 10);
+    }
+
+    function test_safeTransferToNonOwner_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 50);
+    }
+
+    function test_safeTransferToNonOwner_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 100);
     }
 }
 
@@ -1269,6 +1533,7 @@ contract ERC721_B_transferToOwner_Test is DSTest {
     }
 }
 
+// transfer toNonOwner
 contract ERC721_B_transferToNonOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
@@ -1297,6 +1562,71 @@ contract ERC721_B_transferToNonOwner_Test is DSTest {
     function test_transferToNonOwner_id100() public {
         HEVM.prank(address(0xAAAA));
         sut.transferFrom(address(0xAAAA), address(0xCCCC), 100);
+    }
+}
+
+// safeTransfer toOwner
+contract ERC721_B_safeTransferToOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_B internal sut;
+
+    function setUp() public {
+        sut = new ERC721_B();
+        sut.mint(address(0xAAAA), 101);
+        sut.mint(address(0xBBBB), 101);
+    }
+
+    function test_safeTransferToOwner_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 1);
+    }
+
+    function test_safeTransferToOwner_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 10);
+    }
+
+    function test_safeTransferToOwner_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 50);
+    }
+
+    function test_safeTransferToOwner_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 100);
+    }
+}
+
+// safeTransfer toNonOwner
+contract ERC721_B_safeTransferToNonOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_B internal sut;
+
+    function setUp() public {
+        sut = new ERC721_B();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_safeTransferToNonOwner_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 1);
+    }
+
+    function test_safeTransferToNonOwner_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 10);
+    }
+
+    function test_safeTransferToNonOwner_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 50);
+    }
+
+    function test_safeTransferToNonOwner_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 100);
     }
 }
 
@@ -1554,6 +1884,7 @@ contract ERC721_K_transferToOwner_Test is DSTest {
     }
 }
 
+// transfer toNonOwner
 contract ERC721_K_transferToNonOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
@@ -1582,6 +1913,71 @@ contract ERC721_K_transferToNonOwner_Test is DSTest {
     function test_transferToNonOwner_id100() public {
         HEVM.prank(address(0xAAAA));
         sut.transferFrom(address(0xAAAA), address(0xCCCC), 100);
+    }
+}
+
+// safeTransfer toOwner
+contract ERC721_K_safeTransferToOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_K internal sut;
+
+    function setUp() public {
+        sut = new ERC721_K();
+        sut.mint(address(0xAAAA), 101);
+        sut.mint(address(0xBBBB), 101);
+    }
+
+    function test_safeTransferToOwner_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 1);
+    }
+
+    function test_safeTransferToOwner_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 10);
+    }
+
+    function test_safeTransferToOwner_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 50);
+    }
+
+    function test_safeTransferToOwner_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 100);
+    }
+}
+
+// safeTransfer toNonOwner
+contract ERC721_K_safeTransferToNonOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_K internal sut;
+
+    function setUp() public {
+        sut = new ERC721_K();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_safeTransferToNonOwner_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 1);
+    }
+
+    function test_safeTransferToNonOwner_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 10);
+    }
+
+    function test_safeTransferToNonOwner_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 50);
+    }
+
+    function test_safeTransferToNonOwner_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 100);
     }
 }
 

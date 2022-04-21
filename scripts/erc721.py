@@ -57,6 +57,30 @@ def transferToNonOwner(line):
     }
 
 
+safeTransferToOwner_regex = re.compile(
+    "safeTransferToOwner_id(\d+).+gas:\s(\d+)")
+
+
+def safeTransferToOwner(line):
+    match = re.search(safeTransferToOwner_regex, line)
+    return {
+        "key": match.group(1),
+        "gas": match.group(2)
+    }
+
+
+safeTransferToNonOwner_regex = re.compile(
+    "test_safeTransferToNonOwner_id(\d+).+gas:\s(\d+)")
+
+
+def safeTransferToNonOwner(line):
+    match = re.search(safeTransferToNonOwner_regex, line)
+    return {
+        "key": match.group(1),
+        "gas": match.group(2)
+    }
+
+
 approve_regex = re.compile(
     "test_approve_id(\d+).+gas:\s(\d+)")
 
@@ -79,6 +103,7 @@ def setApprovalForAll(line):
         "gas": match.group(1)
     }
 
+
 balanceOf_regex = re.compile(
     "test_balanceOf_(\d+).+gas:\s(\d+)")
 
@@ -90,6 +115,7 @@ def balanceOf(line):
         "gas": match.group(2)
     }
 
+
 ownerOf_regex = re.compile(
     "test_ownerOf_(\d+).+gas:\s(\d+)")
 
@@ -100,6 +126,7 @@ def ownerOf(line):
         "key": match.group(1),
         "gas": match.group(2)
     }
+
 
 getApproved_regex = re.compile(
     "test_getApproved_(\d+).+gas:\s(\d+)")
@@ -136,6 +163,10 @@ def group(lines):
         "transferToOwner", transferToOwner)
     methods["transferToNonOwner"] = rows_for_method(
         "transferToNonOwner", transferToNonOwner)
+    methods["safeTransferToOwner"] = rows_for_method(
+        "safeTransferToOwner", safeTransferToOwner)
+    methods["safeTransferToNonOwner"] = rows_for_method(
+        "safeTransferToNonOwner", safeTransferToNonOwner)
     methods["balanceOf"] = rows_for_method("balanceOf", balanceOf)
     methods["ownerOf"] = rows_for_method("ownerOf", ownerOf)
     methods["getApproved"] = rows_for_method("getApproved", getApproved)
