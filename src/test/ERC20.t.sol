@@ -6,7 +6,7 @@ import {Vm} from "@forge-std/Vm.sol";
 import {ERC20_OZ} from "$/ERC20_OZ.sol";
 import {ERC20_Solmate} from "$/ERC20_Solmate.sol";
 
-// transfer
+// transferToNonOwner
 contract ERC20_OZ_transferToNonOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
@@ -22,6 +22,7 @@ contract ERC20_OZ_transferToNonOwner_Test is DSTest {
     }
 }
 
+// transferToOwner
 contract ERC20_OZ_transferToOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
@@ -33,12 +34,49 @@ contract ERC20_OZ_transferToOwner_Test is DSTest {
         sut.mint(address(0xBBBB), 1000 ether);
     }
     function test_transferToOwner() public {
-      HEVM.prank(address(0xAAAA));
+        HEVM.prank(address(0xAAAA));
         sut.transfer(address(0xBBBB), 500 ether);
     }
 }
 
-// transfer
+// transferFromToNonOwner
+contract ERC20_OZ_transferFromToNonOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC20_OZ internal sut;
+
+    function setUp() public {
+        sut = new ERC20_OZ();
+        sut.mint(address(0xAAAA), 1000 ether);
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xBBBB), 1000 ether);
+    }
+    function test_transferFromToNonOwner() public {
+        HEVM.prank(address(0xBBBB));
+        sut.transferFrom(address(0xAAAA), address(0xCCCC), 500 ether);
+    }
+}
+
+// transferFromToOwner
+contract ERC20_OZ_transferFromToOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC20_OZ internal sut;
+
+    function setUp() public {
+        sut = new ERC20_OZ();
+        sut.mint(address(0xAAAA), 1000 ether);
+        sut.mint(address(0xCCCC), 1000 ether);
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xBBBB), 1000 ether);
+    }
+    function test_transferFromToOwner() public {
+        HEVM.prank(address(0xBBBB));
+        sut.transferFrom(address(0xAAAA), address(0xCCCC), 500 ether);
+    }
+}
+
+// transferToNonOwner
 contract ERC20_Solmate_transferToNonOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
@@ -54,6 +92,7 @@ contract ERC20_Solmate_transferToNonOwner_Test is DSTest {
     }
 }
 
+// transferToOwner
 contract ERC20_Solmate_transferToOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
@@ -65,7 +104,44 @@ contract ERC20_Solmate_transferToOwner_Test is DSTest {
         sut.mint(address(0xBBBB), 1000 ether);
     }
     function test_transferToOwner() public {
-      HEVM.prank(address(0xAAAA));
+        HEVM.prank(address(0xAAAA));
         sut.transfer(address(0xBBBB), 500 ether);
+    }
+}
+
+// transferFromToNonOwner
+contract ERC20_Solmate_transferFromToNonOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC20_Solmate internal sut;
+
+    function setUp() public {
+        sut = new ERC20_Solmate();
+        sut.mint(address(0xAAAA), 1000 ether);
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xBBBB), 1000 ether);
+    }
+    function test_transferFromToNonOwner() public {
+        HEVM.prank(address(0xBBBB));
+        sut.transferFrom(address(0xAAAA), address(0xCCCC), 500 ether);
+    }
+}
+
+// transferFromToOwner
+contract ERC20_Solmate_transferFromToOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC20_Solmate internal sut;
+
+    function setUp() public {
+        sut = new ERC20_Solmate();
+        sut.mint(address(0xAAAA), 1000 ether);
+        sut.mint(address(0xCCCC), 1000 ether);
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xBBBB), 1000 ether);
+    }
+    function test_transferFromToOwner() public {
+        HEVM.prank(address(0xBBBB));
+        sut.transferFrom(address(0xAAAA), address(0xCCCC), 500 ether);
     }
 }

@@ -29,6 +29,27 @@ def transferToNonOwner(line):
     }
 
 
+transferFromToOwner_regex = re.compile("transferFromToOwner.+gas:\s(\d+)")
+
+
+def transferFromToOwner(line):
+    match = re.search(transferFromToOwner_regex, line)
+    return {
+        "gas": match.group(1)
+    }
+
+
+transferFromToNonOwner_regex = re.compile(
+    "transferFromToNonOwner.+gas:\s(\d+)")
+
+
+def transferFromToNonOwner(line):
+    match = re.search(transferFromToNonOwner_regex, line)
+    return {
+        "gas": match.group(1)
+    }
+
+
 def group(lines):
     methods = common.group_methods_and_variant(lines)
 
@@ -39,5 +60,9 @@ def group(lines):
         "transferToOwner", transferToOwner)
     methods["transferToNonOwner"] = rows_for_method(
         "transferToNonOwner", transferToNonOwner)
+    methods["transferFromToOwner"] = rows_for_method(
+        "transferFromToOwner", transferFromToOwner)
+    methods["transferFromToNonOwner"] = rows_for_method(
+        "transferFromToNonOwner", transferFromToNonOwner)
 
     return methods
