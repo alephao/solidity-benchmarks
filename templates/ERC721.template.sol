@@ -241,4 +241,20 @@ contract ERC721_{{variation}}_getApproved_Test is DSTest {
         sut.ownerOf(100);
     }
 }
+
+// isApprovedForAll
+contract ERC721_{{variation}}_isApprovedForAll_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_{{variation}} internal sut;
+
+    function setUp() public {
+        sut = new ERC721_{{variation}}();
+        sut.mint(address(0xAAAA), 10);
+    }
+
+    function test_isApprovedForAll() view public {
+        sut.isApprovedForAll(address(0xAAAA), address(0xBBBB));
+    }
+}
 {% endfor %}

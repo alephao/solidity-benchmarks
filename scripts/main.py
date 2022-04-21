@@ -54,6 +54,7 @@ def update_erc721_readme(contracts):
     readme = erc721_subreadme(contracts, readme, "balanceOf")
     readme = erc721_subreadme(contracts, readme, "ownerOf")
     readme = erc721_subreadme(contracts, readme, "getApproved")
+    readme = erc721_subreadme(contracts, readme, "isApprovedForAll")
     f.write(readme)
     f.truncate()
 

@@ -140,6 +140,17 @@ def getApproved(line):
     }
 
 
+isApprovedForAll_regex = re.compile(
+    "test_isApprovedForAll.+gas:\s(\d+)")
+
+
+def isApprovedForAll(line):
+    match = re.search(isApprovedForAll_regex, line)
+    return {
+        "gas": match.group(1)
+    }
+
+
 def group_methods_and_variant(lines):
     methods = common.group_by_method(lines)
     grouped = {}
@@ -170,5 +181,7 @@ def group(lines):
     methods["balanceOf"] = rows_for_method("balanceOf", balanceOf)
     methods["ownerOf"] = rows_for_method("ownerOf", ownerOf)
     methods["getApproved"] = rows_for_method("getApproved", getApproved)
+    methods["isApprovedForAll"] = rows_for_method(
+        "isApprovedForAll", isApprovedForAll)
 
     return methods
