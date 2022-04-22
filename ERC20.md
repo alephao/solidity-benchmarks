@@ -62,6 +62,8 @@ How much gas to transfer tokens?
 
 ### approve
 
+How much gas to approve an address to spend some amount of tokens?
+
 <!-- Start approve Table -->
 |Implementation|  -- |
 |--------------|-----|
@@ -70,6 +72,8 @@ How much gas to transfer tokens?
 <!-- End approve Table -->
 
 ## View methods
+
+How much gas to check the total supply of tokens?
 
 ### totalSupply
 
@@ -82,6 +86,8 @@ How much gas to transfer tokens?
 
 ### balanceOf
 
+How much gas to check the balance of a wallet?
+
 <!-- Start balanceOf Table -->
 |Implementation| -- |
 |--------------|----|
@@ -91,11 +97,11 @@ How much gas to transfer tokens?
 
 ### allowance
 
+How much gas to check gow much a wallet can spend on behalf of another wallet?
+
 <!-- Start allowance Table -->
 |Implementation| -- |
 |--------------|----|
 | Open Zeppelin|7994|
 |    Solmate   |7927|
 <!-- End allowance Table -->
-
-
