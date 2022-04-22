@@ -114,4 +114,20 @@ contract ERC20_{{variation}}_totalSupply_Test is DSTest {
         sut.totalSupply();
     }
 }
+
+// totalSupply
+contract ERC20_{{variation}}_balanceOf_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC20_{{variation}} internal sut;
+
+    function setUp() public {
+        sut = new ERC20_{{variation}}();
+        sut.mint(address(0xAAAA), 1000 ether);
+    }
+
+    function test_balanceOf() public view {
+        sut.balanceOf(address(0xAAAA));
+    }
+}
 {% endfor %}

@@ -70,6 +70,16 @@ def totalSupply(line):
         "gas": match.group(1)
     }
 
+balanceOf_regex = re.compile(
+    "balanceOf.+gas:\s(\d+)")
+
+
+def balanceOf(line):
+    match = re.search(balanceOf_regex, line)
+    return {
+        "gas": match.group(1)
+    }
+
 
 def group(lines):
     methods = common.group_methods_and_variant(lines)
@@ -89,5 +99,7 @@ def group(lines):
         "approve", approve)
     methods["totalSupply"] = rows_for_method(
         "totalSupply", totalSupply)
+    methods["balanceOf"] = rows_for_method(
+        "balanceOf", balanceOf)
 
     return methods
