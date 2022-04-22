@@ -2,7 +2,7 @@
 
 Benchmarks for popular implementations of contract standards.
 
-- [ERC20 (wip)](ERC20.md)
+- [ERC20](ERC20.md)
 - [ERC721](ERC721.md)
 - [ERC1155 (wip)](ERC1155.md)
 

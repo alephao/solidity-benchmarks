@@ -60,6 +60,16 @@ def approve(line):
         "gas": match.group(1)
     }
 
+totalSupply_regex = re.compile(
+    "totalSupply.+gas:\s(\d+)")
+
+
+def totalSupply(line):
+    match = re.search(totalSupply_regex, line)
+    return {
+        "gas": match.group(1)
+    }
+
 
 def group(lines):
     methods = common.group_methods_and_variant(lines)
@@ -77,5 +87,7 @@ def group(lines):
         "transferFromToNonOwner", transferFromToNonOwner)
     methods["approve"] = rows_for_method(
         "approve", approve)
+    methods["totalSupply"] = rows_for_method(
+        "totalSupply", totalSupply)
 
     return methods

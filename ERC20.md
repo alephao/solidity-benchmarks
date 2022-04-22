@@ -1,4 +1,4 @@
-# ERC20 Benchmarks (WIP)
+# ERC20 Benchmarks
 
 Benchmarks for implementations of the ERC20 standard.
 
@@ -10,7 +10,7 @@ Benchmarks for implementations of the ERC20 standard.
 - [x] transfer
 - [x] transferFrom
 - [x] approve
-- [ ] totalSupply
+- [x] totalSupply
 - [ ] balanceOf
 - [ ] allowance
 
@@ -74,7 +74,10 @@ How much gas to transfer tokens?
 ### totalSupply
 
 <!-- Start totalSupply Table -->
-TBD
+|Implementation| -- |
+|--------------|----|
+| Open Zeppelin|7542|
+|    Solmate   |7556|
 <!-- End totalSupply Table -->
 
 ### balanceOf
