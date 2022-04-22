@@ -7,6 +7,7 @@ Benchmarks for implementations of the ERC20 standard.
 
 ## Methods TODO
 
+- [ ] deploy
 - [x] transfer
 - [x] transferFrom
 - [x] approve
