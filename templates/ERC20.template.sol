@@ -18,7 +18,7 @@ contract ERC20_{{variation}}_transferToNonOwner_Test is DSTest {
         sut = new ERC20_{{variation}}();
         sut.mint(address(0xAAAA), 1000 ether);
     }
-    
+
     function test_transferToNonOwner() public {
         HEVM.prank(address(0xAAAA));
         sut.transfer(address(0xBBBB), 500 ether);
@@ -36,7 +36,7 @@ contract ERC20_{{variation}}_transferToOwner_Test is DSTest {
         sut.mint(address(0xAAAA), 1000 ether);
         sut.mint(address(0xBBBB), 1000 ether);
     }
-    
+
     function test_transferToOwner() public {
         HEVM.prank(address(0xAAAA));
         sut.transfer(address(0xBBBB), 500 ether);
@@ -55,7 +55,7 @@ contract ERC20_{{variation}}_transferFromToNonOwner_Test is DSTest {
         HEVM.prank(address(0xAAAA));
         sut.approve(address(0xBBBB), 1000 ether);
     }
-    
+
     function test_transferFromToNonOwner() public {
         HEVM.prank(address(0xBBBB));
         sut.transferFrom(address(0xAAAA), address(0xCCCC), 500 ether);
@@ -75,7 +75,7 @@ contract ERC20_{{variation}}_transferFromToOwner_Test is DSTest {
         HEVM.prank(address(0xAAAA));
         sut.approve(address(0xBBBB), 1000 ether);
     }
-    
+
     function test_transferFromToOwner() public {
         HEVM.prank(address(0xBBBB));
         sut.transferFrom(address(0xAAAA), address(0xCCCC), 500 ether);
@@ -92,7 +92,7 @@ contract ERC20_{{variation}}_approve_Test is DSTest {
         sut = new ERC20_{{variation}}();
         sut.mint(address(0xAAAA), 1000 ether);
     }
-    
+
     function test_approve() public {
         HEVM.prank(address(0xAAAA));
         sut.approve(address(0xBBBB), 1000 ether);

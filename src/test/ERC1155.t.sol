@@ -15,6 +15,7 @@ contract ERC1155_OZ_mint_Test is DSTest {
     function setUp() public {
         sut = new ERC1155_OZ();
     }
+
     function test_mint() public {
         sut.mint(address(0xAAAA), 1, 1);
     }
@@ -29,6 +30,7 @@ contract ERC1155_OZ_mintBatch_Test is DSTest {
     function setUp() public {
         sut = new ERC1155_OZ();
     }
+
     function test_mintBatch_1() public {
         uint256[] memory ids = new uint256[](1);
         ids[0] = 1;
@@ -97,6 +99,7 @@ contract ERC1155_Solmate_mint_Test is DSTest {
     function setUp() public {
         sut = new ERC1155_Solmate();
     }
+
     function test_mint() public {
         sut.mint(address(0xAAAA), 1, 1);
     }
@@ -111,6 +114,7 @@ contract ERC1155_Solmate_mintBatch_Test is DSTest {
     function setUp() public {
         sut = new ERC1155_Solmate();
     }
+
     function test_mintBatch_1() public {
         uint256[] memory ids = new uint256[](1);
         ids[0] = 1;
