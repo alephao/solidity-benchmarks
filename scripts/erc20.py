@@ -60,6 +60,7 @@ def approve(line):
         "gas": match.group(1)
     }
 
+
 totalSupply_regex = re.compile(
     "totalSupply.+gas:\s(\d+)")
 
@@ -70,12 +71,24 @@ def totalSupply(line):
         "gas": match.group(1)
     }
 
+
 balanceOf_regex = re.compile(
     "balanceOf.+gas:\s(\d+)")
 
 
 def balanceOf(line):
     match = re.search(balanceOf_regex, line)
+    return {
+        "gas": match.group(1)
+    }
+
+
+allowance_regex = re.compile(
+    "allowance.+gas:\s(\d+)")
+
+
+def allowance(line):
+    match = re.search(allowance_regex, line)
     return {
         "gas": match.group(1)
     }
@@ -101,5 +114,7 @@ def group(lines):
         "totalSupply", totalSupply)
     methods["balanceOf"] = rows_for_method(
         "balanceOf", balanceOf)
+    methods["allowance"] = rows_for_method(
+        "allowance", allowance)
 
     return methods

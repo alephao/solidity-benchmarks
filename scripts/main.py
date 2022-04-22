@@ -33,6 +33,7 @@ def update_erc20_readme(contracts):
     readme = erc20_subreadme(contracts, readme, "approve")
     readme = erc20_subreadme(contracts, readme, "totalSupply")
     readme = erc20_subreadme(contracts, readme, "balanceOf")
+    readme = erc20_subreadme(contracts, readme, "allowance")
     f.write(readme)
     f.truncate()
 
