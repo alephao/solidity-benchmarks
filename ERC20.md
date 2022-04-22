@@ -7,11 +7,11 @@ Benchmarks for implementations of the ERC20 standard.
 
 ## Methods TODO
 
-- [ ] totalSupply
-- [ ] balanceOf
 - [x] transfer
 - [x] transferFrom
-- [ ] approve
+- [x] approve
+- [ ] totalSupply
+- [ ] balanceOf
 - [ ] allowance
 
 ## Write methods
@@ -63,8 +63,11 @@ How much gas to transfer tokens?
 ### approve
 
 <!-- Start approve Table -->
-TBD
-<!-- Start approve Table -->
+|Implementation|  -- |
+|--------------|-----|
+| Open Zeppelin|32649|
+|    Solmate   |32547|
+<!-- End approve Table -->
 
 ## View methods
 
@@ -72,18 +75,18 @@ TBD
 
 <!-- Start totalSupply Table -->
 TBD
-<!-- Start totalSupply Table -->
+<!-- End totalSupply Table -->
 
 ### balanceOf
 
 <!-- Start balanceOf Table -->
 TBD
-<!-- Start balanceOf Table -->
+<!-- End balanceOf Table -->
 
 ### allowance
 
 <!-- Start allowance Table -->
 TBD
-<!-- Start allowance Table -->
+<!-- End allowance Table -->
 
 

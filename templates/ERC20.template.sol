@@ -81,4 +81,21 @@ contract ERC20_{{variation}}_transferFromToOwner_Test is DSTest {
         sut.transferFrom(address(0xAAAA), address(0xCCCC), 500 ether);
     }
 }
+
+// approve
+contract ERC20_{{variation}}_approve_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC20_{{variation}} internal sut;
+
+    function setUp() public {
+        sut = new ERC20_{{variation}}();
+        sut.mint(address(0xAAAA), 1000 ether);
+    }
+    
+    function test_approve() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xBBBB), 1000 ether);
+    }
+}
 {% endfor %}

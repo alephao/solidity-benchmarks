@@ -30,6 +30,7 @@ def update_erc20_readme(contracts):
     readme = erc20_subreadme(contracts, readme, "transferToNonOwner")
     readme = erc20_subreadme(contracts, readme, "transferFromToOwner")
     readme = erc20_subreadme(contracts, readme, "transferFromToNonOwner")
+    readme = erc20_subreadme(contracts, readme, "approve")
     f.write(readme)
     f.truncate()
 

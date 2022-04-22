@@ -50,6 +50,17 @@ def transferFromToNonOwner(line):
     }
 
 
+approve_regex = re.compile(
+    "approve.+gas:\s(\d+)")
+
+
+def approve(line):
+    match = re.search(approve_regex, line)
+    return {
+        "gas": match.group(1)
+    }
+
+
 def group(lines):
     methods = common.group_methods_and_variant(lines)
 
@@ -64,5 +75,7 @@ def group(lines):
         "transferFromToOwner", transferFromToOwner)
     methods["transferFromToNonOwner"] = rows_for_method(
         "transferFromToNonOwner", transferFromToNonOwner)
+    methods["approve"] = rows_for_method(
+        "approve", approve)
 
     return methods

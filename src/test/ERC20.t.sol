@@ -76,6 +76,22 @@ contract ERC20_OZ_transferFromToOwner_Test is DSTest {
     }
 }
 
+// approve
+contract ERC20_OZ_approve_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC20_OZ internal sut;
+
+    function setUp() public {
+        sut = new ERC20_OZ();
+        sut.mint(address(0xAAAA), 1000 ether);
+    }
+    function test_approve() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xBBBB), 1000 ether);
+    }
+}
+
 // transferToNonOwner
 contract ERC20_Solmate_transferToNonOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
@@ -143,5 +159,21 @@ contract ERC20_Solmate_transferFromToOwner_Test is DSTest {
     function test_transferFromToOwner() public {
         HEVM.prank(address(0xBBBB));
         sut.transferFrom(address(0xAAAA), address(0xCCCC), 500 ether);
+    }
+}
+
+// approve
+contract ERC20_Solmate_approve_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC20_Solmate internal sut;
+
+    function setUp() public {
+        sut = new ERC20_Solmate();
+        sut.mint(address(0xAAAA), 1000 ether);
+    }
+    function test_approve() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xBBBB), 1000 ether);
     }
 }
