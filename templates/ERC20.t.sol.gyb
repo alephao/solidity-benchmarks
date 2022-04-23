@@ -1,28 +1,34 @@
+%{ 
+  import yaml
+  with open('../test-cases.yml', 'r') as file:
+    config = yaml.safe_load(file)
+    contracts = config["contracts"]
+}%
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity >=0.8.4;
 
 import {DSTest} from "@ds-test/test.sol";
 import {Vm} from "@forge-std/Vm.sol";
-{% for variation in contracts.erc20.variations %}
-import {ERC20_{{variation}}} from "$/ERC20_{{variation}}.sol";
-{% endfor %}
-{% for variation in contracts.erc20.variations %}
+% for variation in contracts["erc20"]["variations"]:
+import {ERC20_${variation}} from "$/ERC20_${variation}.sol";
+%end
+% for variation in contracts["erc20"]["variations"]:
 
 // deploy
-contract ERC20_{{variation}}_deploy_Test is DSTest {
+contract ERC20_${variation}_deploy_Test is DSTest {
     function test_deploy() public {
-        ERC20_{{variation}} sut = new ERC20_{{variation}}();
+        ERC20_${variation} sut = new ERC20_${variation}();
     }
 }
 
 // transferToNonOwner
-contract ERC20_{{variation}}_transferToNonOwner_Test is DSTest {
+contract ERC20_${variation}_transferToNonOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
-    ERC20_{{variation}} internal sut;
+    ERC20_${variation} internal sut;
 
     function setUp() public {
-        sut = new ERC20_{{variation}}();
+        sut = new ERC20_${variation}();
         sut.mint(address(0xAAAA), 1000 ether);
     }
 
@@ -33,13 +39,13 @@ contract ERC20_{{variation}}_transferToNonOwner_Test is DSTest {
 }
 
 // transferToOwner
-contract ERC20_{{variation}}_transferToOwner_Test is DSTest {
+contract ERC20_${variation}_transferToOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
-    ERC20_{{variation}} internal sut;
+    ERC20_${variation} internal sut;
 
     function setUp() public {
-        sut = new ERC20_{{variation}}();
+        sut = new ERC20_${variation}();
         sut.mint(address(0xAAAA), 1000 ether);
         sut.mint(address(0xBBBB), 1000 ether);
     }
@@ -51,13 +57,13 @@ contract ERC20_{{variation}}_transferToOwner_Test is DSTest {
 }
 
 // transferFromToNonOwner
-contract ERC20_{{variation}}_transferFromToNonOwner_Test is DSTest {
+contract ERC20_${variation}_transferFromToNonOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
-    ERC20_{{variation}} internal sut;
+    ERC20_${variation} internal sut;
 
     function setUp() public {
-        sut = new ERC20_{{variation}}();
+        sut = new ERC20_${variation}();
         sut.mint(address(0xAAAA), 1000 ether);
         HEVM.prank(address(0xAAAA));
         sut.approve(address(0xBBBB), 1000 ether);
@@ -70,13 +76,13 @@ contract ERC20_{{variation}}_transferFromToNonOwner_Test is DSTest {
 }
 
 // transferFromToOwner
-contract ERC20_{{variation}}_transferFromToOwner_Test is DSTest {
+contract ERC20_${variation}_transferFromToOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
-    ERC20_{{variation}} internal sut;
+    ERC20_${variation} internal sut;
 
     function setUp() public {
-        sut = new ERC20_{{variation}}();
+        sut = new ERC20_${variation}();
         sut.mint(address(0xAAAA), 1000 ether);
         sut.mint(address(0xCCCC), 1000 ether);
         HEVM.prank(address(0xAAAA));
@@ -90,13 +96,13 @@ contract ERC20_{{variation}}_transferFromToOwner_Test is DSTest {
 }
 
 // approve
-contract ERC20_{{variation}}_approve_Test is DSTest {
+contract ERC20_${variation}_approve_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
-    ERC20_{{variation}} internal sut;
+    ERC20_${variation} internal sut;
 
     function setUp() public {
-        sut = new ERC20_{{variation}}();
+        sut = new ERC20_${variation}();
         sut.mint(address(0xAAAA), 1000 ether);
     }
 
@@ -107,13 +113,13 @@ contract ERC20_{{variation}}_approve_Test is DSTest {
 }
 
 // totalSupply
-contract ERC20_{{variation}}_totalSupply_Test is DSTest {
+contract ERC20_${variation}_totalSupply_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
-    ERC20_{{variation}} internal sut;
+    ERC20_${variation} internal sut;
 
     function setUp() public {
-        sut = new ERC20_{{variation}}();
+        sut = new ERC20_${variation}();
         sut.mint(address(0xAAAA), 1000 ether);
     }
 
@@ -123,13 +129,13 @@ contract ERC20_{{variation}}_totalSupply_Test is DSTest {
 }
 
 // balanceOf
-contract ERC20_{{variation}}_balanceOf_Test is DSTest {
+contract ERC20_${variation}_balanceOf_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
-    ERC20_{{variation}} internal sut;
+    ERC20_${variation} internal sut;
 
     function setUp() public {
-        sut = new ERC20_{{variation}}();
+        sut = new ERC20_${variation}();
         sut.mint(address(0xAAAA), 1000 ether);
     }
 
@@ -139,13 +145,13 @@ contract ERC20_{{variation}}_balanceOf_Test is DSTest {
 }
 
 // allowance
-contract ERC20_{{variation}}_allowance_Test is DSTest {
+contract ERC20_${variation}_allowance_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
-    ERC20_{{variation}} internal sut;
+    ERC20_${variation} internal sut;
 
     function setUp() public {
-        sut = new ERC20_{{variation}}();
+        sut = new ERC20_${variation}();
         sut.mint(address(0xAAAA), 1000 ether);
         HEVM.prank(address(0xAAAA));
         sut.approve(address(0xBBBB), 1000 ether);
@@ -155,4 +161,4 @@ contract ERC20_{{variation}}_allowance_Test is DSTest {
         sut.allowance(address(0xAAAA), address(0xBBBB));
     }
 }
-{% endfor %}
+% end
