@@ -78,6 +78,7 @@ def update_erc1155_readme(contracts):
     f = open("ERC1155.md", "r+")
     readme = f.read()
     f.seek(0)
+    readme = erc1155_subreadme(contracts, readme, "deploy")
     readme = erc1155_subreadme(contracts, readme, "mint")
     readme = erc1155_subreadme(contracts, readme, "mintBatch")
     f.write(readme)

@@ -6,6 +6,13 @@ import {Vm} from "@forge-std/Vm.sol";
 import {ERC1155_OZ} from "$/ERC1155_OZ.sol";
 import {ERC1155_Solmate} from "$/ERC1155_Solmate.sol";
 
+// deploy
+contract ERC1155_OZ_deploy_Test is DSTest {
+    function test_deploy() public {
+        ERC1155_OZ sut = new ERC1155_OZ();
+    }
+}
+
 // mint
 contract ERC1155_OZ_mint_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
@@ -89,6 +96,13 @@ contract ERC1155_OZ_mintBatch_Test is DSTest {
 }
 
 
+
+// deploy
+contract ERC1155_Solmate_deploy_Test is DSTest {
+    function test_deploy() public {
+        ERC1155_Solmate sut = new ERC1155_Solmate();
+    }
+}
 
 // mint
 contract ERC1155_Solmate_mint_Test is DSTest {
