@@ -26,7 +26,7 @@ If you want to add another implementation, please open an issue with a link to t
 **Dependencies**
 
 - You'll need python 3 installed to run the scripts under the `scripts` folder
-- You'll need to install [stencil-cli](https://github.com/alephao/stencil-cli). This is used to code generate the tests. Unfortunately this is currently only available on macos. Quick install: `brew install alephao/formulae/stencil` 
+- `pip install -r requirements.txt` (or `pip3` depending on ur environment)
 
 **Instructions**
 
