@@ -8,6 +8,16 @@ variations = {
 
 # Methods to format .gas-snapshot line to an object with relevant info
 
+deploy_regex = re.compile("deploy.+gas:\s(\d+)")
+
+
+def deploy(line):
+    match = re.search(deploy_regex, line)
+    return {
+        "gas": match.group(1)
+    }
+
+
 transferToOwner_regex = re.compile("transferToOwner.+gas:\s(\d+)")
 
 
@@ -100,6 +110,8 @@ def group(lines):
     def rows_for_method(method_name, method_fn):
         return common.rows_for_method(methods, variations, method_name, method_fn)
 
+    methods["deploy"] = rows_for_method(
+        "deploy", deploy)
     methods["transferToOwner"] = rows_for_method(
         "transferToOwner", transferToOwner)
     methods["transferToNonOwner"] = rows_for_method(

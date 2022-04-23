@@ -6,6 +6,13 @@ import {Vm} from "@forge-std/Vm.sol";
 import {ERC20_OZ} from "$/ERC20_OZ.sol";
 import {ERC20_Solmate} from "$/ERC20_Solmate.sol";
 
+// deploy
+contract ERC20_OZ_deploy_Test is DSTest {
+    function test_deploy() public {
+        ERC20_OZ sut = new ERC20_OZ();
+    }
+}
+
 // transferToNonOwner
 contract ERC20_OZ_transferToNonOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
@@ -144,6 +151,13 @@ contract ERC20_OZ_allowance_Test is DSTest {
 
     function test_allowance() public view {
         sut.allowance(address(0xAAAA), address(0xBBBB));
+    }
+}
+
+// deploy
+contract ERC20_Solmate_deploy_Test is DSTest {
+    function test_deploy() public {
+        ERC20_Solmate sut = new ERC20_Solmate();
     }
 }
 

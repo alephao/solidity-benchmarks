@@ -7,13 +7,24 @@ Benchmarks for implementations of the ERC20 standard.
 
 ## Methods TODO
 
-- [ ] deploy
+- [x] deploy
 - [x] transfer
 - [x] transferFrom
 - [x] approve
 - [x] totalSupply
 - [x] balanceOf
 - [x] allowance
+
+## Deployment
+
+How much gas to deploy the contract as is?
+
+<!-- Start deploy Table -->
+|Implementation|  --  |
+|--------------|------|
+| Open Zeppelin|568857|
+|    Solmate   |656844|
+<!-- End deploy Table -->
 
 ## Write methods
 

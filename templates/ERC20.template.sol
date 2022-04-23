@@ -8,6 +8,13 @@ import {ERC20_{{variation}}} from "$/ERC20_{{variation}}.sol";
 {% endfor %}
 {% for variation in contracts.erc20.variations %}
 
+// deploy
+contract ERC20_{{variation}}_deploy_Test is DSTest {
+    function test_deploy() public {
+        ERC20_{{variation}} sut = new ERC20_{{variation}}();
+    }
+}
+
 // transferToNonOwner
 contract ERC20_{{variation}}_transferToNonOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);

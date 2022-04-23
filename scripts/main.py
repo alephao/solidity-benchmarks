@@ -26,6 +26,7 @@ def update_erc20_readme(contracts):
     f = open("ERC20.md", "r+")
     readme = f.read()
     f.seek(0)
+    readme = erc20_subreadme(contracts, readme, "deploy")
     readme = erc20_subreadme(contracts, readme, "transferToOwner")
     readme = erc20_subreadme(contracts, readme, "transferToNonOwner")
     readme = erc20_subreadme(contracts, readme, "transferFromToOwner")
