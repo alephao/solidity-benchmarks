@@ -12,6 +12,16 @@ variations = {
 
 # Methods to format .gas-snapshot line to an object with relevant info
 
+deploy_regex = re.compile("deploy.+gas:\s(\d+)")
+
+
+def deploy(line):
+    match = re.search(deploy_regex, line)
+    return {
+        "gas": match.group(1)
+    }
+
+
 mint_regex = re.compile("test_mint_(\d+).+gas:\s(\d+)")
 
 
@@ -165,6 +175,7 @@ def group(lines):
     def rows_for_method(method_name, method_fn):
         return common.rows_for_method(methods, variations, method_name, method_fn)
 
+    methods["deploy"] = rows_for_method("deploy", deploy)
     methods["mint"] = rows_for_method("mint", mint)
     methods["safeMint"] = rows_for_method("safeMint", safeMint)
     methods["approve"] = rows_for_method("approve", approve)

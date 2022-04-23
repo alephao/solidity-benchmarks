@@ -10,6 +10,13 @@ import {ERC721_A} from "$/ERC721_A.sol";
 import {ERC721_B} from "$/ERC721_B.sol";
 import {ERC721_K} from "$/ERC721_K.sol";
 
+// deploy
+contract ERC721_OZ_deploy_Test is DSTest {
+    function test_deploy() public {
+        ERC721_OZ sut = new ERC721_OZ();
+    }
+}
+
 // mint
 contract ERC721_OZ_mint_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
@@ -374,6 +381,13 @@ contract ERC721_OZ_isApprovedForAll_Test is DSTest {
 
     function test_isApprovedForAll() view public {
         sut.isApprovedForAll(address(0xAAAA), address(0xBBBB));
+    }
+}
+
+// deploy
+contract ERC721_OZEnumerable_deploy_Test is DSTest {
+    function test_deploy() public {
+        ERC721_OZEnumerable sut = new ERC721_OZEnumerable();
     }
 }
 
@@ -744,6 +758,13 @@ contract ERC721_OZEnumerable_isApprovedForAll_Test is DSTest {
     }
 }
 
+// deploy
+contract ERC721_Solmate_deploy_Test is DSTest {
+    function test_deploy() public {
+        ERC721_Solmate sut = new ERC721_Solmate();
+    }
+}
+
 // mint
 contract ERC721_Solmate_mint_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
@@ -1108,6 +1129,13 @@ contract ERC721_Solmate_isApprovedForAll_Test is DSTest {
 
     function test_isApprovedForAll() view public {
         sut.isApprovedForAll(address(0xAAAA), address(0xBBBB));
+    }
+}
+
+// deploy
+contract ERC721_A_deploy_Test is DSTest {
+    function test_deploy() public {
+        ERC721_A sut = new ERC721_A();
     }
 }
 
@@ -1478,6 +1506,13 @@ contract ERC721_A_isApprovedForAll_Test is DSTest {
     }
 }
 
+// deploy
+contract ERC721_B_deploy_Test is DSTest {
+    function test_deploy() public {
+        ERC721_B sut = new ERC721_B();
+    }
+}
+
 // mint
 contract ERC721_B_mint_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
@@ -1842,6 +1877,13 @@ contract ERC721_B_isApprovedForAll_Test is DSTest {
 
     function test_isApprovedForAll() view public {
         sut.isApprovedForAll(address(0xAAAA), address(0xBBBB));
+    }
+}
+
+// deploy
+contract ERC721_K_deploy_Test is DSTest {
+    function test_deploy() public {
+        ERC721_K sut = new ERC721_K();
     }
 }
 

@@ -8,6 +8,13 @@ import {ERC721_{{variation}}} from "$/ERC721_{{variation}}.sol";
 {% endfor %}
 {% for variation in contracts.erc721.variations %}
 
+// deploy
+contract ERC721_{{variation}}_deploy_Test is DSTest {
+    function test_deploy() public {
+        ERC721_{{variation}} sut = new ERC721_{{variation}}();
+    }
+}
+
 // mint
 contract ERC721_{{variation}}_mint_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
