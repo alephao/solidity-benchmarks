@@ -113,4 +113,102 @@ contract ERC1155_{{variation}}_safeTransferFrom_Test is DSTest {
         sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 1, 1, "");
     }
 }
+
+// safeBatchTransferFrom
+contract ERC1155_{{variation}}_safeBatchTransferFrom_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC1155_{{variation}} internal sut;
+
+    function setUp() public {
+        sut = new ERC1155_{{variation}}();
+
+        uint256[] memory ids = new uint256[](11);
+        ids[0] = 1;
+        ids[1] = 2;
+        ids[2] = 3;
+        ids[3] = 4;
+        ids[4] = 5;
+        ids[5] = 6;
+        ids[6] = 7;
+        ids[7] = 8;
+        ids[8] = 9;
+        ids[9] = 10;
+        ids[10] = 11;
+
+        uint256[] memory amounts = new uint256[](11);
+        amounts[0] = 1;
+        amounts[1] = 1;
+        amounts[2] = 1;
+        amounts[3] = 1;
+        amounts[4] = 1;
+        amounts[5] = 1;
+        amounts[6] = 1;
+        amounts[7] = 1;
+        amounts[8] = 1;
+        amounts[9] = 1;
+        amounts[10] = 1;
+
+        sut.mintBatch(address(0xAAAA), ids, amounts);
+    }
+
+    function test_safeBatchTransferFrom_1() public {
+        uint256[] memory ids = new uint256[](1);
+        ids[0] = 1;
+
+        uint256[] memory amounts = new uint256[](1);
+        amounts[0] = 1;
+
+        HEVM.prank(address(0xAAAA));
+        sut.safeBatchTransferFrom(address(0xAAAA), address(0xBBBB), ids, amounts, "");
+    }
+
+    function test_safeBatchTransferFrom_5() public {
+        uint256[] memory ids = new uint256[](5);
+        ids[0] = 1;
+        ids[1] = 2;
+        ids[2] = 3;
+        ids[3] = 4;
+        ids[4] = 5;
+
+        uint256[] memory amounts = new uint256[](5);
+        amounts[0] = 1;
+        amounts[1] = 1;
+        amounts[2] = 1;
+        amounts[3] = 1;
+        amounts[4] = 1;
+
+        HEVM.prank(address(0xAAAA));
+        sut.safeBatchTransferFrom(address(0xAAAA), address(0xBBBB), ids, amounts, "");
+    }
+
+    function test_safeBatchTransferFrom_10() public {
+        uint256[] memory ids = new uint256[](10);
+        ids[0] = 1;
+        ids[1] = 2;
+        ids[2] = 3;
+        ids[3] = 4;
+        ids[4] = 5;
+        ids[5] = 6;
+        ids[6] = 7;
+        ids[7] = 8;
+        ids[8] = 9;
+        ids[9] = 10;
+
+        uint256[] memory amounts = new uint256[](10);
+        amounts[0] = 1;
+        amounts[1] = 1;
+        amounts[2] = 1;
+        amounts[3] = 1;
+        amounts[4] = 1;
+        amounts[5] = 1;
+        amounts[6] = 1;
+        amounts[7] = 1;
+        amounts[8] = 1;
+        amounts[9] = 1;
+
+        HEVM.prank(address(0xAAAA));
+        sut.safeBatchTransferFrom(address(0xAAAA), address(0xBBBB), ids, amounts, "");
+    }
+}
 {% endfor %}

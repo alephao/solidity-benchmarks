@@ -82,6 +82,7 @@ def update_erc1155_readme(contracts):
     readme = erc1155_subreadme(contracts, readme, "mint")
     readme = erc1155_subreadme(contracts, readme, "mintBatch")
     readme = erc1155_subreadme(contracts, readme, "safeTransferFrom")
+    readme = erc1155_subreadme(contracts, readme, "safeBatchTransferFrom")
     f.write(readme)
     f.truncate()
 
