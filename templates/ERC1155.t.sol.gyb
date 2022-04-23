@@ -1,28 +1,34 @@
+%{ 
+  import yaml
+  with open('../test-cases.yml', 'r') as file:
+    config = yaml.safe_load(file)
+    contracts = config["contracts"]
+}%
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity >=0.8.4;
 
 import {DSTest} from "@ds-test/test.sol";
 import {Vm} from "@forge-std/Vm.sol";
-{% for variation in contracts.erc1155.variations %}
-import {ERC1155_{{variation}}} from "$/ERC1155_{{variation}}.sol";
-{% endfor %}
-{% for variation in contracts.erc1155.variations %}
+%for variation in contracts["erc1155"]["variations"]:
+import {ERC1155_${variation}} from "$/ERC1155_${variation}.sol";
+% end
+%for variation in contracts["erc1155"]["variations"]:
 
 // deploy
-contract ERC1155_{{variation}}_deploy_Test is DSTest {
+contract ERC1155_${variation}_deploy_Test is DSTest {
     function test_deploy() public {
-        ERC1155_{{variation}} sut = new ERC1155_{{variation}}();
+        ERC1155_${variation} sut = new ERC1155_${variation}();
     }
 }
 
 // mint
-contract ERC1155_{{variation}}_mint_Test is DSTest {
+contract ERC1155_${variation}_mint_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
-    ERC1155_{{variation}} internal sut;
+    ERC1155_${variation} internal sut;
 
     function setUp() public {
-        sut = new ERC1155_{{variation}}();
+        sut = new ERC1155_${variation}();
     }
 
     function test_mint() public {
@@ -31,13 +37,13 @@ contract ERC1155_{{variation}}_mint_Test is DSTest {
 }
 
 // mintBatch
-contract ERC1155_{{variation}}_mintBatch_Test is DSTest {
+contract ERC1155_${variation}_mintBatch_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
-    ERC1155_{{variation}} internal sut;
+    ERC1155_${variation} internal sut;
 
     function setUp() public {
-        sut = new ERC1155_{{variation}}();
+        sut = new ERC1155_${variation}();
     }
 
     function test_mintBatch_1() public {
@@ -98,13 +104,13 @@ contract ERC1155_{{variation}}_mintBatch_Test is DSTest {
 }
 
 // safeTransferFrom
-contract ERC1155_{{variation}}_safeTransferFrom_Test is DSTest {
+contract ERC1155_${variation}_safeTransferFrom_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
-    ERC1155_{{variation}} internal sut;
+    ERC1155_${variation} internal sut;
 
     function setUp() public {
-        sut = new ERC1155_{{variation}}();
+        sut = new ERC1155_${variation}();
         sut.mint(address(0xAAAA), 1, 1);
     }
 
@@ -115,13 +121,13 @@ contract ERC1155_{{variation}}_safeTransferFrom_Test is DSTest {
 }
 
 // safeBatchTransferFrom
-contract ERC1155_{{variation}}_safeBatchTransferFrom_Test is DSTest {
+contract ERC1155_${variation}_safeBatchTransferFrom_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
-    ERC1155_{{variation}} internal sut;
+    ERC1155_${variation} internal sut;
 
     function setUp() public {
-        sut = new ERC1155_{{variation}}();
+        sut = new ERC1155_${variation}();
 
         uint256[] memory ids = new uint256[](11);
         ids[0] = 1;
@@ -211,4 +217,4 @@ contract ERC1155_{{variation}}_safeBatchTransferFrom_Test is DSTest {
         sut.safeBatchTransferFrom(address(0xAAAA), address(0xBBBB), ids, amounts, "");
     }
 }
-{% endfor %}
+% end 
