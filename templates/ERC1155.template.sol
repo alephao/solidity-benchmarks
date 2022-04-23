@@ -97,5 +97,20 @@ contract ERC1155_{{variation}}_mintBatch_Test is DSTest {
     }
 }
 
+// safeTransferFrom
+contract ERC1155_{{variation}}_safeTransferFrom_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
+    ERC1155_{{variation}} internal sut;
+
+    function setUp() public {
+        sut = new ERC1155_{{variation}}();
+        sut.mint(address(0xAAAA), 1, 1);
+    }
+
+    function test_safeTransferFrom() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 1, 1, "");
+    }
+}
 {% endfor %}

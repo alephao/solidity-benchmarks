@@ -95,7 +95,22 @@ contract ERC1155_OZ_mintBatch_Test is DSTest {
     }
 }
 
+// safeTransferFrom
+contract ERC1155_OZ_safeTransferFrom_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
+    ERC1155_OZ internal sut;
+
+    function setUp() public {
+        sut = new ERC1155_OZ();
+        sut.mint(address(0xAAAA), 1, 1);
+    }
+
+    function test_safeTransferFrom() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 1, 1, "");
+    }
+}
 
 // deploy
 contract ERC1155_Solmate_deploy_Test is DSTest {
@@ -186,4 +201,19 @@ contract ERC1155_Solmate_mintBatch_Test is DSTest {
     }
 }
 
+// safeTransferFrom
+contract ERC1155_Solmate_safeTransferFrom_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
 
+    ERC1155_Solmate internal sut;
+
+    function setUp() public {
+        sut = new ERC1155_Solmate();
+        sut.mint(address(0xAAAA), 1, 1);
+    }
+
+    function test_safeTransferFrom() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 1, 1, "");
+    }
+}

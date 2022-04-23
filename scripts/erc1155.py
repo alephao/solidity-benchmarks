@@ -39,6 +39,16 @@ def mintBatch(line):
     }
 
 
+safeTransferFrom_regex = re.compile("test_safeTransferFrom.+gas:\s(\d+)")
+
+
+def safeTransferFrom(line):
+    match = re.search(safeTransferFrom_regex, line)
+    return {
+        "gas": match.group(1)
+    }
+
+
 def group(lines):
     methods = common.group_methods_and_variant(lines)
 
@@ -48,5 +58,7 @@ def group(lines):
     methods["deploy"] = rows_for_method("deploy", deploy)
     methods["mint"] = rows_for_method("mint", mint)
     methods["mintBatch"] = rows_for_method("mintBatch", mintBatch)
+    methods["safeTransferFrom"] = rows_for_method(
+        "safeTransferFrom", safeTransferFrom)
 
     return methods
