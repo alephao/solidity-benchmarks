@@ -2,6 +2,8 @@
 
 Benchmarks for popular implementations of contract standards.
 
+> ⚠️ The gas usage shown in the benchmarks doesn't take into account the 21k gas added to every ethereum transaction
+
 - [ERC20](ERC20.md)
 - [ERC721](ERC721.md)
 - [ERC1155 (wip)](ERC1155.md)
