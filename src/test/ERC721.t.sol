@@ -103,6 +103,38 @@ contract ERC721_OZ_safeMint_Test is DSTest {
     }
 }
 
+// burn
+contract ERC721_OZ_burn_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_OZ internal sut;
+
+    function setUp() public {
+        sut = new ERC721_OZ();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_burn_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(1);
+    }
+
+    function test_burn_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(10);
+    }
+
+    function test_burn_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(50);
+    }
+
+    function test_burn_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(100);
+    }
+}
+
 // transfer toOwner
 contract ERC721_OZ_transferToOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
@@ -474,6 +506,38 @@ contract ERC721_OZEnumerable_safeMint_Test is DSTest {
 
     function test_safeMint_100() public {
         sut.safeMint(address(0xAAAA), 100);
+    }
+}
+
+// burn
+contract ERC721_OZEnumerable_burn_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_OZEnumerable internal sut;
+
+    function setUp() public {
+        sut = new ERC721_OZEnumerable();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_burn_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(1);
+    }
+
+    function test_burn_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(10);
+    }
+
+    function test_burn_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(50);
+    }
+
+    function test_burn_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(100);
     }
 }
 
@@ -851,6 +915,38 @@ contract ERC721_Solmate_safeMint_Test is DSTest {
     }
 }
 
+// burn
+contract ERC721_Solmate_burn_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_Solmate internal sut;
+
+    function setUp() public {
+        sut = new ERC721_Solmate();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_burn_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(1);
+    }
+
+    function test_burn_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(10);
+    }
+
+    function test_burn_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(50);
+    }
+
+    function test_burn_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(100);
+    }
+}
+
 // transfer toOwner
 contract ERC721_Solmate_transferToOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
@@ -1222,6 +1318,38 @@ contract ERC721_A_safeMint_Test is DSTest {
 
     function test_safeMint_100() public {
         sut.safeMint(address(0xAAAA), 100);
+    }
+}
+
+// burn
+contract ERC721_A_burn_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_A internal sut;
+
+    function setUp() public {
+        sut = new ERC721_A();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_burn_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(1);
+    }
+
+    function test_burn_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(10);
+    }
+
+    function test_burn_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(50);
+    }
+
+    function test_burn_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(100);
     }
 }
 
@@ -1599,6 +1727,38 @@ contract ERC721_B_safeMint_Test is DSTest {
     }
 }
 
+// burn
+contract ERC721_B_burn_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_B internal sut;
+
+    function setUp() public {
+        sut = new ERC721_B();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_burn_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(1);
+    }
+
+    function test_burn_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(10);
+    }
+
+    function test_burn_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(50);
+    }
+
+    function test_burn_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(100);
+    }
+}
+
 // transfer toOwner
 contract ERC721_B_transferToOwner_Test is DSTest {
     Vm internal constant HEVM = Vm(HEVM_ADDRESS);
@@ -1970,6 +2130,38 @@ contract ERC721_K_safeMint_Test is DSTest {
 
     function test_safeMint_100() public {
         sut.safeMint(address(0xAAAA), 100);
+    }
+}
+
+// burn
+contract ERC721_K_burn_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_K internal sut;
+
+    function setUp() public {
+        sut = new ERC721_K();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_burn_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(1);
+    }
+
+    function test_burn_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(10);
+    }
+
+    function test_burn_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(50);
+    }
+
+    function test_burn_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(100);
     }
 }
 

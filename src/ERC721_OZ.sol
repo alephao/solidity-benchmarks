@@ -37,4 +37,8 @@ contract ERC721_OZ is ERC721 {
             }
         }
     }
+    
+    function burn(uint256 tokenId) external {
+        _burn(tokenId);
+    }
 }

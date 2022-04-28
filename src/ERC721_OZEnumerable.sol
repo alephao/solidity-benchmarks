@@ -38,4 +38,8 @@ contract ERC721_OZEnumerable is ERC721Enumerable {
             }
         }
     }
+    
+    function burn(uint256 tokenId) external {
+        _burn(tokenId);
+    }
 }
