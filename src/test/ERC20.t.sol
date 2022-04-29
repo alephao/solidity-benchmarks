@@ -4,6 +4,7 @@ pragma solidity >=0.8.4;
 import {DSTest} from "@ds-test/test.sol";
 import {Vm} from "@forge-std/Vm.sol";
 import {ERC20_OZ} from "$/ERC20_OZ.sol";
+import {ERC20_OZPermit} from "$/ERC20_OZPermit.sol";
 import {ERC20_Solmate} from "$/ERC20_Solmate.sol";
 import {ERC20_Maple} from "$/ERC20_Maple.sol";
 
@@ -145,6 +146,154 @@ contract ERC20_OZ_allowance_Test is DSTest {
 
     function setUp() public {
         sut = new ERC20_OZ();
+        sut.mint(address(0xAAAA), 1000 ether);
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xBBBB), 1000 ether);
+    }
+
+    function test_allowance() public view {
+        sut.allowance(address(0xAAAA), address(0xBBBB));
+    }
+}
+
+// deploy
+contract ERC20_OZPermit_deploy_Test is DSTest {
+    function test_deploy() public {
+        ERC20_OZPermit sut = new ERC20_OZPermit();
+    }
+}
+
+// transferToNonOwner
+contract ERC20_OZPermit_transferToNonOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC20_OZPermit internal sut;
+
+    function setUp() public {
+        sut = new ERC20_OZPermit();
+        sut.mint(address(0xAAAA), 1000 ether);
+    }
+
+    function test_transferToNonOwner() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transfer(address(0xBBBB), 500 ether);
+    }
+}
+
+// transferToOwner
+contract ERC20_OZPermit_transferToOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC20_OZPermit internal sut;
+
+    function setUp() public {
+        sut = new ERC20_OZPermit();
+        sut.mint(address(0xAAAA), 1000 ether);
+        sut.mint(address(0xBBBB), 1000 ether);
+    }
+
+    function test_transferToOwner() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transfer(address(0xBBBB), 500 ether);
+    }
+}
+
+// transferFromToNonOwner
+contract ERC20_OZPermit_transferFromToNonOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC20_OZPermit internal sut;
+
+    function setUp() public {
+        sut = new ERC20_OZPermit();
+        sut.mint(address(0xAAAA), 1000 ether);
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xBBBB), 1000 ether);
+    }
+
+    function test_transferFromToNonOwner() public {
+        HEVM.prank(address(0xBBBB));
+        sut.transferFrom(address(0xAAAA), address(0xCCCC), 500 ether);
+    }
+}
+
+// transferFromToOwner
+contract ERC20_OZPermit_transferFromToOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC20_OZPermit internal sut;
+
+    function setUp() public {
+        sut = new ERC20_OZPermit();
+        sut.mint(address(0xAAAA), 1000 ether);
+        sut.mint(address(0xCCCC), 1000 ether);
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xBBBB), 1000 ether);
+    }
+
+    function test_transferFromToOwner() public {
+        HEVM.prank(address(0xBBBB));
+        sut.transferFrom(address(0xAAAA), address(0xCCCC), 500 ether);
+    }
+}
+
+// approve
+contract ERC20_OZPermit_approve_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC20_OZPermit internal sut;
+
+    function setUp() public {
+        sut = new ERC20_OZPermit();
+        sut.mint(address(0xAAAA), 1000 ether);
+    }
+
+    function test_approve() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xBBBB), 1000 ether);
+    }
+}
+
+// totalSupply
+contract ERC20_OZPermit_totalSupply_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC20_OZPermit internal sut;
+
+    function setUp() public {
+        sut = new ERC20_OZPermit();
+        sut.mint(address(0xAAAA), 1000 ether);
+    }
+
+    function test_totalSupply() public view {
+        sut.totalSupply();
+    }
+}
+
+// balanceOf
+contract ERC20_OZPermit_balanceOf_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC20_OZPermit internal sut;
+
+    function setUp() public {
+        sut = new ERC20_OZPermit();
+        sut.mint(address(0xAAAA), 1000 ether);
+    }
+
+    function test_balanceOf() public view {
+        sut.balanceOf(address(0xAAAA));
+    }
+}
+
+// allowance
+contract ERC20_OZPermit_allowance_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC20_OZPermit internal sut;
+
+    function setUp() public {
+        sut = new ERC20_OZPermit();
         sut.mint(address(0xAAAA), 1000 ether);
         HEVM.prank(address(0xAAAA));
         sut.approve(address(0xBBBB), 1000 ether);
