@@ -4,6 +4,7 @@ Benchmarks for implementations of the ERC20 standard.
 
 - [Open Zeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts)
 - [Solmate](https://github.com/rari-capital/solmate)
+- [Maple](https://github.com/maple-labs/erc20) * using [this fork](http://github.com/alephao/erc20) instead of the original codebase until [this PR](https://github.com/maple-labs/erc20/pull/42) is merged
 
 ## Methods TODO
 
@@ -22,6 +23,7 @@ How much gas to deploy the contract as is?
 <!-- Start deploy Table -->
 |Implementation|  --  |
 |--------------|------|
+|     Maple    |672309|
 | Open Zeppelin|568857|
 |    Solmate   |656844|
 <!-- End deploy Table -->
@@ -37,6 +39,7 @@ How much gas to transfer tokens?
 <!-- Start transferToOwner Table -->
 |Implementation|  -- |
 |--------------|-----|
+|     Maple    |20657|
 | Open Zeppelin|20917|
 |    Solmate   |20590|
 <!-- End transferToOwner Table -->
@@ -46,6 +49,7 @@ How much gas to transfer tokens?
 <!-- Start transferToNonOwner Table -->
 |Implementation|  -- |
 |--------------|-----|
+|     Maple    |37735|
 | Open Zeppelin|37995|
 |    Solmate   |37668|
 <!-- End transferToNonOwner Table -->
@@ -59,6 +63,7 @@ How much gas to transfer tokens?
 <!-- Start transferFromToOwner Table -->
 |Implementation|  -- |
 |--------------|-----|
+|     Maple    |28136|
 | Open Zeppelin|28413|
 |    Solmate   |26167|
 <!-- End transferFromToOwner Table -->
@@ -68,6 +73,7 @@ How much gas to transfer tokens?
 <!-- Start transferFromToNonOwner Table -->
 |Implementation|  -- |
 |--------------|-----|
+|     Maple    |45258|
 | Open Zeppelin|45535|
 |    Solmate   |43289|
 <!-- End transferFromToNonOwner Table -->
@@ -79,6 +85,7 @@ How much gas to approve an address to spend some amount of tokens?
 <!-- Start approve Table -->
 |Implementation|  -- |
 |--------------|-----|
+|     Maple    |32598|
 | Open Zeppelin|32649|
 |    Solmate   |32547|
 <!-- End approve Table -->
@@ -92,6 +99,7 @@ How much gas to check the total supply of tokens?
 <!-- Start totalSupply Table -->
 |Implementation| -- |
 |--------------|----|
+|     Maple    |7579|
 | Open Zeppelin|7542|
 |    Solmate   |7556|
 <!-- End totalSupply Table -->
@@ -103,6 +111,7 @@ How much gas to check the balance of a wallet?
 <!-- Start balanceOf Table -->
 |Implementation| -- |
 |--------------|----|
+|     Maple    |7692|
 | Open Zeppelin|7690|
 |    Solmate   |7692|
 <!-- End balanceOf Table -->
@@ -114,6 +123,7 @@ How much gas to check gow much a wallet can spend on behalf of another wallet?
 <!-- Start allowance Table -->
 |Implementation| -- |
 |--------------|----|
+|     Maple    |7927|
 | Open Zeppelin|7994|
 |    Solmate   |7927|
 <!-- End allowance Table -->

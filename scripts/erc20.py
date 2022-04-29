@@ -4,6 +4,7 @@ import common
 variations = {
     "OZ": "Open Zeppelin",
     "Solmate": "Solmate",
+    "Maple": "Maple",
 }
 
 # Methods to format .gas-snapshot line to an object with relevant info
