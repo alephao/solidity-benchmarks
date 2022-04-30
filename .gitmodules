@@ -19,3 +19,6 @@
 [submodule "lib/ERC721K"]
 	path = lib/ERC721K
 	url = https://github.com/kadenzipfel/ERC721K
+[submodule "lib/maple-erc20"]
+	path = lib/maple-erc20
+	url = https://github.com/alephao/erc20.git
