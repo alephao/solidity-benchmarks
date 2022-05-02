@@ -2,10 +2,12 @@
 
 Benchmarks for implementations of the ERC20 standard.
 
+Note: When comparing, keep in mind that Solmate and Maple implements ERC-2612 permit so it's more fairt to compare them against Open Zeppelin Permit and not the raw Open Zeppelin implementation.
+
 - [Open Zeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts)
 - [Open Zeppelin Permit](https://github.com/OpenZeppelin/openzeppelin-contracts)
 - [Solmate](https://github.com/rari-capital/solmate)
-- [Maple](https://github.com/maple-labs/erc20) * using [this fork](http://github.com/alephao/erc20) instead of the original codebase until [this PR](https://github.com/maple-labs/erc20/pull/42) is merged
+- [Maple](https://github.com/maple-labs/erc20)
 
 ## Methods TODO
 
