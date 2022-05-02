@@ -13,6 +13,10 @@ contract ERC721_A is ERC721A {
     function safeMint(address to, uint256 amount) external payable {
         _safeMint(to, amount);
     }
+    
+    function burn(uint256 tokenId) external {
+        _burn(tokenId, false);
+    }
 
     function _startTokenId() internal pure override returns (uint256) {
         return 1;

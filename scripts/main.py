@@ -53,6 +53,7 @@ def update_erc721_readme(contracts):
     readme = erc721_subreadme(contracts, readme, "deploy")
     readme = erc721_subreadme(contracts, readme, "mint")
     readme = erc721_subreadme(contracts, readme, "safeMint")
+    readme = erc721_subreadme(contracts, readme, "burn")
     readme = erc721_subreadme(contracts, readme, "transferToOwner")
     readme = erc721_subreadme(contracts, readme, "transferToNonOwner")
     readme = erc721_subreadme(contracts, readme, "safeTransferToOwner")

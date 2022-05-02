@@ -14,6 +14,10 @@ contract ERC721_K is ERC721K {
         _safeMint(to, amount);
     }
 
+    function burn(uint256 tokenId) external {
+        _burn(tokenId, false);
+    }
+    
     function tokenURI(uint256)
         public
         pure

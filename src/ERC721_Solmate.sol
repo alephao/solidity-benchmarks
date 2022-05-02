@@ -38,6 +38,10 @@ contract ERC721_Solmate is ERC721 {
         }
     }
 
+    function burn(uint256 tokenId) external {
+        _burn(tokenId);
+    }
+    
     function tokenURI(uint256 id) public view override returns (string memory) {
         return "";
     }

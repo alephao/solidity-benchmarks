@@ -14,6 +14,8 @@ contract ERC721_B is ERC721B {
         _safeMint(to, amount);
     }
 
+    function burn(uint256 tokenId) external {}
+
     function tokenURI(uint256 id) public pure override returns (string memory) {
         return "";
     }

@@ -13,6 +13,9 @@ contracts:
       # Approve
       # - same logic as Transfer, but for approval, the numbers below are token ids
       approve: [1, 10, 50, 100]
+      # Burn
+      # - same logic as Transfer, but for burn, the numbers below are token ids
+      burn: [1, 10, 50, 100]
 
       # Mint
       # - The numbers below are the amount to mint. Each number in the array will
