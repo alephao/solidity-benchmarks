@@ -4,9 +4,11 @@ Benchmarks for popular implementations of contract standards.
 
 > ⚠️ The gas usage shown in the benchmarks doesn't take into account the 21k gas added to every ethereum transaction
 
-- [ERC20](ERC20.md)
-- [ERC721](ERC721.md)
-- [ERC1155 (wip)](ERC1155.md)
+- [ERC20 0.8.10](benchmarks/0.8.10/ERC20.md)
+- [ERC721 0.8.10](benchmarks/0.8.10/ERC721.md)
+- [ERC1155 0.8.10 (wip)](benchmarks/0.8.10/ERC1155.md)
+
+You can see benchmarks for different compiler versions on [`benchmarks/`](benchmarks)
 
 ## Method used
 
@@ -58,3 +60,29 @@ make readme
 ```
 
 6. Add the contract to the list at the top of the `<Contract Type>.md`. (If you added a new ERC721, update the list on top of [`ERC721.md`](ERC721.md))
+
+### Quick links
+
+**Benchmarks using solidity 0.8.10**
+
+* [ERC20](benchmarks/0.8.10/ERC20.md)
+* [ERC721](benchmarks/0.8.10/ERC721.md)
+* [ERC1155](benchmarks/0.8.10/ERC1155.md)
+
+**Benchmarks using solidity 0.8.11**
+
+* [ERC20](benchmarks/0.8.11/ERC20.md)
+* [ERC721](benchmarks/0.8.11/ERC721.md)
+* [ERC1155](benchmarks/0.8.11/ERC1155.md)
+
+**Benchmarks using solidity 0.8.12**
+
+* [ERC20](benchmarks/0.8.12/ERC20.md)
+* [ERC721](benchmarks/0.8.12/ERC721.md)
+* [ERC1155](benchmarks/0.8.12/ERC1155.md)
+
+**Benchmarks using solidity 0.8.13**
+
+* [ERC20](benchmarks/0.8.13/ERC20.md)
+* [ERC721](benchmarks/0.8.13/ERC721.md)
+* [ERC1155](benchmarks/0.8.13/ERC1155.md)

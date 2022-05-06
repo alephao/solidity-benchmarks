@@ -22,8 +22,8 @@ def erc20_subreadme(contracts, readme, method):
         contracts["ERC20"][method]))
 
 
-def update_erc20_readme(contracts):
-    f = open("ERC20.md", "r+")
+def update_erc20_readme(contracts, file):
+    f = open(file, "r+")
     readme = f.read()
     f.seek(0)
     readme = erc20_subreadme(contracts, readme, "deploy")
@@ -46,8 +46,8 @@ def erc721_subreadme(contracts, readme, method):
         contracts["ERC721"][method]))
 
 
-def update_erc721_readme(contracts):
-    f = open("ERC721.md", "r+")
+def update_erc721_readme(contracts, file):
+    f = open(file, "r+")
     readme = f.read()
     f.seek(0)
     readme = erc721_subreadme(contracts, readme, "deploy")
@@ -75,8 +75,8 @@ def erc1155_subreadme(contracts, readme, method):
         contracts["ERC1155"][method]))
 
 
-def update_erc1155_readme(contracts):
-    f = open("ERC1155.md", "r+")
+def update_erc1155_readme(contracts, file):
+    f = open(file, "r+")
     readme = f.read()
     f.seek(0)
     readme = erc1155_subreadme(contracts, readme, "deploy")
@@ -88,15 +88,28 @@ def update_erc1155_readme(contracts):
     f.truncate()
 
 
-def main():
-    snapshot = open(".gas-snapshot", "r")
+def update_readmes(version):
+    snapshot_file = "{}.gas-snapshot".format(version.replace(".", "-"))
+    snapshot = open(snapshot_file, "r")
     lines = snapshot.readlines()
 
     contracts = group_by_contract(lines)
 
-    update_erc20_readme(contracts)
-    update_erc721_readme(contracts)
-    update_erc1155_readme(contracts)
+    base_write_path = "benchmarks/{}".format(version)
+    update_erc20_readme(contracts, "{}/ERC20.md".format(base_write_path))
+    update_erc721_readme(contracts, "{}/ERC721.md".format(base_write_path))
+    update_erc1155_readme(contracts, "{}/ERC1155.md".format(base_write_path))    
+
+def main():
+    versions = [
+        "0.8.10",
+        "0.8.11",
+        "0.8.12",
+        "0.8.13",
+    ]
+    
+    for version in versions:
+        update_readmes(version)
 
 
 main()
