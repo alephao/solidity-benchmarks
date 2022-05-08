@@ -63,26 +63,23 @@ make readme
 
 ### Quick links
 
-**Benchmarks using solidity 0.8.10**
+**ERC20**
 
-* [ERC20](benchmarks/0.8.10/ERC20.md)
-* [ERC721](benchmarks/0.8.10/ERC721.md)
-* [ERC1155](benchmarks/0.8.10/ERC1155.md)
+* [0.8.10](benchmarks/0.8.10/ERC20.md) 
+* [0.8.11](benchmarks/0.8.11/ERC20.md)
+* [0.8.12](benchmarks/0.8.12/ERC20.md)
+* [0.8.13](benchmarks/0.8.13/ERC20.md)
 
-**Benchmarks using solidity 0.8.11**
+**ERC721**
 
-* [ERC20](benchmarks/0.8.11/ERC20.md)
-* [ERC721](benchmarks/0.8.11/ERC721.md)
-* [ERC1155](benchmarks/0.8.11/ERC1155.md)
+* [0.8.10](benchmarks/0.8.10/ERC721.md) 
+* [0.8.11](benchmarks/0.8.11/ERC721.md)
+* [0.8.12](benchmarks/0.8.12/ERC721.md)
+* [0.8.13](benchmarks/0.8.13/ERC721.md)
 
-**Benchmarks using solidity 0.8.12**
+**ERC1155**
 
-* [ERC20](benchmarks/0.8.12/ERC20.md)
-* [ERC721](benchmarks/0.8.12/ERC721.md)
-* [ERC1155](benchmarks/0.8.12/ERC1155.md)
-
-**Benchmarks using solidity 0.8.13**
-
-* [ERC20](benchmarks/0.8.13/ERC20.md)
-* [ERC721](benchmarks/0.8.13/ERC721.md)
-* [ERC1155](benchmarks/0.8.13/ERC1155.md)
+* [0.8.10](benchmarks/0.8.10/ERC1155.md) 
+* [0.8.11](benchmarks/0.8.11/ERC1155.md)
+* [0.8.12](benchmarks/0.8.12/ERC1155.md)
+* [0.8.13](benchmarks/0.8.13/ERC1155.md)
