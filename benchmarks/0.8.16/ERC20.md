@@ -27,8 +27,8 @@ How much gas to deploy the contract as is?
 |       Implementation       |  --  |
 |----------------------------|------|
 |            Maple           |669717|
-|Open Zeppelin Permit (draft)|922885|
-|        Open Zeppelin       |566672|
+|Open Zeppelin Permit (draft)|878192|
+|        Open Zeppelin       |551833|
 |           Solmate          |654281|
 <!-- End deploy Table -->
 
@@ -44,8 +44,8 @@ How much gas to transfer tokens?
 |       Implementation       |  -- |
 |----------------------------|-----|
 |            Maple           |20666|
-|Open Zeppelin Permit (draft)|20882|
-|        Open Zeppelin       |20926|
+|Open Zeppelin Permit (draft)|20741|
+|        Open Zeppelin       |20785|
 |           Solmate          |20599|
 <!-- End transferToOwner Table -->
 
@@ -55,8 +55,8 @@ How much gas to transfer tokens?
 |       Implementation       |  -- |
 |----------------------------|-----|
 |            Maple           |37744|
-|Open Zeppelin Permit (draft)|37960|
-|        Open Zeppelin       |38004|
+|Open Zeppelin Permit (draft)|37819|
+|        Open Zeppelin       |37863|
 |           Solmate          |37677|
 <!-- End transferToNonOwner Table -->
 
@@ -70,8 +70,8 @@ How much gas to transfer tokens?
 |       Implementation       |  -- |
 |----------------------------|-----|
 |            Maple           |28152|
-|Open Zeppelin Permit (draft)|28374|
-|        Open Zeppelin       |28418|
+|Open Zeppelin Permit (draft)|28233|
+|        Open Zeppelin       |28277|
 |           Solmate          |26183|
 <!-- End transferFromToOwner Table -->
 
@@ -81,8 +81,8 @@ How much gas to transfer tokens?
 |       Implementation       |  -- |
 |----------------------------|-----|
 |            Maple           |45274|
-|Open Zeppelin Permit (draft)|45496|
-|        Open Zeppelin       |45540|
+|Open Zeppelin Permit (draft)|45355|
+|        Open Zeppelin       |45399|
 |           Solmate          |43305|
 <!-- End transferFromToNonOwner Table -->
 
