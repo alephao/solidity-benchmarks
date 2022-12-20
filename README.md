@@ -4,9 +4,9 @@ Benchmarks for popular implementations of contract standards.
 
 > ⚠️ The gas usage shown in the benchmarks doesn't take into account the 21k gas added to every ethereum transaction
 
-- [ERC20 0.8.10](benchmarks/0.8.10/ERC20.md)
-- [ERC721 0.8.10](benchmarks/0.8.10/ERC721.md)
-- [ERC1155 0.8.10 (wip)](benchmarks/0.8.10/ERC1155.md)
+- [ERC20 0.8.17](benchmarks/0.8.17/ERC20.md)
+- [ERC721 0.8.17](benchmarks/0.8.17/ERC721.md)
+- [ERC1155 0.8.17](benchmarks/0.8.17/ERC1155.md)
 
 You can see benchmarks for different compiler versions on [`benchmarks/`](benchmarks)
 
@@ -71,6 +71,10 @@ make readme
 * [0.8.11](benchmarks/0.8.11/ERC20.md)
 * [0.8.12](benchmarks/0.8.12/ERC20.md)
 * [0.8.13](benchmarks/0.8.13/ERC20.md)
+* [0.8.14](benchmarks/0.8.14/ERC20.md)
+* [0.8.15](benchmarks/0.8.15/ERC20.md)
+* [0.8.16](benchmarks/0.8.16/ERC20.md)
+* [0.8.17](benchmarks/0.8.17/ERC20.md)
 
 **ERC721**
 
@@ -78,6 +82,10 @@ make readme
 * [0.8.11](benchmarks/0.8.11/ERC721.md)
 * [0.8.12](benchmarks/0.8.12/ERC721.md)
 * [0.8.13](benchmarks/0.8.13/ERC721.md)
+* [0.8.14](benchmarks/0.8.14/ERC721.md)
+* [0.8.15](benchmarks/0.8.15/ERC721.md)
+* [0.8.16](benchmarks/0.8.16/ERC721.md)
+* [0.8.17](benchmarks/0.8.17/ERC721.md)
 
 **ERC1155**
 
@@ -85,3 +93,7 @@ make readme
 * [0.8.11](benchmarks/0.8.11/ERC1155.md)
 * [0.8.12](benchmarks/0.8.12/ERC1155.md)
 * [0.8.13](benchmarks/0.8.13/ERC1155.md)
+* [0.8.14](benchmarks/0.8.14/ERC1155.md)
+* [0.8.15](benchmarks/0.8.15/ERC1155.md)
+* [0.8.16](benchmarks/0.8.16/ERC1155.md)
+* [0.8.17](benchmarks/0.8.17/ERC1155.md)
