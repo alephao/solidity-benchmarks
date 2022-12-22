@@ -2,7 +2,7 @@ import re
 import common
 
 variations = {
-    "OZ": "Open Zeppelin",
+    "OZ": "OpenZeppelin",
     "Solmate": "Solmate",
 }
 

@@ -43,8 +43,8 @@ If you want to add another implementation, please open an issue with a link to t
 
 ```python
 variations = {
-    "OZ": "Open Zeppelin",
-    "OZEnumerable": "Open Zeppelin Enumerable",
+    "OZ": "OpenZeppelin",
+    "OZEnumerable": "OpenZeppelin Enumerable",
     "Solmate": "Solmate",
     "A": "ERC721A",
     "B": "ERC721B",
