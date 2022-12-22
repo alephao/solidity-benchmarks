@@ -2,12 +2,13 @@ contracts:
   erc20:
     variations: [OZ, OZPermit, Solmate, Maple]
   erc721:
-    variations: [OZ, OZEnumerable, Solmate, A, B, K]
+    variations: [OZ, OZEnumerable, OZConsecutive, Solmate, A, B, K]
+    ERC2309Variations: [OZConsecutive, A]
     methods:
       # Transfer
       # - For transfer tests, there is one account with tokens from 1 to 100.
-      # - The numbers below is which token ID to transfer. Each number in the 
-      #   array will generate a test transfering the specific token Id. This only 
+      # - The numbers below is which token ID to transfer. Each number in the
+      #   array will generate a test transfering the specific token Id. This only
       #   affects a few implementations like ERC721A.
       transfer: [1, 10, 50, 100]
       # Approve
@@ -19,9 +20,13 @@ contracts:
 
       # Mint
       # - The numbers below are the amount to mint. Each number in the array will
-      #   generate a test mining the number.
+      #   generate a test minting the number.
       mint: [1, 2, 3, 4, 5, 10, 50, 100]
+
+      # ERC2309Mint
+      # - The numbers below are the amount to mint using ERC2309 during constructor.
+      # - Only apply to ERC2309Variations
+      # - Same logic as Mint for each amount.
+      ERC2309Mint: [5, 10, 50, 100, 200, 300]
   erc1155:
     variations: [OZ, Solmate]
-
-

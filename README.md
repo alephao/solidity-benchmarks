@@ -40,11 +40,13 @@ If you want to add another implementation, please open an issue with a link to t
 2. Implement the common interface that is in other files of the same contract type (for ERC721 for example, it's `mint` and `safeMint` functions)
 3. Add an entry to the `contracts.<contract type>.variations` property on [test-cases.yml](test-cases.yml), following the examples there.
 4. Add an entry to [scripts/<contract type>.py](scripts)'s `variants` var following the examples there. It should map the variant name you used in the contract like `ERC721_<Variant>` to the name you want to appear on the table. E.g.:
+5. In case you added an ERC721 that's also ERC2309 compliant, add a another contract in the same file following the convention `<Contract Type>_<Variation>_ERC2309`, and add an entry to the `contracts.ERC721.ERC2309Variations` in the [test-cases.yml](test-cases.yml)
 
 ```python
 variations = {
     "OZ": "OpenZeppelin",
     "OZEnumerable": "OpenZeppelin Enumerable",
+    "OZConsecutive": "OpenZeppelin Consecutive",
     "Solmate": "Solmate",
     "A": "ERC721A",
     "B": "ERC721B",

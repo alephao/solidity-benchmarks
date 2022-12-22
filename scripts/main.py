@@ -51,6 +51,7 @@ def update_erc721_readme(contracts, file):
     readme = f.read()
     f.seek(0)
     readme = erc721_subreadme(contracts, readme, "deploy")
+    readme = erc721_subreadme(contracts, readme, "deployERC2309")
     readme = erc721_subreadme(contracts, readme, "mint")
     readme = erc721_subreadme(contracts, readme, "safeMint")
     readme = erc721_subreadme(contracts, readme, "burn")
