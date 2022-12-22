@@ -12,7 +12,7 @@
 	url = https://github.com/chiru-labs/ERC721A
 [submodule "lib/solmate"]
 	path = lib/solmate
-	url = https://github.com/rari-capital/solmate
+	url = https://github.com/transmissions11/solmate
 [submodule "lib/ERC721B"]
 	path = lib/ERC721B
 	url = https://github.com/beskay/ERC721B

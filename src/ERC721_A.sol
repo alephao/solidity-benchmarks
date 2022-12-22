@@ -7,7 +7,7 @@ contract ERC721_A is ERC721A {
     constructor() ERC721A("Name", "Sy") {}
 
     function mint(address to, uint256 amount) external payable {
-        _mint(to, amount, "", false);
+        _mint(to, amount);
     }
 
     function safeMint(address to, uint256 amount) external payable {
