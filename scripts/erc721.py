@@ -2,8 +2,8 @@ import re
 import common
 
 variations = {
-    "OZ": "Open Zeppelin",
-    "OZEnumerable": "Open Zeppelin Enumerable",
+    "OZ": "OpenZeppelin",
+    "OZEnumerable": "OpenZeppelin Enumerable",
     "Solmate": "Solmate",
     "A": "ERC721A",
     "B": "ERC721B",
