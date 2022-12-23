@@ -4,6 +4,7 @@ import common
 variations = {
     "OZ": "OpenZeppelin",
     "OZEnumerable": "OpenZeppelin Enumerable",
+    "OZConsecutive": "OpenZeppelin Consecutive",
     "Solmate": "Solmate",
     "A": "ERC721A",
     "B": "ERC721B",
@@ -12,13 +13,22 @@ variations = {
 
 # Methods to format .gas-snapshot line to an object with relevant info
 
-deploy_regex = re.compile("deploy.+gas:\s(\d+)")
+deploy_regex = re.compile("deploy\(.+gas:\s(\d+)")
 
 
 def deploy(line):
     match = re.search(deploy_regex, line)
     return {
         "gas": match.group(1)
+    }
+
+deployERC2309_regex = re.compile("deployERC2309_(\d+)\(.+gas:\s(\d+)")
+
+def deployERC2309(line):
+    match = re.search(deployERC2309_regex, line)
+    return {
+        "key": match.group(1),
+        "gas": match.group(2)
     }
 
 
@@ -185,6 +195,7 @@ def group(lines):
         return common.rows_for_method(methods, variations, method_name, method_fn)
 
     methods["deploy"] = rows_for_method("deploy", deploy)
+    methods["deployERC2309"] = rows_for_method("deployERC2309", deployERC2309)
     methods["mint"] = rows_for_method("mint", mint)
     methods["safeMint"] = rows_for_method("safeMint", safeMint)
     methods["burn"] = rows_for_method("burn", burn)

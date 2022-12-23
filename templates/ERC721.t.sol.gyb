@@ -10,7 +10,7 @@ pragma solidity >=0.8.4;
 import {DSTest} from "@ds-test/test.sol";
 import {Vm} from "@forge-std/Vm.sol";
 % for variation in contracts["erc721"]["variations"]:
-import {ERC721_${variation}} from "$/ERC721_${variation}.sol";
+import {ERC721_${variation}${",ERC721_{}_ERC2309".format(variation) if variation in contracts["erc721"]["ERC2309Variations"] else ""}} from "$/ERC721_${variation}.sol";
 % end
 % for variation in contracts["erc721"]["variations"]:
 
@@ -20,6 +20,18 @@ contract ERC721_${variation}_deploy_Test is DSTest {
         ERC721_${variation} sut = new ERC721_${variation}();
     }
 }
+% if variation in contracts["erc721"]["ERC2309Variations"]:
+
+// deployERC2309
+contract ERC721_${variation}_deployERC2309_Test is DSTest {
+    % for mintAmount in contracts["erc721"]["methods"]["ERC2309Mint"]:
+
+    function test_deployERC2309_${mintAmount}() public {
+        ERC721_${variation}_ERC2309 sut = new ERC721_${variation}_ERC2309(${mintAmount});
+    }
+    % end
+}
+% end
 
 // mint
 contract ERC721_${variation}_mint_Test is DSTest {
