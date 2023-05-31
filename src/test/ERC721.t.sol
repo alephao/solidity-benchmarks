@@ -6,6 +6,7 @@ import {Vm} from "@forge-std/Vm.sol";
 import {ERC721_OZ} from "$/ERC721_OZ.sol";
 import {ERC721_OZEnumerable} from "$/ERC721_OZEnumerable.sol";
 import {ERC721_OZConsecutive,ERC721_OZConsecutive_ERC2309} from "$/ERC721_OZConsecutive.sol";
+import {ERC721_Solady} from "$/ERC721_Solady.sol";
 import {ERC721_Solmate} from "$/ERC721_Solmate.sol";
 import {ERC721_A,ERC721_A_ERC2309} from "$/ERC721_A.sol";
 import {ERC721_B} from "$/ERC721_B.sol";
@@ -1249,6 +1250,412 @@ contract ERC721_OZConsecutive_isApprovedForAll_Test is DSTest {
 
     function setUp() public {
         sut = new ERC721_OZConsecutive();
+        sut.mint(address(0xAAAA), 10);
+    }
+
+    function test_isApprovedForAll() view public {
+        sut.isApprovedForAll(address(0xAAAA), address(0xBBBB));
+    }
+}
+
+// deploy
+contract ERC721_Solady_deploy_Test is DSTest {
+    function test_deploy() public {
+        ERC721_Solady sut = new ERC721_Solady();
+    }
+}
+
+// mint
+contract ERC721_Solady_mint_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_Solady internal sut;
+
+    function setUp() public {
+        sut = new ERC721_Solady();
+    }
+
+    function test_mint_1() public {
+        sut.mint(address(0xAAAA), 1);
+    }
+
+    function test_mint_2() public {
+        sut.mint(address(0xAAAA), 2);
+    }
+
+    function test_mint_3() public {
+        sut.mint(address(0xAAAA), 3);
+    }
+
+    function test_mint_4() public {
+        sut.mint(address(0xAAAA), 4);
+    }
+
+    function test_mint_5() public {
+        sut.mint(address(0xAAAA), 5);
+    }
+
+    function test_mint_10() public {
+        sut.mint(address(0xAAAA), 10);
+    }
+
+    function test_mint_50() public {
+        sut.mint(address(0xAAAA), 50);
+    }
+
+    function test_mint_100() public {
+        sut.mint(address(0xAAAA), 100);
+    }
+}
+
+// safeMint
+contract ERC721_Solady_safeMint_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_Solady internal sut;
+
+    function setUp() public {
+        sut = new ERC721_Solady();
+    }
+
+    function test_safeMint_1() public {
+        sut.safeMint(address(0xAAAA), 1);
+    }
+
+    function test_safeMint_2() public {
+        sut.safeMint(address(0xAAAA), 2);
+    }
+
+    function test_safeMint_3() public {
+        sut.safeMint(address(0xAAAA), 3);
+    }
+
+    function test_safeMint_4() public {
+        sut.safeMint(address(0xAAAA), 4);
+    }
+
+    function test_safeMint_5() public {
+        sut.safeMint(address(0xAAAA), 5);
+    }
+
+    function test_safeMint_10() public {
+        sut.safeMint(address(0xAAAA), 10);
+    }
+
+    function test_safeMint_50() public {
+        sut.safeMint(address(0xAAAA), 50);
+    }
+
+    function test_safeMint_100() public {
+        sut.safeMint(address(0xAAAA), 100);
+    }
+}
+
+// burn
+contract ERC721_Solady_burn_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_Solady internal sut;
+
+    function setUp() public {
+        sut = new ERC721_Solady();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_burn_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(1);
+    }
+
+    function test_burn_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(10);
+    }
+
+    function test_burn_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(50);
+    }
+
+    function test_burn_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.burn(100);
+    }
+}
+
+// transfer toOwner
+contract ERC721_Solady_transferToOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_Solady internal sut;
+
+    function setUp() public {
+        sut = new ERC721_Solady();
+        sut.mint(address(0xAAAA), 101);
+        sut.mint(address(0xBBBB), 101);
+    }
+
+    function test_transferToOwner_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transferFrom(address(0xAAAA), address(0xBBBB), 1);
+    }
+
+    function test_transferToOwner_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transferFrom(address(0xAAAA), address(0xBBBB), 10);
+    }
+
+    function test_transferToOwner_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transferFrom(address(0xAAAA), address(0xBBBB), 50);
+    }
+
+    function test_transferToOwner_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transferFrom(address(0xAAAA), address(0xBBBB), 100);
+    }
+}
+
+// transfer toNonOwner
+contract ERC721_Solady_transferToNonOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_Solady internal sut;
+
+    function setUp() public {
+        sut = new ERC721_Solady();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_transferToNonOwner_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transferFrom(address(0xAAAA), address(0xCCCC), 1);
+    }
+
+    function test_transferToNonOwner_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transferFrom(address(0xAAAA), address(0xCCCC), 10);
+    }
+
+    function test_transferToNonOwner_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transferFrom(address(0xAAAA), address(0xCCCC), 50);
+    }
+
+    function test_transferToNonOwner_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.transferFrom(address(0xAAAA), address(0xCCCC), 100);
+    }
+}
+
+// safeTransfer toOwner
+contract ERC721_Solady_safeTransferToOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_Solady internal sut;
+
+    function setUp() public {
+        sut = new ERC721_Solady();
+        sut.mint(address(0xAAAA), 101);
+        sut.mint(address(0xBBBB), 101);
+    }
+
+    function test_safeTransferToOwner_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 1);
+    }
+
+    function test_safeTransferToOwner_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 10);
+    }
+
+    function test_safeTransferToOwner_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 50);
+    }
+
+    function test_safeTransferToOwner_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xBBBB), 100);
+    }
+}
+
+// safeTransfer toNonOwner
+contract ERC721_Solady_safeTransferToNonOwner_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_Solady internal sut;
+
+    function setUp() public {
+        sut = new ERC721_Solady();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_safeTransferToNonOwner_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 1);
+    }
+
+    function test_safeTransferToNonOwner_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 10);
+    }
+
+    function test_safeTransferToNonOwner_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 50);
+    }
+
+    function test_safeTransferToNonOwner_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.safeTransferFrom(address(0xAAAA), address(0xCCCC), 100);
+    }
+}
+
+// setApprovalForAll
+contract ERC721_Solady_setApprovalForAll_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_Solady internal sut;
+
+    function setUp() public {
+        sut = new ERC721_Solady();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_setApprovalForAll() public {
+        HEVM.prank(address(0xAAAA));
+        sut.setApprovalForAll(address(0xCCCC), true);
+    }
+}
+
+// approve
+contract ERC721_Solady_approve_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_Solady internal sut;
+
+    function setUp() public {
+        sut = new ERC721_Solady();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+
+    function test_approve_id1() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xCCCC), 1);
+    }
+
+    function test_approve_id10() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xCCCC), 10);
+    }
+
+    function test_approve_id50() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xCCCC), 50);
+    }
+
+    function test_approve_id100() public {
+        HEVM.prank(address(0xAAAA));
+        sut.approve(address(0xCCCC), 100);
+    }
+}
+
+// balanceOf
+contract ERC721_Solady_balanceOf_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_Solady internal sut;
+
+    function setUp() public {
+        sut = new ERC721_Solady();
+        sut.mint(address(0xAAAA), 1);
+        sut.mint(address(0xBBBB), 10);
+        sut.mint(address(0xCCCC), 50);
+        sut.mint(address(0xDDDD), 100);
+    }
+
+    function test_balanceOf_1() view public {
+        sut.balanceOf(address(0xAAAA));
+    }
+
+    function test_balanceOf_10() view public {
+        sut.balanceOf(address(0xBBBB));
+    }
+
+    function test_balanceOf_50() view public {
+        sut.balanceOf(address(0xCCCC));
+    }
+
+    function test_balanceOf_100() view public {
+        sut.balanceOf(address(0xDDDD));
+    }
+}
+
+contract ERC721_Solady_ownerOf_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_Solady internal sut;
+
+    function setUp() public {
+        sut = new ERC721_Solady();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_ownerOf_1() view public {
+        sut.ownerOf(1);
+    }
+
+    function test_ownerOf_10() view public {
+        sut.ownerOf(10);
+    }
+
+    function test_ownerOf_50() view public {
+        sut.ownerOf(50);
+    }
+
+    function test_ownerOf_100() view public {
+        sut.ownerOf(100);
+    }
+}
+
+contract ERC721_Solady_getApproved_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_Solady internal sut;
+
+    function setUp() public {
+        sut = new ERC721_Solady();
+        sut.mint(address(0xAAAA), 101);
+    }
+
+    function test_getApproved_1() view public {
+        sut.ownerOf(1);
+    }
+
+    function test_getApproved_10() view public {
+        sut.ownerOf(10);
+    }
+
+    function test_getApproved_50() view public {
+        sut.ownerOf(50);
+    }
+
+    function test_getApproved_100() view public {
+        sut.ownerOf(100);
+    }
+}
+
+// isApprovedForAll
+contract ERC721_Solady_isApprovedForAll_Test is DSTest {
+    Vm internal constant HEVM = Vm(HEVM_ADDRESS);
+
+    ERC721_Solady internal sut;
+
+    function setUp() public {
+        sut = new ERC721_Solady();
         sut.mint(address(0xAAAA), 10);
     }
 

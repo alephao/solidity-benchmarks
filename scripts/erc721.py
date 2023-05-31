@@ -5,6 +5,7 @@ variations = {
     "OZ": "OpenZeppelin",
     "OZEnumerable": "OpenZeppelin Enumerable",
     "OZConsecutive": "OpenZeppelin Consecutive",
+    "Solady": "Solady",
     "Solmate": "Solmate",
     "A": "ERC721A",
     "B": "ERC721B",
