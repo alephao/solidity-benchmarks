@@ -4,6 +4,7 @@
 @ERC721A/=lib/ERC721A/contracts/
 @ERC721B/=lib/ERC721B/contracts/
 @ERC721K/=lib/ERC721K/src/
+@solady/=lib/solady/src/
 @solmate/=lib/solmate/src/
 @maple-erc20/=lib/maple-erc20/contracts/
 $/=src/

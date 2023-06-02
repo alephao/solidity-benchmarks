@@ -22,3 +22,6 @@
 [submodule "lib/maple-erc20"]
 	path = lib/maple-erc20
 	url = https://github.com/maple-labs/erc20.git
+[submodule "lib/solady"]
+	path = lib/solady
+	url = https://github.com/Vectorized/solady

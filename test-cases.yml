@@ -2,7 +2,7 @@ contracts:
   erc20:
     variations: [OZ, OZPermit, Solmate, Maple]
   erc721:
-    variations: [OZ, OZEnumerable, OZConsecutive, Solmate, A, B, K]
+    variations: [OZ, OZEnumerable, OZConsecutive, Solady, Solmate, A, B, K]
     ERC2309Variations: [OZConsecutive, A]
     methods:
       # Transfer
