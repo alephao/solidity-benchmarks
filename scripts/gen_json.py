@@ -1,3 +1,6 @@
+# Pattern: <CONTRACT>_<VARIANT>_<method>_Test:test_<method>_<optionalConstraint>_<optionalData>() (gas: <gas>)
+# Example: ERC721_B_transfer_Test:test_transfer_toNonOwner_id50() (gas: 179836)
+
 import re
 import json
 

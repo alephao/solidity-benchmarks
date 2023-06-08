@@ -103,7 +103,6 @@ def update_readmes(version):
     update_erc721_readme(contracts, "{}/ERC721.md".format(base_write_path))
     update_erc1155_readme(contracts, "{}/ERC1155.md".format(base_write_path))
 
-
 def main():
     versions = [
         "0.8.10",
