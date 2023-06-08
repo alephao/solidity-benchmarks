@@ -16,10 +16,21 @@ def main():
         "0.8.11",
         "0.8.12",
         "0.8.13",
+        "0.8.13-via-ir",
         "0.8.14",
+        "0.8.14-via-ir",
         "0.8.15",
+        "0.8.15-via-ir",
         "0.8.16",
+        "0.8.16-via-ir",
         "0.8.17",
+        "0.8.17-via-ir",
+        "0.8.18",
+        "0.8.18-via-ir",
+        "0.8.19",
+        "0.8.19-via-ir",
+        "0.8.20",
+        "0.8.20-via-ir",
     ]
 
     for version in versions:
@@ -58,5 +69,6 @@ def main():
     json_dump = json.dumps(obj, indent=2)
     f = open("data.json", "w")
     f.write(json_dump)
+
 
 main()

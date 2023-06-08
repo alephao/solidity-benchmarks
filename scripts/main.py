@@ -99,7 +99,7 @@ def update_readmes(version):
     base_write_path = "benchmarks/{}".format(version)
     update_erc20_readme(contracts, "{}/ERC20.md".format(base_write_path))
     update_erc721_readme(contracts, "{}/ERC721.md".format(base_write_path))
-    update_erc1155_readme(contracts, "{}/ERC1155.md".format(base_write_path))    
+    update_erc1155_readme(contracts, "{}/ERC1155.md".format(base_write_path))
 
 def main():
     versions = [
@@ -107,12 +107,23 @@ def main():
         "0.8.11",
         "0.8.12",
         "0.8.13",
+        "0.8.13-via-ir",
         "0.8.14",
+        "0.8.14-via-ir",
         "0.8.15",
+        "0.8.15-via-ir",
         "0.8.16",
+        "0.8.16-via-ir",
         "0.8.17",
+        "0.8.17-via-ir",
+        "0.8.18",
+        "0.8.18-via-ir",
+        "0.8.19",
+        "0.8.19-via-ir",
+        "0.8.20",
+        "0.8.20-via-ir",
     ]
-    
+
     for version in versions:
         update_readmes(version)
 

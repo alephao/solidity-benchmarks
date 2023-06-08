@@ -4,9 +4,9 @@ Benchmarks for popular implementations of contract standards.
 
 > ⚠️ The gas usage shown in the benchmarks doesn't take into account the 21k gas added to every ethereum transaction
 
-- [ERC20 0.8.17](benchmarks/0.8.17/ERC20.md)
-- [ERC721 0.8.17](benchmarks/0.8.17/ERC721.md)
-- [ERC1155 0.8.17](benchmarks/0.8.17/ERC1155.md)
+- [ERC20 0.8.20](benchmarks/0.8.20/ERC20.md)
+- [ERC721 0.8.20](benchmarks/0.8.20/ERC721.md)
+- [ERC1155 0.8.20](benchmarks/0.8.20/ERC1155.md)
 
 You can see benchmarks for different compiler versions on [`benchmarks/`](benchmarks)
 
@@ -47,6 +47,7 @@ variations = {
     "OZ": "OpenZeppelin",
     "OZEnumerable": "OpenZeppelin Enumerable",
     "OZConsecutive": "OpenZeppelin Consecutive",
+    "Solady": "Solady",
     "Solmate": "Solmate",
     "A": "ERC721A",
     "B": "ERC721B",
@@ -63,6 +64,7 @@ make snapshot
 make readme
 ```
 
+
 6. Add the contract to the list at the top of the `<Contract Type>.md`. (If you added a new ERC721, update the list on top of [`ERC721.md`](ERC721.md))
 
 ### Quick links
@@ -72,30 +74,42 @@ make readme
 * [0.8.10](benchmarks/0.8.10/ERC20.md) 
 * [0.8.11](benchmarks/0.8.11/ERC20.md)
 * [0.8.12](benchmarks/0.8.12/ERC20.md)
-* [0.8.13](benchmarks/0.8.13/ERC20.md)
-* [0.8.14](benchmarks/0.8.14/ERC20.md)
-* [0.8.15](benchmarks/0.8.15/ERC20.md)
-* [0.8.16](benchmarks/0.8.16/ERC20.md)
-* [0.8.17](benchmarks/0.8.17/ERC20.md)
+* [0.8.13](benchmarks/0.8.13/ERC20.md) or with IR-based codegen [0.8.13](benchmarks/0.8.13-via-ir/ERC20.md)
+* [0.8.14](benchmarks/0.8.14/ERC20.md) or with IR-based codegen [0.8.14](benchmarks/0.8.14-via-ir/ERC20.md)
+* [0.8.15](benchmarks/0.8.15/ERC20.md) or with IR-based codegen [0.8.15](benchmarks/0.8.15-via-ir/ERC20.md)
+* [0.8.16](benchmarks/0.8.16/ERC20.md) or with IR-based codegen [0.8.16](benchmarks/0.8.16-via-ir/ERC20.md)
+* [0.8.17](benchmarks/0.8.17/ERC20.md) or with IR-based codegen [0.8.17](benchmarks/0.8.17-via-ir/ERC20.md)
+* [0.8.18](benchmarks/0.8.18/ERC20.md) or with IR-based codegen [0.8.18](benchmarks/0.8.18-via-ir/ERC20.md)
+* [0.8.19](benchmarks/0.8.19/ERC20.md) or with IR-based codegen [0.8.19](benchmarks/0.8.19-via-ir/ERC20.md)
+* [0.8.20](benchmarks/0.8.20/ERC20.md) or with IR-based codegen [0.8.20](benchmarks/0.8.20-via-ir/ERC20.md)
+
 
 **ERC721**
 
 * [0.8.10](benchmarks/0.8.10/ERC721.md) 
 * [0.8.11](benchmarks/0.8.11/ERC721.md)
 * [0.8.12](benchmarks/0.8.12/ERC721.md)
-* [0.8.13](benchmarks/0.8.13/ERC721.md)
-* [0.8.14](benchmarks/0.8.14/ERC721.md)
-* [0.8.15](benchmarks/0.8.15/ERC721.md)
-* [0.8.16](benchmarks/0.8.16/ERC721.md)
-* [0.8.17](benchmarks/0.8.17/ERC721.md)
+* [0.8.13](benchmarks/0.8.13/ERC721.md) or with IR-based codegen [0.8.13](benchmarks/0.8.13-via-ir/ERC721.md)
+* [0.8.14](benchmarks/0.8.14/ERC721.md) or with IR-based codegen [0.8.14](benchmarks/0.8.14-via-ir/ERC721.md)
+* [0.8.15](benchmarks/0.8.15/ERC721.md) or with IR-based codegen [0.8.15](benchmarks/0.8.15-via-ir/ERC721.md)
+* [0.8.16](benchmarks/0.8.16/ERC721.md) or with IR-based codegen [0.8.16](benchmarks/0.8.16-via-ir/ERC721.md)
+* [0.8.17](benchmarks/0.8.17/ERC721.md) or with IR-based codegen [0.8.17](benchmarks/0.8.17-via-ir/ERC721.md)
+* [0.8.18](benchmarks/0.8.18/ERC721.md) or with IR-based codegen [0.8.18](benchmarks/0.8.18-via-ir/ERC721.md)
+* [0.8.19](benchmarks/0.8.19/ERC721.md) or with IR-based codegen [0.8.19](benchmarks/0.8.19-via-ir/ERC721.md)
+* [0.8.20](benchmarks/0.8.20/ERC721.md) or with IR-based codegen [0.8.20](benchmarks/0.8.20-via-ir/ERC721.md)
+
 
 **ERC1155**
 
 * [0.8.10](benchmarks/0.8.10/ERC1155.md) 
 * [0.8.11](benchmarks/0.8.11/ERC1155.md)
 * [0.8.12](benchmarks/0.8.12/ERC1155.md)
-* [0.8.13](benchmarks/0.8.13/ERC1155.md)
-* [0.8.14](benchmarks/0.8.14/ERC1155.md)
-* [0.8.15](benchmarks/0.8.15/ERC1155.md)
-* [0.8.16](benchmarks/0.8.16/ERC1155.md)
-* [0.8.17](benchmarks/0.8.17/ERC1155.md)
+* [0.8.13](benchmarks/0.8.13/ERC1155.md) or with IR-based codegen [0.8.13](benchmarks/0.8.13-via-ir/ERC1155.md)
+* [0.8.14](benchmarks/0.8.14/ERC1155.md) or with IR-based codegen [0.8.14](benchmarks/0.8.14-via-ir/ERC1155.md)
+* [0.8.15](benchmarks/0.8.15/ERC1155.md) or with IR-based codegen [0.8.15](benchmarks/0.8.15-via-ir/ERC1155.md)
+* [0.8.16](benchmarks/0.8.16/ERC1155.md) or with IR-based codegen [0.8.16](benchmarks/0.8.16-via-ir/ERC1155.md)
+* [0.8.17](benchmarks/0.8.17/ERC1155.md) or with IR-based codegen [0.8.17](benchmarks/0.8.17-via-ir/ERC1155.md)
+* [0.8.18](benchmarks/0.8.18/ERC1155.md) or with IR-based codegen [0.8.18](benchmarks/0.8.18-via-ir/ERC1155.md)
+* [0.8.19](benchmarks/0.8.19/ERC1155.md) or with IR-based codegen [0.8.19](benchmarks/0.8.19-via-ir/ERC1155.md)
+* [0.8.20](benchmarks/0.8.20/ERC1155.md) or with IR-based codegen [0.8.20](benchmarks/0.8.20-via-ir/ERC1155.md)
+
