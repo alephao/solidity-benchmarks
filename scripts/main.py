@@ -2,7 +2,6 @@ import erc20
 import erc721
 import erc1155
 import common
-import re
 
 
 def group_by_contract(lines):
@@ -92,7 +91,6 @@ def update_erc1155_readme(contracts, file):
 
 def update_readmes(version):
     snapshot_file = "{}.gas-snapshot".format(version.replace(".", "-"))
-
     snapshot = open(snapshot_file, "r")
     lines = snapshot.readlines()
 
