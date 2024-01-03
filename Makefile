@@ -32,8 +32,8 @@ snapshot:
 
 .PHONY: readme
 readme:
-	python3 scripts/main.py
+	python scripts/main.py
 
 .PHONY: json
 json:
-	python3 scripts/gen_json.py
+	python scripts/gen_json.py
