@@ -22,19 +22,23 @@ All tests are generated using the template files in [`templates`](templates)
 
 All tables in the readmes are generated using the scripts in [`scripts`](scripts)
 
-
 ## Contributing
 
-If you want to add another implementation, please open an issue with a link to the repo, or try adding it yourself by using the instructions below.
+There are many ways to contribute to this project
+
+- Add a snapshot for the latest solc version
+- Add or suggest a contract implementation (the instructions for adding are below)
+- Update a contract implementation
+- Enhance the codegen scripts
+
+### Setup for local development
+
+- Install foundry http://getfoundry.sh
+- You'll need python 3 installed to run the scripts under the `scripts` folder
+- Install the python dependencies `pip install -r requirements.txt`
+- `git clone --recurse-submodules https://github.com/alephao/solidity-benchmarks.git`
 
 ### How to add a contract
-
-**Dependencies**
-
-- You'll need python 3 installed to run the scripts under the `scripts` folder
-- `pip install -r requirements.txt` (or `pip3` depending on ur environment)
-
-**Instructions**
 
 1. Create a minimal implementation on `src/`, the contract name and file name should follow the convention `<Contract Type>_<Variation>`.
 2. Implement the common interface that is in other files of the same contract type (for ERC721 for example, it's `mint` and `safeMint` functions)
