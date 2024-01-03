@@ -31,6 +31,12 @@ def main():
         "0.8.19-via-ir",
         "0.8.20",
         "0.8.20-via-ir",
+        "0.8.21",
+        "0.8.21-via-ir",
+        "0.8.22",
+        "0.8.22-via-ir",
+        "0.8.23",
+        "0.8.23-via-ir",
     ]
 
     for version in versions:
