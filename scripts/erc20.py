@@ -2,8 +2,8 @@ import re
 import common
 
 variations = {
-    "OZ": "OpenZeppelin",
-    "OZPermit": "OpenZeppelin Permit (draft)",
+    "OZ": "OpenZeppelin v5",
+    "OZPermit": "OpenZeppelin v5 Permit",
     "Solmate": "Solmate",
     "Maple": "Maple",
 }
