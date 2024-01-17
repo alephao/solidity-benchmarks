@@ -75,16 +75,6 @@ make readme
 
 **ERC20**
 
-* [0.8.10](benchmarks/0.8.10/ERC20.md) 
-* [0.8.11](benchmarks/0.8.11/ERC20.md)
-* [0.8.12](benchmarks/0.8.12/ERC20.md)
-* [0.8.13](benchmarks/0.8.13/ERC20.md) or [0.8.13-ir](benchmarks/0.8.13-via-ir/ERC20.md)
-* [0.8.14](benchmarks/0.8.14/ERC20.md) or [0.8.14-ir](benchmarks/0.8.14-via-ir/ERC20.md)
-* [0.8.15](benchmarks/0.8.15/ERC20.md) or [0.8.15-ir](benchmarks/0.8.15-via-ir/ERC20.md)
-* [0.8.16](benchmarks/0.8.16/ERC20.md) or [0.8.16-ir](benchmarks/0.8.16-via-ir/ERC20.md)
-* [0.8.17](benchmarks/0.8.17/ERC20.md) or [0.8.17-ir](benchmarks/0.8.17-via-ir/ERC20.md)
-* [0.8.18](benchmarks/0.8.18/ERC20.md) or [0.8.18-ir](benchmarks/0.8.18-via-ir/ERC20.md)
-* [0.8.19](benchmarks/0.8.19/ERC20.md) or [0.8.19-ir](benchmarks/0.8.19-via-ir/ERC20.md)
 * [0.8.20](benchmarks/0.8.20/ERC20.md) or [0.8.20-ir](benchmarks/0.8.20-via-ir/ERC20.md)
 * [0.8.21](benchmarks/0.8.21/ERC21.md) or [0.8.21-ir](benchmarks/0.8.21-via-ir/ERC20.md)
 * [0.8.22](benchmarks/0.8.22/ERC22.md) or [0.8.22-ir](benchmarks/0.8.22-via-ir/ERC20.md)
@@ -93,16 +83,6 @@ make readme
 
 **ERC721**
 
-* [0.8.10](benchmarks/0.8.10/ERC721.md) 
-* [0.8.11](benchmarks/0.8.11/ERC721.md)
-* [0.8.12](benchmarks/0.8.12/ERC721.md)
-* [0.8.13](benchmarks/0.8.13/ERC721.md) or [0.8.13-ir](benchmarks/0.8.13-via-ir/ERC721.md)
-* [0.8.14](benchmarks/0.8.14/ERC721.md) or [0.8.14-ir](benchmarks/0.8.14-via-ir/ERC721.md)
-* [0.8.15](benchmarks/0.8.15/ERC721.md) or [0.8.15-ir](benchmarks/0.8.15-via-ir/ERC721.md)
-* [0.8.16](benchmarks/0.8.16/ERC721.md) or [0.8.16-ir](benchmarks/0.8.16-via-ir/ERC721.md)
-* [0.8.17](benchmarks/0.8.17/ERC721.md) or [0.8.17-ir](benchmarks/0.8.17-via-ir/ERC721.md)
-* [0.8.18](benchmarks/0.8.18/ERC721.md) or [0.8.18-ir](benchmarks/0.8.18-via-ir/ERC721.md)
-* [0.8.19](benchmarks/0.8.19/ERC721.md) or [0.8.19-ir](benchmarks/0.8.19-via-ir/ERC721.md)
 * [0.8.20](benchmarks/0.8.20/ERC721.md) or [0.8.20-ir](benchmarks/0.8.20-via-ir/ERC721.md)
 * [0.8.21](benchmarks/0.8.21/ERC721.md) or [0.8.21-ir](benchmarks/0.8.21-via-ir/ERC721.md)
 * [0.8.22](benchmarks/0.8.22/ERC721.md) or [0.8.22-ir](benchmarks/0.8.22-via-ir/ERC721.md)
@@ -111,16 +91,6 @@ make readme
 
 **ERC1155**
 
-* [0.8.10](benchmarks/0.8.10/ERC1155.md) 
-* [0.8.11](benchmarks/0.8.11/ERC1155.md)
-* [0.8.12](benchmarks/0.8.12/ERC1155.md)
-* [0.8.13](benchmarks/0.8.13/ERC1155.md) or [0.8.13-ir](benchmarks/0.8.13-via-ir/ERC1155.md)
-* [0.8.14](benchmarks/0.8.14/ERC1155.md) or [0.8.14-ir](benchmarks/0.8.14-via-ir/ERC1155.md)
-* [0.8.15](benchmarks/0.8.15/ERC1155.md) or [0.8.15-ir](benchmarks/0.8.15-via-ir/ERC1155.md)
-* [0.8.16](benchmarks/0.8.16/ERC1155.md) or [0.8.16-ir](benchmarks/0.8.16-via-ir/ERC1155.md)
-* [0.8.17](benchmarks/0.8.17/ERC1155.md) or [0.8.17-ir](benchmarks/0.8.17-via-ir/ERC1155.md)
-* [0.8.18](benchmarks/0.8.18/ERC1155.md) or [0.8.18-ir](benchmarks/0.8.18-via-ir/ERC1155.md)
-* [0.8.19](benchmarks/0.8.19/ERC1155.md) or [0.8.19-ir](benchmarks/0.8.19-via-ir/ERC1155.md)
 * [0.8.20](benchmarks/0.8.20/ERC1155.md) or [0.8.20-ir](benchmarks/0.8.20-via-ir/ERC1155.md)
 * [0.8.21](benchmarks/0.8.21/ERC1155.md) or [0.8.21-ir](benchmarks/0.8.21-via-ir/ERC1155.md)
 * [0.8.22](benchmarks/0.8.22/ERC1155.md) or [0.8.22-ir](benchmarks/0.8.22-via-ir/ERC1155.md)
