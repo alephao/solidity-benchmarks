@@ -66,6 +66,7 @@ variations = {
 make codegen
 make snapshot
 make readme
+make json
 ```
 
 
