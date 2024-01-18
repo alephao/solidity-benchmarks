@@ -1,6 +1,7 @@
 # Pattern: <CONTRACT>_<VARIANT>_<method>_Test:test_<method>_<optionalConstraint>_<optionalData>() (gas: <gas>)
 # Example: ERC721_B_transfer_Test:test_transfer_toNonOwner_id50() (gas: 179836)
 
+import os
 import re
 import json
 
@@ -11,20 +12,11 @@ regex = re.compile(
 def main():
     obj = {}
 
-    versions = [
-        "0.8.20",
-        "0.8.20-via-ir",
-        "0.8.21",
-        "0.8.21-via-ir",
-        "0.8.22",
-        "0.8.22-via-ir",
-        "0.8.23",
-        "0.8.23-via-ir",
-    ]
+    snapshot_files = os.listdir('./gas-snapshots')
 
-    for version in versions:
-        snapshot_file = "{}.gas-snapshot".format(version.replace(".", "-"))
-        snapshot = open(snapshot_file, "r")
+    for snapshot_file in snapshot_files:
+        version = snapshot_file.replace('0-8-', '0.8.')
+        snapshot = open('./gas-snapshots/{}'.format(snapshot_file), "r")
         lines = snapshot.readlines()
 
         for line in lines:
@@ -58,6 +50,5 @@ def main():
     json_dump = json.dumps(obj, indent=2)
     f = open("data.json", "w")
     f.write(json_dump)
-
 
 main()

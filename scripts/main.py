@@ -1,3 +1,4 @@
+import os
 import erc20
 import erc721
 import erc1155
@@ -89,9 +90,9 @@ def update_erc1155_readme(contracts, file):
     f.truncate()
 
 
-def update_readmes(version):
-    snapshot_file = "{}.gas-snapshot".format(version.replace(".", "-"))
-    snapshot = open(snapshot_file, "r")
+def update_readmes(snapshot_file):
+    version = snapshot_file.replace('0-8-', '0.8.')
+    snapshot = open('./gas-snapshots/{}'.format(snapshot_file), "r")
     lines = snapshot.readlines()
 
     contracts = group_by_contract(lines)
@@ -102,19 +103,10 @@ def update_readmes(version):
     update_erc1155_readme(contracts, "{}/ERC1155.md".format(base_write_path))
 
 def main():
-    versions = [
-        "0.8.20",
-        "0.8.20-via-ir",
-        "0.8.21",
-        "0.8.21-via-ir",
-        "0.8.22",
-        "0.8.22-via-ir",
-        "0.8.23",
-        "0.8.23-via-ir",
-    ]
+    snapshot_files = os.listdir('./gas-snapshots')
 
-    for version in versions:
-        update_readmes(version)
+    for snapshot_file in snapshot_files:
+        update_readmes(snapshot_file)
 
 
 main()
