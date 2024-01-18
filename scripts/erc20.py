@@ -9,7 +9,7 @@ variations = {
 }
 
 def regex_for_method(method):
-    regex_string = "{}.+gas:\s(\d+)".format(method)
+    regex_string = "test_{}.+gas:\s(\d+)".format(method)
     return re.compile(regex_string)    
 
 def fn_for_method(method):
