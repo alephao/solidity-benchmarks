@@ -14,7 +14,7 @@ variations = {
 
 # Methods to format .gas-snapshot line to an object with relevant info
 
-deploy_regex = re.compile("deploy\(.+gas:\s(\d+)")
+deploy_regex = re.compile("test_deploy\(.+gas:\s(\d+)")
 
 
 def deploy(line):
@@ -23,7 +23,7 @@ def deploy(line):
         "gas": match.group(1)
     }
 
-deployERC2309_regex = re.compile("deployERC2309_(\d+)\(.+gas:\s(\d+)")
+deployERC2309_regex = re.compile("test_deployERC2309_(\d+)\(.+gas:\s(\d+)")
 
 def deployERC2309(line):
     match = re.search(deployERC2309_regex, line)
@@ -64,7 +64,7 @@ def burn(line):
         "gas": match.group(2)
     }
 
-transferToOwner_regex = re.compile("transferToOwner_id(\d+).+gas:\s(\d+)")
+transferToOwner_regex = re.compile("test_transferToOwner_id(\d+).+gas:\s(\d+)")
 
 
 def transferToOwner(line):
@@ -88,7 +88,7 @@ def transferToNonOwner(line):
 
 
 safeTransferToOwner_regex = re.compile(
-    "safeTransferToOwner_id(\d+).+gas:\s(\d+)")
+    "test_safeTransferToOwner_id(\d+).+gas:\s(\d+)")
 
 
 def safeTransferToOwner(line):
