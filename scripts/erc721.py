@@ -55,25 +55,6 @@ def fn_for_method_id(method):
         }
     return get_gas
 
-deploy = fn_for_method_simple("deploy")
-isApprovedForAll = fn_for_method_simple("isApprovedForAll")
-setApprovalForAll = fn_for_method_simple("setApprovalForAll")
-
-deployERC2309 = fn_for_method_amount("deployERC2309")
-mint = fn_for_method_amount("mint")
-safeMint = fn_for_method_amount("safeMint")
-balanceOf = fn_for_method_amount("balanceOf")
-ownerOf = fn_for_method_amount("ownerOf")
-getApproved = fn_for_method_amount("getApproved")
-
-burn = fn_for_method_id("burn")
-transferToOwner = fn_for_method_id("transferToOwner")
-transferToNonOwner = fn_for_method_id("transferToNonOwner")
-safeTransferToOwner = fn_for_method_id("safeTransferToOwner")
-safeTransferToNonOwner = fn_for_method_id("safeTransferToNonOwner")
-approve = fn_for_method_id("approve")
-
-
 def group_methods_and_variant(lines):
     methods = common.group_by_method(lines)
     grouped = {}
