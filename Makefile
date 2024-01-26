@@ -14,6 +14,8 @@ snapshot:
 	forge snapshot --force --optimize --use 0.8.22 --snap gas-snapshots/0-8-22-via-ir --via-ir
 	forge snapshot --force --optimize --use 0.8.23 --snap gas-snapshots/0-8-23
 	forge snapshot --force --optimize --use 0.8.23 --snap gas-snapshots/0-8-23-via-ir --via-ir
+	forge snapshot --force --optimize --use 0.8.24 --snap gas-snapshots/0-8-24
+	forge snapshot --force --optimize --use 0.8.24 --snap gas-snapshots/0-8-24-via-ir --via-ir
 
 # Generate a structured json from gas-snapshots and outputs to ./data.json
 .PHONY: json
