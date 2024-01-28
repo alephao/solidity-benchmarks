@@ -26,3 +26,8 @@ json:
 .PHONY: readme
 readme:
 	python scripts/main.py
+
+# run swift generator
+.PHONY: readme-swift
+readme-swift:
+	swift run --package-path generator generator data.json benchmarks
