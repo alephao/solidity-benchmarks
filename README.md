@@ -4,9 +4,9 @@ Benchmarks for popular implementations of contract standards.
 
 > ⚠️ The gas usage shown in the benchmarks doesn't take into account the 21k gas added to every ethereum transaction
 
-- [ERC20 0.8.23](benchmarks/0.8.23/ERC20.md)
-- [ERC721 0.8.23](benchmarks/0.8.23/ERC721.md)
-- [ERC1155 0.8.23](benchmarks/0.8.23/ERC1155.md)
+- [ERC20 0.8.24](benchmarks/0.8.24/ERC20.md)
+- [ERC721 0.8.24](benchmarks/0.8.24/ERC721.md)
+- [ERC1155 0.8.24](benchmarks/0.8.24/ERC1155.md)
 
 You can see benchmarks for different compiler versions on [`benchmarks/`](benchmarks)
 
@@ -70,16 +70,17 @@ make json
 ```
 
 
-6. Add the contract to the list at the top of the `<Contract Type>.md`. (If you added a new ERC721, update the list on top of [`ERC721.md`](ERC721.md))
+6. Add the contract to the list at the top of the `<Contract Type>.md`. (If you added a new ERC721, update the list on top of [`ERC721.md`](benchmarks/0.8.24/ERC721.md))
 
 ### Quick links
 
 **ERC20**
 
 * [0.8.20](benchmarks/0.8.20/ERC20.md) or [0.8.20-ir](benchmarks/0.8.20-via-ir/ERC20.md)
-* [0.8.21](benchmarks/0.8.21/ERC21.md) or [0.8.21-ir](benchmarks/0.8.21-via-ir/ERC20.md)
-* [0.8.22](benchmarks/0.8.22/ERC22.md) or [0.8.22-ir](benchmarks/0.8.22-via-ir/ERC20.md)
-* [0.8.23](benchmarks/0.8.23/ERC23.md) or [0.8.23-ir](benchmarks/0.8.23-via-ir/ERC20.md)
+* [0.8.21](benchmarks/0.8.21/ERC20.md) or [0.8.21-ir](benchmarks/0.8.21-via-ir/ERC20.md)
+* [0.8.22](benchmarks/0.8.22/ERC20.md) or [0.8.22-ir](benchmarks/0.8.22-via-ir/ERC20.md)
+* [0.8.23](benchmarks/0.8.23/ERC20.md) or [0.8.23-ir](benchmarks/0.8.23-via-ir/ERC20.md)
+* [0.8.23](benchmarks/0.8.24/ERC20.md) or [0.8.24-ir](benchmarks/0.8.24-via-ir/ERC20.md)
 
 
 **ERC721**
@@ -88,6 +89,7 @@ make json
 * [0.8.21](benchmarks/0.8.21/ERC721.md) or [0.8.21-ir](benchmarks/0.8.21-via-ir/ERC721.md)
 * [0.8.22](benchmarks/0.8.22/ERC721.md) or [0.8.22-ir](benchmarks/0.8.22-via-ir/ERC721.md)
 * [0.8.23](benchmarks/0.8.23/ERC721.md) or [0.8.23-ir](benchmarks/0.8.23-via-ir/ERC721.md)
+* [0.8.24](benchmarks/0.8.24/ERC721.md) or [0.8.24-ir](benchmarks/0.8.24-via-ir/ERC721.md)
 
 
 **ERC1155**
@@ -96,4 +98,5 @@ make json
 * [0.8.21](benchmarks/0.8.21/ERC1155.md) or [0.8.21-ir](benchmarks/0.8.21-via-ir/ERC1155.md)
 * [0.8.22](benchmarks/0.8.22/ERC1155.md) or [0.8.22-ir](benchmarks/0.8.22-via-ir/ERC1155.md)
 * [0.8.23](benchmarks/0.8.23/ERC1155.md) or [0.8.23-ir](benchmarks/0.8.23-via-ir/ERC1155.md)
+* [0.8.24](benchmarks/0.8.24/ERC1155.md) or [0.8.24-ir](benchmarks/0.8.24-via-ir/ERC1155.md)
 
