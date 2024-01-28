@@ -26,9 +26,6 @@ Note: When comparing, keep in mind that Solmate and Maple implements ERC-2612 pe
 
 ## Table
 
-| Implementation | balanceOf | transferToNonOwner | transferFromToOwner | allowance | deploy | totalSupply | transferToOwner | transferFromToNonOwner | approve |
+| Implementation | allowance | approve | balanceOf | deploy | totalSupply | transferFromToNonOwner | transferFromToOwner | transferToNonOwner | transferToOwner |
 | - | - | - | - | - | - | - | - | - | - |
-| Maple | 7692 | 37744 | 28152 | 7927 | 670317 | 7579 | 20666 | 45274 | 32599 |
-| Solmate | 7692 | 37677 | 26183 | 7927 | 654881 | 7556 | 20599 | 43305 | 32548 |
-| OZPermit | 7691 | 37991 | 26573 | 7960 | 870240 | 7565 | 20913 | 43695 | 32787 |
-| OZ | 7690 | 38013 | 26617 | 7960 | 463270 | 7542 | 20935 | 43739 | 32764 |
+| 7927 | 32599 | 7692 | 670317 | 7579 | 45274 | 28152 | 37744 | 20666 | 7960 | 32764 | 7690 | 463270 | 7542 | 43739 | 26617 | 38013 | 20935 | 7960 | 32787 | 7691 | 870240 | 7565 | 43695 | 26573 | 37991 | 20913 | 7927 | 32548 | 7692 | 654881 | 7556 | 43305 | 26183 | 37677 | 20599 |
