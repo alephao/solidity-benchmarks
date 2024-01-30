@@ -25,12 +25,14 @@ func joinWithLinebreak(_ lines: [String]) -> String { lines.joined(separator: "\
 
 func addTableEdge(_ str: String) -> String { "| \(str) |" }
 
-func tableComponentsToString(_ components: (head: [String], body: [String])) -> String {
-    [
-        components.head,
-        components.head |> map { _ in "-" }, // separator
-        components.body
-    ]
+func tableComponentsToString(_ components: (head: [String], body: [[String]])) -> String {
+    (
+        [
+            components.head,
+            components.head.map(const("-")),
+        ]
+        + components.body
+    )
     |> map(joinWithColumnSeparator >>> addTableEdge)
     >>> joinWithLinebreak
 }

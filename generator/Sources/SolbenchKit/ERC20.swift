@@ -75,10 +75,12 @@ enum ERC20 {
         """
     }
 
-    static func dictToTableComponents(_ dict: [Method.RawValue: [Implementation.RawValue: String]]) -> (head: [String], body: [String]) {
+    static func dictToTableComponents(_ dict: [Method.RawValue: [Implementation.RawValue: String]]) -> (head: [String], body: [[String]]) {
         let head = ["Implementation"] + Method.allCases.map(\.rawValue)
-        let body = Implementation.allCases.flatMap { impl in
-            Method.allCases.map { method in dict[method.rawValue]![impl.rawValue]! }
+        let body = Implementation.allCases.map { impl in
+            Method.allCases.map { method in
+                dict[method.rawValue]![impl.rawValue]!
+            }
         }
         return (head, body)
     }
