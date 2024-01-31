@@ -10,10 +10,17 @@ struct WriteFile {
     let contents: String
 }
 
-func read(_ rf: ReadFile) -> Data { try! Data(contentsOf: URL(filePath: rf.path)) }
+func pathToData(_ path: String) -> Data {
+    try! String(contentsOfFile: path).data(using: .utf8)!
+}
+
+func read(_ rf: ReadFile) -> Data {
+    pathToData(rf.path)
+}
+
 func write(_ wf: WriteFile) -> Void {
     try! wf.contents.write(
-        to: URL(filePath: wf.path),
+        toFile: wf.path,
         atomically: true,
         encoding: .utf8
     )

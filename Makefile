@@ -30,4 +30,13 @@ readme:
 # run swift generator
 .PHONY: readme-swift
 readme-swift:
-	swift run --package-path generator generator data.json benchmarks
+	swift run --package-path generator solbench erc20 data.json benchmarks
+
+# build swift generator docker image
+.PHONY: build-generator-docker
+build-solbench:
+	docker build . -t solbench
+
+# run solbench image
+.PHONY: run-generator-docker
+	docker run -v ./data.json:/data.json -v ./benchmarks:/benchmarks solbench erc20 /data.json /benchmarks
