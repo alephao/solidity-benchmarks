@@ -16,6 +16,10 @@ snapshot:
 	forge snapshot --force --optimize --use 0.8.23 --snap gas-snapshots/0-8-23-via-ir --via-ir
 	forge snapshot --force --optimize --use 0.8.24 --snap gas-snapshots/0-8-24
 	forge snapshot --force --optimize --use 0.8.24 --snap gas-snapshots/0-8-24-via-ir --via-ir
+	forge snapshot --force --optimize --use 0.8.25 --snap gas-snapshots/0-8-25
+	forge snapshot --force --optimize --use 0.8.25 --snap gas-snapshots/0-8-25-via-ir --via-ir
+	forge snapshot --force --optimize --use 0.8.26 --snap gas-snapshots/0-8-26
+	forge snapshot --force --optimize --use 0.8.26 --snap gas-snapshots/0-8-26-via-ir --via-ir
 
 # Generate a structured json from gas-snapshots and outputs to ./data.json
 .PHONY: json
@@ -39,4 +43,6 @@ build-solbench:
 
 # run solbench image
 .PHONY: run-generator-docker
+run-generator-docker:
+
 	docker run -v ./data.json:/data.json -v ./benchmarks:/benchmarks solbench erc20 /data.json /benchmarks
